@@ -1,0 +1,22 @@
+USE [C07051_TAREA1_LENGUAJES]
+
+CREATE TABLE Usuario
+(
+	idusuario INT IDENTITY PRIMARY KEY
+	, nombre NVARCHAR(MAX) NOT NULL
+	, apellidos NVARCHAR(MAX) NOT NULL
+	, cedula NVARCHAR(MAX) NOT NULL
+	, fechaNacimiento DATE NOT NULL
+	, correo NVARCHAR(MAX) NOT NULL
+	, contrasenna NVARCHAR(MAX) NOT NULL
+)
+
+CREATE TABLE Compra
+(
+	idCompra INT IDENTITY PRIMARY KEY
+	, idUsuario INT NOT NULL
+	, idCupon INT NOT NULL
+	, cantidad INT NOT NULL
+	, tarjeta NVARCHAR(MAX) NOT NULL
+	, FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+)

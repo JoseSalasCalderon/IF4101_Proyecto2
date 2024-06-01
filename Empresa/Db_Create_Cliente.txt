@@ -1,0 +1,68 @@
+CREATE DATABASE proyecto2empresas;
+
+-- Crear la tabla Usuario
+CREATE TABLE Usuario (
+    nombreUsuario VARCHAR(255) PRIMARY KEY,
+    contrasenna VARCHAR(255) NOT NULL,
+    nombreEmpresa VARCHAR(255),
+    direccion VARCHAR(255),
+    cedulaFisicaOJuridica VARCHAR(255),
+    fechaCreacion DATE,
+    correo VARCHAR(255),
+    telefono VARCHAR(20),
+    primeraVez BIT,
+    activo BIT NOT NULL
+);
+
+-- Crear la tabla Promocion
+CREATE TABLE Promocion (
+    idPromocion INT AUTO_INCREMENT PRIMARY KEY,
+    idUsuario VARCHAR(255),
+    descuento DECIMAL(5, 2) NOT NULL,
+    fechaInicio DATE NOT NULL,
+    fechaFinalizacion DATE NOT NULL,
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(nombreUsuario)
+);
+
+-- Crear la tabla Categoria
+CREATE TABLE Categoria(
+    idCategoria INT AUTO_INCREMENT PRIMARY KEY,
+    nombreCategoria VARCHAR(255)
+);
+
+-- Crear la tabla Cupon
+CREATE TABLE Cupon (
+    idCupon INT AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(255) NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    ubicacion VARCHAR(255),
+    imagenRepresentativa VARCHAR(255),
+    activo BIT NOT NULL,
+    descuento DECIMAL (10, 2),
+    idUsuario VARCHAR(255),
+    idPromocion INT,
+    idCategoria INT,
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(nombreUsuario),
+    FOREIGN KEY (idPromocion) REFERENCES Promocion(idPromocion),
+    FOREIGN KEY (idCategoria) REFERENCES Categoria(idCategoria)
+);
+
+-- INSERTS
+
+-- Insertar datos en la tabla Usuario
+INSERT INTO Usuario (nombreUsuario, contrasenna, nombreEmpresa, direccion, cedulaFisicaOJuridica, fechaCreacion, correo, telefono, primeraVez, activo)
+VALUES ('usuario1', 'password1', 'Empresa1', 'Direccion1', '1234567890', '2024-01-01', 'usuario1@empresa.com', '1111111111', 1, 1),
+       ('usuario2', 'password2', 'Empresa2', 'Direccion2', '0987654321', '2024-02-01', 'usuario2@empresa.com', '2222222222', 1, 1),
+       ('usuario3', 'password3', 'Empresa3', 'Direccion3', '1122334455', '2024-03-01', 'usuario3@empresa.com', '3333333333', 0, 1),
+       ('usuario4', 'password4', 'Empresa4', 'Direccion4', '5566778899', '2024-04-01', 'usuario4@empresa.com', '4444444444', 0, 1),
+       ('usuario5', 'password5', 'Empresa5', 'Direccion5', '6677889900', '2024-05-01', 'usuario5@empresa.com', '5555555555', 1, 1);
+
+-- Insertar datos en la tabla Categoria
+INSERT INTO Categoria (nombreCategoria)
+VALUES ('Electrónica'),
+       ('Ropa'),
+       ('Hogar'),
+       ('Libros'),
+       ('Deportes');
+       
