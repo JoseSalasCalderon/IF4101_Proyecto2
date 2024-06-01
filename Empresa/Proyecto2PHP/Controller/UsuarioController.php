@@ -51,6 +51,28 @@ class UsuarioController {
             exit();
         }
     }
+
+    public function actualizarUsuarioEmpresa() {
+        if($_POST['METHOD']=='PUT'){
+            unset($_POST['METHOD']);
+            $nombreUsuario = $_GET['nombreUsuario'];
+            $contrasenna = $_POST['contrasenna'];
+            $nombreEmpresa = $_POST['nombreEmpresa'];
+            $direccion = $_POST['direccion'];
+            $cedulaFisicaOJuridica = $_POST['cedulaFisicaOJuridica'];
+            $fechaCreacion = $_POST['fechaCreacion'];
+            $correo = $_POST['correo'];
+            $telefono = $_POST['telefono'];
+            $primeraVez = $_POST['primeraVez'];
+            $activo = $_POST['activo'];
+
+            $usuario = new Usuario($nombreUsuario, $contrasenna, $nombreEmpresa, $direccion, $cedulaFisicaOJuridica, $fechaCreacion, $correo, $telefono, $primeraVez, $activo);
+            $resultado = $this->usuarioBusiness->actualizarUsuarioEmpresa($nombreUsuario, $usuario);
+            echo json_encode($resultado);
+            http_response_code(200);
+            exit();
+        }
+    }
 }
 
 // $controller = new UsuarioController();

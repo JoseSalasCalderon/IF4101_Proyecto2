@@ -64,14 +64,14 @@ class UsuarioData {
 
         try {
             $sentencia = $this->pdo->prepare($query);
-            $sentencia->bindParam(':nombreUsuario', $usuario->nombreUsuario);
-            $sentencia->bindParam(':contrasenna', $usuario->contrasenna);
-            $sentencia->bindParam(':nombreEmpresa', $usuario->nombreEmpresa);
-            $sentencia->bindParam(':direccion', $usuario->direccion);
-            $sentencia->bindParam(':cedulaFisicaOJuridica', $usuario->cedulaFisicaOJuridica);
-            $sentencia->bindParam(':fechaCreacion', $usuario->fechaCreacion);
-            $sentencia->bindParam(':correo', $usuario->correo);
-            $sentencia->bindParam(':telefono', $usuario->telefono);
+            $sentencia->bindParam(':nombreUsuario', $usuario->nombreUsuario, PDO::PARAM_STR);
+            $sentencia->bindParam(':contrasenna', $usuario->contrasenna, PDO::PARAM_STR);
+            $sentencia->bindParam(':nombreEmpresa', $usuario->nombreEmpresa, PDO::PARAM_STR);
+            $sentencia->bindParam(':direccion', $usuario->direccion, PDO::PARAM_STR);
+            $sentencia->bindParam(':cedulaFisicaOJuridica', $usuario->cedulaFisicaOJuridica, PDO::PARAM_STR);
+            $sentencia->bindParam(':fechaCreacion', $usuario->fechaCreacion, PDO::PARAM_STR);
+            $sentencia->bindParam(':correo', $usuario->correo, PDO::PARAM_STR);
+            $sentencia->bindParam(':telefono', $usuario->telefono, PDO::PARAM_STR);
             $sentencia->bindParam(':primeraVez', $usuario->primeraVez, PDO::PARAM_BOOL);
             $sentencia->bindParam(':activo', $usuario->activo, PDO::PARAM_BOOL);
 
@@ -83,8 +83,42 @@ class UsuarioData {
         }
 
     }
+
+    public function actualizarUsuarioEmpresa($nombreUsuario, Usuario $usuario) {
+        $query = "UPDATE usuario SET 
+                    contrasenna = :contrasenna,
+                    nombreEmpresa = :nombreEmpresa,
+                    direccion = :direccion,
+                    cedulaFisicaOJuridica = :cedulaFisicaOJuridica,
+                    fechaCreacion = :fechaCreacion,
+                    correo = :correo,
+                    telefono = :telefono,
+                    primeraVez = :primeraVez,
+                    activo = :activo
+                WHERE nombreUsuario = :nombreUsuario";
+        
+        try {
+            $sentencia = $this->pdo->prepare($query);
+            $sentencia->bindParam(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
+            $sentencia->bindParam(':contrasenna', $usuario->contrasenna, PDO::PARAM_STR);
+            $sentencia->bindParam(':nombreEmpresa', $usuario->nombreEmpresa, PDO::PARAM_STR);
+            $sentencia->bindParam(':direccion', $usuario->direccion, PDO::PARAM_STR);
+            $sentencia->bindParam(':cedulaFisicaOJuridica', $usuario->cedulaFisicaOJuridica, PDO::PARAM_STR);
+            $sentencia->bindParam(':fechaCreacion', $usuario->fechaCreacion, PDO::PARAM_STR);
+            $sentencia->bindParam(':correo', $usuario->correo, PDO::PARAM_STR);
+            $sentencia->bindParam(':telefono', $usuario->telefono, PDO::PARAM_STR);
+            $sentencia->bindParam(':primeraVez', $usuario->primeraVez, PDO::PARAM_BOOL);
+            $sentencia->bindParam(':activo', $usuario->activo, PDO::PARAM_BOOL);
+            
+            $sentencia->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false; // Devolver false en caso de error
+        }
+    }
     
-}
+}   
 
 
 ?>

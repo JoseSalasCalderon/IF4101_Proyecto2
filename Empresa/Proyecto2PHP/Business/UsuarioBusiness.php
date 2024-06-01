@@ -23,6 +23,10 @@ class UsuarioBusiness {
         return $this->usuarioData->crearUsuarioEmpresa($usuario);
     }
 
+    public function actualizarUsuarioEmpresa($nombreUsuario, Usuario $usuario) {
+        return $this->usuarioData->actualizarUsuarioEmpresa($nombreUsuario, $usuario);
+    }
+
     // Implementar métodos para insertar, actualizar y eliminar usuario
 }
 ?>
