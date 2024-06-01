@@ -1,0 +1,86 @@
+CREATE DATABASE proyecto2empresas;
+
+-- Crear la tabla Usuario
+CREATE TABLE Usuario (
+    nombreUsuario VARCHAR(255) PRIMARY KEY,
+    contrasenna VARCHAR(255) NOT NULL,
+    nombreEmpresa VARCHAR(255),
+    direccion VARCHAR(255),
+    cedulaFisicaOJuridica VARCHAR(255),
+    fechaCreacion DATE,
+    correo VARCHAR(255),
+    telefono VARCHAR(20),
+    primeraVez BIT,
+    activo BIT NOT NULL
+);
+
+-- Crear la tabla Categoria
+CREATE TABLE Categoria(
+    idCategoria INT AUTO_INCREMENT PRIMARY KEY,
+    nombreCategoria VARCHAR(255)
+);
+
+-- Crear la tabla Categoria
+CREATE TABLE Administrador(
+    nombreUsuario VARCHAR(255) PRIMARY KEY,
+    contrasenna VARCHAR(255) NOT NULL
+);
+
+
+-- Crear la tabla Cupon
+CREATE TABLE Cupon (
+    idCupon INT AUTO_INCREMENT PRIMARY KEY,
+    idCategoria INT,
+    idUsuario VARCHAR(255),
+    codigo VARCHAR(255) NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    descuento DECIMAL (10, 2),
+    ubicacion VARCHAR(255),
+    imagenRepresentativa TEXT,
+    fechaCreacion DATE NOT NULL,
+    fechaInicio DATE NOT NULL,
+    fechaFinalizacion DATE NOT NULL,
+    activo BIT NOT NULL,
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(nombreUsuario),
+    FOREIGN KEY (idCategoria) REFERENCES Categoria(idCategoria)
+);
+
+-- Crear la tabla Promocion
+CREATE TABLE Promocion (
+    idPromocion INT AUTO_INCREMENT PRIMARY KEY,
+    idCupon INT NOT NULL,
+    descuento DECIMAL(5, 2) NOT NULL,
+    fechaInicio DATE NOT NULL,
+    fechaFinalizacion DATE NOT NULL,
+    FOREIGN KEY (idCupon) REFERENCES Cupon(idCupon)
+);
+
+
+
+
+-- INSERTS
+-- Insertar datos en Usuario
+INSERT INTO Usuario (nombreUsuario, contrasenna, nombreEmpresa, direccion, cedulaFisicaOJuridica, fechaCreacion, correo, telefono, primeraVez, activo)
+VALUES ('usuario1', 'contrasena1', 'Empresa 1', 'Dirección 1', '123456789', '2024-05-31', 'correo1@example.com', '1234567890', 1, 1),
+       ('usuario2', 'contrasena2', 'Empresa 2', 'Dirección 2', '987654321', '2024-05-30', 'correo2@example.com', '0987654321', 1, 1);
+
+-- Insertar datos en Categoria
+INSERT INTO Categoria (nombreCategoria)
+VALUES ('Categoria 1'),
+       ('Categoria 2');
+
+-- Insertar datos en Administrador
+INSERT INTO Administrador (nombreUsuario, contrasenna)
+VALUES ('admin1', '123'),
+       ('admin2', '456');
+
+-- Insertar datos en Cupon
+INSERT INTO Cupon (idCategoria, idUsuario, codigo, nombre, precio, descuento, ubicacion, imagenRepresentativa, fechaCreacion, fechaInicio, fechaFinalizacion, activo)
+VALUES (1, 'usuario1', 'COD123', 'Cupón 1', 10.50, 2.00, 'Ubicación 1', 'imagen1.jpg', '2024-05-31', '2024-06-01', '2024-06-30', 1),
+       (2, 'usuario2', 'COD456', 'Cupón 2', 20.75, 5.00, 'Ubicación 2', 'imagen2.jpg', '2024-05-30', '2024-06-01', '2024-06-15', 1);
+
+-- Insertar datos en Promocion
+INSERT INTO Promocion (idCupon, descuento, fechaInicio, fechaFinalizacion)
+VALUES (1, 3.00, '2024-06-01', '2024-06-10'),
+       (2, 7.50, '2024-06-01', '2024-06-07');

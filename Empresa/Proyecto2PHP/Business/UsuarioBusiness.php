@@ -8,18 +8,20 @@ class UsuarioBusiness {
         $this->usuarioData = new UsuarioData();
     }
 
-    public function listarUsuarios() {
+    public function listarUsuariosEmpresa() {
         $usuarios = [];
-        $usuarios = $this->usuarioData->listarUsuarios();
+        $usuarios = $this->usuarioData->listarUsuariosEmpresa();
         return $usuarios;
     }
 
-    public function buscarUsuario($nombreUsuario) {
-        $usuario = $this->usuarioData->buscarUsuario($nombreUsuario);
+    public function buscarUsuarioEmpresa($nombreUsuario) {
+        $usuario = $this->usuarioData->buscarUsuarioEmpresa($nombreUsuario);
         return $usuario;
     }
 
-    
+    public function crearUsuarioEmpresa(Usuario $usuario) {
+        return $this->usuarioData->crearUsuarioEmpresa($usuario);
+    }
 
     // Implementar métodos para insertar, actualizar y eliminar usuario
 }

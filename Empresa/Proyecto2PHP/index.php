@@ -2,8 +2,8 @@
 header('Access-Control-Allow-Origin: *');
 
 // Obtener el controlador y la acción de la URL
-$controllerName = $_GET['controller'] ?? 'Usuario'; // Por defecto, usar el controlador Framework
-$action = $_GET['action'] ?? 'listarUsuarios'; // Por defecto, usar el método listarFrameworks
+$controllerName = $_GET['controller'] ?? 'Usuario'; // Por defecto, usar el controlador 
+$action = $_GET['action'] ?? 'listarUsuariosEmpresa'; // Por defecto, usar el método 
 
 // Incluir el archivo del controlador
 require_once 'Controller/' . $controllerName . 'Controller.php';
