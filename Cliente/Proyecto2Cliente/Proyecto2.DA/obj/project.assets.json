@@ -595,19 +595,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Laboratorios\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Laboratorios\\Desktop\\Clase-30-05-2024\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj",
       "projectName": "Proyecto2.DA",
-      "projectPath": "C:\\Users\\Laboratorios\\Desktop\\Clase-30-05-2024\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj",
-      "packagesPath": "C:\\Users\\Laboratorios\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Laboratorios\\Desktop\\Clase-30-05-2024\\Proyecto2Cliente\\Proyecto2.DA\\obj\\",
+      "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Laboratorios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -621,8 +621,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Laboratorios\\Desktop\\Clase-30-05-2024\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
-              "projectPath": "C:\\Users\\Laboratorios\\Desktop\\Clase-30-05-2024\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj"
+            "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
+              "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj"
             }
           }
         }
@@ -663,7 +663,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

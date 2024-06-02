@@ -1,0 +1,16 @@
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\bin\Debug\net8.0\Proyecto2.BW.deps.json
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\bin\Debug\net8.0\Proyecto2.BW.dll
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\bin\Debug\net8.0\Proyecto2.BW.pdb
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\bin\Debug\net8.0\Proyecto2.BC.dll
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\bin\Debug\net8.0\Proyecto2.BC.pdb
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto2.BW.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto2.BW.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto2.BW.AssemblyInfoInputs.cache
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto2.BW.AssemblyInfo.cs
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto2.BW.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto2.BW.sourcelink.json
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto.E7FDC0BB.Up2Date
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto2.BW.dll
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\refint\Proyecto2.BW.dll
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\Proyecto2.BW.pdb
+C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BW\obj\Debug\net8.0\ref\Proyecto2.BW.dll
