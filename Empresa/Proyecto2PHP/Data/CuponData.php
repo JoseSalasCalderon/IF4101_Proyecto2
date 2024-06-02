@@ -9,7 +9,7 @@ class CuponData {
         $this->pdo = Context::getConnection();
     }
 
-    public function listarCuponesPorEmpresa($nombreEmpresa) {
+    public function listarCuponesPorEmpresa($nombreUsuario) {
        $query = "SELECT 
                     c.idCupon
                     , c.idCategoria
@@ -26,9 +26,9 @@ class CuponData {
                     , c.activo
                 FROM Cupon c
                 JOIN Usuario u ON c.nombreUsuario = u.nombreUsuario
-                WHERE u.nombreEmpresa = :nombreEmpresa";
+                WHERE u.nombreUsuario = :nombreUsuario";
         $sentencia = $this->pdo->prepare($query);
-        $sentencia->bindParam(':nombreEmpresa', $nombreEmpresa, PDO::PARAM_STR);
+        $sentencia->bindParam(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute();
         $cupones = [];
@@ -66,7 +66,45 @@ class CuponData {
     }
 
     public function listarCupones() {
-
+        $query = "SELECT 
+                    c.idCupon
+                    , c.idCategoria
+                    , c.nombreUsuario
+                    , c.codigo
+                    , c.nombre
+                    , c.precio
+                    , c.descuento
+                    , c.ubicacion
+                    , c.imagenRepresentativa
+                    , c.fechaCreacion
+                    , c.fechaInicio
+                    , c.fechaFinalizacion
+                    , c.activo
+                FROM Cupon c
+                WHERE c.activo = 1";
+        $sentencia = $this->pdo->prepare($query);
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $sentencia->execute();
+        $cupones = [];
+        while ($cuponData = $sentencia->fetch()) {
+            $cupon = new Cupon(
+              $cuponData['idCupon'],
+              $cuponData['idCategoria'],
+              $cuponData['nombreUsuario'],
+              $cuponData['codigo'],
+              $cuponData['nombre'],
+              $cuponData['precio'],
+              $cuponData['descuento'],
+              $cuponData['ubicacion'],
+              $cuponData['imagenRepresentativa'],
+              $cuponData['fechaCreacion'],
+              $cuponData['fechaInicio'],
+              $cuponData['fechaFinalizacion'],
+              $cuponData['activo']
+            );
+            $cupones[] = $cupon;
+          }
+        return $cupones;
     }
     
 }// Class

@@ -8,9 +8,9 @@ class CuponBusiness {
         $this->cuponData = new CuponData();
     }
 
-    public function listarCuponesPorEmpresa($nombreEmpresa) {
+    public function listarCuponesPorEmpresa($nombreUsuario) {
        $cupones = [];
-       $cupones = $this->cuponData->listarCuponesPorEmpresa($nombreEmpresa);
+       $cupones = $this->cuponData->listarCuponesPorEmpresa($nombreUsuario);
        return $cupones;
     }
 
@@ -27,7 +27,9 @@ class CuponBusiness {
     }
 
     public function listarCupones() {
-        
+       $cupones = [];
+       $cupones = $this->cuponData->listarCupones();
+       return $cupones;
     }
 }
 ?>

@@ -10,17 +10,23 @@ class CuponController {
     }
 
     public function listarCuponesPorEmpresa() {
-        if (isset($_GET['nombreEmpresa'])) {
-            $resultado = $this->cuponBusiness->listarCuponesPorEmpresa($_GET['nombreEmpresa']);
+        if (isset($_GET['nombreUsuario'])) {
+            $resultado = $this->cuponBusiness->listarCuponesPorEmpresa($_GET['nombreUsuario']);
             if ($resultado) {
                 echo json_encode($resultado);
                 http_response_code(200);
                 exit();
             }else { 
-                echo json_encode("No hay cupones");
+                // No encuentra en esa empresa
+                echo json_encode(null);
                 http_response_code(404);
                 exit();
             }
+        }else {
+            // No viene la variable nombreEmpresa
+            echo json_encode(null);
+            http_response_code(404);
+            exit();
         }
         
         
@@ -39,7 +45,16 @@ class CuponController {
     }
 
     public function listarCupones() {
-        
+        $resultado = $this->cuponBusiness->listarCupones();
+        if ($resultado) {
+            echo json_encode($resultado);
+            http_response_code(200);
+            exit();
+        }else { 
+            echo json_encode(null);
+            http_response_code(404);
+            exit();
+        }
     }
 }
 
