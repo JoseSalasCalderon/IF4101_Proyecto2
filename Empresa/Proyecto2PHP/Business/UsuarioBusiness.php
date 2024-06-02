@@ -27,6 +27,5 @@ class UsuarioBusiness {
         return $this->usuarioData->actualizarUsuarioEmpresa($nombreUsuario, $usuario);
     }
 
-    // Implementar métodos para insertar, actualizar y eliminar usuario
 }
 ?>
