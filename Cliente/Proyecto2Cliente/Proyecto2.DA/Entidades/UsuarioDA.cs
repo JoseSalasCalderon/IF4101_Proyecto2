@@ -16,6 +16,10 @@ namespace Proyecto2.DA.Entidades
         public int idUsuario { get; set; }
 
         [Required]
+        [MaxLength(9)]
+        public string cedula { get; set; }
+
+        [Required]
         public string nombre { get; set; }
 
         [Required]
@@ -31,6 +35,5 @@ namespace Proyecto2.DA.Entidades
         public string contrasenna { get; set; }
 
         public virtual ICollection<CompraDA> CompraDA { get; set; } = new List<CompraDA>();
-
     }
 }
