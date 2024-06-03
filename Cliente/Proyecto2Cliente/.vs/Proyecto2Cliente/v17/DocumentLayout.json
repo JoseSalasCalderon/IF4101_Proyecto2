@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\proyecto2cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|solutionrelative:proyecto2cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\interfaces\\da\\igestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\interfaces\\da\\igestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D01BA42F-E880-4510-A120-DF6ACDEE065A}|Proyecto2.BC\\Proyecto2.BC.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bc\\modelos\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D01BA42F-E880-4510-A120-DF6ACDEE065A}|Proyecto2.BC\\Proyecto2.BC.csproj|solutionrelative:proyecto2.bc\\modelos\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.da\\acciones\\gestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|solutionrelative:proyecto2.da\\acciones\\gestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2cliente\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|solutionrelative:proyecto2cliente\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\cu\\gestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\cu\\gestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\interfaces\\bw\\igestionarusuariobw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\interfaces\\bw\\igestionarusuariobw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\interfaces\\bw\\igestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\interfaces\\bw\\igestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\cu\\gestionarusuariobw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\cu\\gestionarusuariobw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2cliente\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|solutionrelative:proyecto2cliente\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.da\\acciones\\gestionarusuarioda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|solutionrelative:proyecto2.da\\acciones\\gestionarusuarioda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\interfaces\\da\\igestionarusuarioda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\interfaces\\da\\igestionarusuarioda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.da\\entidades\\usuarioda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|solutionrelative:proyecto2.da\\entidades\\usuarioda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.da\\contexto\\proyecto2context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|solutionrelative:proyecto2.da\\contexto\\proyecto2context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IGestionarUsuarioBW.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\BW\\IGestionarUsuarioBW.cs",
-              "RelativeDocumentMoniker": "Proyecto2.BW\\Interfaces\\BW\\IGestionarUsuarioBW.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\BW\\IGestionarUsuarioBW.cs",
-              "RelativeToolTip": "Proyecto2.BW\\Interfaces\\BW\\IGestionarUsuarioBW.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAoAAAA",
+              "DocumentIndex": 5,
+              "Title": "Proyecto2Context.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Contexto\\Proyecto2Context.cs",
+              "RelativeDocumentMoniker": "Proyecto2.DA\\Contexto\\Proyecto2Context.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Contexto\\Proyecto2Context.cs",
+              "RelativeToolTip": "Proyecto2.DA\\Contexto\\Proyecto2Context.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAcwBYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T16:47:05.487Z",
+              "WhenOpened": "2024-06-03T01:16:05.249Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GestionarUsuarioBW.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\CU\\GestionarUsuarioBW.cs",
-              "RelativeDocumentMoniker": "Proyecto2.BW\\CU\\GestionarUsuarioBW.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\CU\\GestionarUsuarioBW.cs",
-              "RelativeToolTip": "Proyecto2.BW\\CU\\GestionarUsuarioBW.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAJAAAA",
+              "Title": "CompraController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Controllers\\CompraController.cs",
+              "RelativeDocumentMoniker": "Proyecto2Cliente\\Controllers\\CompraController.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Controllers\\CompraController.cs",
+              "RelativeToolTip": "Proyecto2Cliente\\Controllers\\CompraController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAuwCsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T16:45:26.564Z",
+              "WhenOpened": "2024-06-03T01:06:56.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IGestionarUsuarioDA.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\DA\\IGestionarUsuarioDA.cs",
-              "RelativeDocumentMoniker": "Proyecto2.BW\\Interfaces\\DA\\IGestionarUsuarioDA.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\DA\\IGestionarUsuarioDA.cs",
-              "RelativeToolTip": "Proyecto2.BW\\Interfaces\\DA\\IGestionarUsuarioDA.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "DocumentIndex": 3,
+              "Title": "IGestionarCompraBW.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
+              "RelativeDocumentMoniker": "Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
+              "RelativeToolTip": "Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T16:41:44.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Modelos\\Usuario.cs",
-              "RelativeDocumentMoniker": "Proyecto2.BC\\Modelos\\Usuario.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Modelos\\Usuario.cs",
-              "RelativeToolTip": "Proyecto2.BC\\Modelos\\Usuario.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T16:25:02.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GestionarUsuarioDA.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Acciones\\GestionarUsuarioDA.cs",
-              "RelativeDocumentMoniker": "Proyecto2.DA\\Acciones\\GestionarUsuarioDA.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Acciones\\GestionarUsuarioDA.cs",
-              "RelativeToolTip": "Proyecto2.DA\\Acciones\\GestionarUsuarioDA.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T16:17:43.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UsuarioDA.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Entidades\\UsuarioDA.cs",
-              "RelativeDocumentMoniker": "Proyecto2.DA\\Entidades\\UsuarioDA.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Entidades\\UsuarioDA.cs",
-              "RelativeToolTip": "Proyecto2.DA\\Entidades\\UsuarioDA.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwCQAAABbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T00:52:29.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Program.cs",
-              "RelativeDocumentMoniker": "Proyecto2Cliente\\Program.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Program.cs",
-              "RelativeToolTip": "Proyecto2Cliente\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T00:21:48.88Z",
+              "WhenOpened": "2024-06-03T01:06:53.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "Proyecto2Cliente\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "Proyecto2Cliente\\Controllers\\UsuarioController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAzwBUAAABPAAAA",
+              "Title": "GestionarCompraBW.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\CU\\GestionarCompraBW.cs",
+              "RelativeDocumentMoniker": "Proyecto2.BW\\CU\\GestionarCompraBW.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\CU\\GestionarCompraBW.cs",
+              "RelativeToolTip": "Proyecto2.BW\\CU\\GestionarCompraBW.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAiwB0AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T16:48:25.241Z",
+              "WhenOpened": "2024-06-03T01:06:51.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IGestionarCompraDA.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
+              "RelativeDocumentMoniker": "Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
+              "RelativeToolTip": "Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T01:06:47.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GestionarCompraDA.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
+              "RelativeDocumentMoniker": "Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
+              "RelativeToolTip": "Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAuwDkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T01:06:45.173Z",
               "EditorCaption": ""
             }
           ]

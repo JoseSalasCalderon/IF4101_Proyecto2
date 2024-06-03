@@ -11,10 +11,10 @@ namespace Proyecto2.DA.Entidades
     [Table("Usuario")]
     public class UsuarioDA
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public int idUsuario { get; set; }
 
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         [MaxLength(9)]
         public string cedula { get; set; }
