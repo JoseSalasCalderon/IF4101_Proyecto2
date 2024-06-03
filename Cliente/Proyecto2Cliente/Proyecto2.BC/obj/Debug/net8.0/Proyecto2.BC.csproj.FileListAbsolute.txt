@@ -10,3 +10,15 @@ C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2
 C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\refint\Proyecto2.BC.dll
 C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\Proyecto2.BC.pdb
 C:\Users\PC\Documents\GitHub\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\ref\Proyecto2.BC.dll
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\bin\Debug\net8.0\Proyecto2.BC.deps.json
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\bin\Debug\net8.0\Proyecto2.BC.dll
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\bin\Debug\net8.0\Proyecto2.BC.pdb
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\Proyecto2.BC.GeneratedMSBuildEditorConfig.editorconfig
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\Proyecto2.BC.AssemblyInfoInputs.cache
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\Proyecto2.BC.AssemblyInfo.cs
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\Proyecto2.BC.csproj.CoreCompileInputs.cache
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\Proyecto2.BC.sourcelink.json
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\Proyecto2.BC.dll
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\refint\Proyecto2.BC.dll
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\Proyecto2.BC.pdb
+E:\Documentos\ICiclo2024\Lenguajes\Proyecto-2\Desarrollo\IF4101_Proyecto2\Cliente\Proyecto2Cliente\Proyecto2.BC\obj\Debug\net8.0\ref\Proyecto2.BC.dll

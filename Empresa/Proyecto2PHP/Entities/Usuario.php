@@ -24,5 +24,4 @@ class Usuario {
         $this->activo = $activo;
     }
 }
-
 ?>
