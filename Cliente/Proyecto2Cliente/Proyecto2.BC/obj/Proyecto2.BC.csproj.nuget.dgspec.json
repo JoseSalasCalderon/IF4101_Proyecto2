@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {}
+    "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
+    "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj",
+        "projectUniqueName": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj",
         "projectName": "Proyecto2.BC",
-        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\obj\\",
+        "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj",
+        "packagesPath": "C:\\Users\\50671\\.nuget\\packages\\",
+        "outputPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\50671\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
