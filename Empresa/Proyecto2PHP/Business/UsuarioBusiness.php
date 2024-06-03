@@ -14,6 +14,11 @@ class UsuarioBusiness {
         return $usuarios;
     }
 
+    public function loginUsuarioEmpresa($nombreUsuario, $contrasenna) {
+        $usuario = $this->usuarioData->loginUsuarioEmpresa($nombreUsuario, $contrasenna);
+        return $usuario;
+    }
+
     public function buscarUsuarioEmpresa($nombreUsuario) {
         $usuario = $this->usuarioData->buscarUsuarioEmpresa($nombreUsuario);
         return $usuario;

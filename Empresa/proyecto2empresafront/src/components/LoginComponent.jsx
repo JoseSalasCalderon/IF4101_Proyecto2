@@ -22,7 +22,7 @@ export const LoginComponent = ({ loginApp }) => {
                 <div className="col-md-6">
                     <div className="card">
                         <div className="card-body text-center">
-                        <BiUser style={{ fontSize: '3rem', marginBottom: '1rem' }} /> {/* Usa el ícono de usuario */}
+                        <BiUser style={{ fontSize: '5rem', marginBottom: '1rem' }} /> {/* Usa el ícono de usuario */}
                             <h2 className="card-title text-center">Inicio Sesión</h2>
                             <div className="form-group mb-3">
                                 <input 

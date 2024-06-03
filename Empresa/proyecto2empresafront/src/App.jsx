@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 // import { redirect } from 'react-router-dom';
 import { LoginComponent } from './components/LoginComponent';
 import { HomeAdminComponent } from './components/HomeAdminComponent';
+import { HomeUserComponent } from './components/HomeUserComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -25,17 +26,37 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route 
-            path="/" 
-            element={usuarioSesion ? <Navigate to="/homeAdmin" replace />: <LoginComponent  loginApp={login} />}
-          />
+      <Route 
+          path="/" 
+          element={usuarioSesion ? (
+            usuarioSesion.isAdmin ? (
+              <Navigate to="/homeAdmin" replace />
+            ) : (
+              <Navigate to="/homeUser" replace />
+            )
+          ) : (
+            <LoginComponent loginApp={login} />
+          )}
+        />
         <Route 
           path="/login" 
-          element={usuarioSesion ? <Navigate to="/homeAdmin" replace />: <LoginComponent  loginApp={login} />}
+          element={usuarioSesion ? (
+            usuarioSesion.isAdmin ? (
+              <Navigate to="/homeAdmin" replace />
+            ) : (
+              <Navigate to="/homeUser" replace />
+            )
+          ) : (
+            <LoginComponent loginApp={login} />
+          )}
         />
         <Route 
           path="/homeAdmin" 
-          element={usuarioSesion ? <HomeAdminComponent usuarioSesion={usuarioSesion} onLogout={login} /> : <Navigate to="/login" replace />}
+          element={usuarioSesion ? (<HomeAdminComponent usuarioSesion={usuarioSesion} logoutApp={login} />) : (<Navigate to="/login" replace />)}
+        />
+        <Route 
+          path="/homeUser" 
+          element={usuarioSesion ? (<HomeUserComponent usuarioSesion={usuarioSesion} logoutApp={login} />) : (<Navigate to="/login" replace />)}
         />
       </Routes>
     </Router>
