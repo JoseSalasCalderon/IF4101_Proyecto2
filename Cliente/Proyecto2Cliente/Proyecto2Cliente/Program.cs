@@ -17,6 +17,10 @@ builder.Services.AddSwaggerGen();
 //Inyección de Dependencias
 builder.Services.AddTransient<IGestionarUsuarioBW, GestionarUsuarioBW>();
 builder.Services.AddTransient<IGestionarUsuarioDA, GestionarUsuarioDA>();
+builder.Services.AddTransient<IGestionarCompraBW, GestionarCompraBW>();
+builder.Services.AddTransient<IGestionarCompraDA, GestionarCompraDA>();
+builder.Services.AddTransient<IGestionarDatosCuponBW, GestionarDatosCuponBW>();
+builder.Services.AddTransient<IGestionarDatosCuponDA, GestionarDatosCuponDA>();
 
 //Conexión a BD
 builder.Services.AddDbContext<Proyecto2Context>(options =>

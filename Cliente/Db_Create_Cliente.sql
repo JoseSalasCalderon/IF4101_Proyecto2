@@ -34,6 +34,12 @@ CREATE TABLE Compra
     CONSTRAINT FK_Compra_Usuario FOREIGN KEY (cedula) REFERENCES Usuario(cedula)
 );
 
+INSERT INTO Compra (idCompra, cedula, precioTotal, descuentoFinal, tarjeta)
+VALUES (1, '12345678', 100.00, 10.00, '1234-5678-9876-5432');
+
+SELECT * FROM Compra
+
+
 CREATE TABLE DatosCupon
 (
     idCupon INT NOT NULL,
@@ -43,7 +49,13 @@ CREATE TABLE DatosCupon
     imagenRepresentativa NVARCHAR(MAX) NOT NULL,
     ubicacion NVARCHAR(MAX) NOT NULL,
     empresa NVARCHAR(MAX) NOT NULL,
+	categoria NVARCHAR(MAX) NOT NULL,
     cantidad INT NOT NULL,
     CONSTRAINT PK_DatosCupon PRIMARY KEY (idCupon, idCompra),
     CONSTRAINT FK_DatosCupon_Compra FOREIGN KEY (idCompra) REFERENCES Compra(idCompra)
 );
+
+INSERT INTO DatosCupon (idCupon, idCompra, precio, descuento, imagenRepresentativa, ubicacion, empresa, categoria, cantidad)
+VALUES (1, 1, 100.00, 10.00, 'imagen.jpg', 'Ubicación A', 'Empresa X', 'Deportes', 3);
+
+SELECT * FROM DatosCupon
