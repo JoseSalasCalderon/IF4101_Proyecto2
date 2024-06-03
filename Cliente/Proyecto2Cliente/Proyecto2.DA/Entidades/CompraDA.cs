@@ -11,23 +11,26 @@ namespace Proyecto2.DA.Entidades
     [Table("Compra")]
     public class CompraDA
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
         public int idCompra { get; set; }
 
         [Required]
-        public int idUsuario { get; set; }
+        [MaxLength(9)]
+        public string cedula { get; set; } = null!; 
 
         [Required]
-        public int idCupon { get; set; }
+        public decimal precioTotal { get; set; } 
 
         [Required]
-        public int cantidad { get; set; }
+        public decimal descuentoFinal { get; set; } 
 
         [Required]
-        public string tarjeta { get; set; }
+        public string tarjeta { get; set; } = null!; 
 
-        [ForeignKey("idUsuario")]
+        [ForeignKey("cedula")]
         public virtual UsuarioDA UsuarioAsociado { get; set; } = null!;
+
+        public virtual ICollection<DatosCuponDA> DatosCupones { get; set; } = new List<DatosCuponDA>();
     }
 }
