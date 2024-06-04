@@ -1,9 +1,11 @@
 import React, { useState, useEffect }  from 'react'
 import UserService from '../services/UserService';
+import { useNavigate } from 'react-router-dom';
 
 export const HomeAdminComponent = ({ usuarioSesion }) => {
   const [empresas, setEmpresas]=useState([]);
   const userService = new UserService();
+  const navigate = useNavigate();
 
 
   useEffect(()=>{
@@ -14,7 +16,15 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
       .catch(error=>{
         console.log(error);
       })
-   }, []);
+  }, []);
+
+  const verUsuarioEmpresa = (empresa) => {
+    navigate(`/empresa`, {state: { empresa: empresa }});
+  };
+
+  const verCuponesEmpresa = (empresa) => {
+    navigate(`/cupones`, {state: { empresa: empresa }});
+  };
 
   return (
     <div className="main container mt-4">
@@ -54,12 +64,15 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
                   <button className="text-center btn btn-primary btn-sm mr-2">Editar</button>
                 </td>
                 <td className='text-center'>
-                  <button className="text-center btn btn-info btn-sm">Ver</button>
+                  <button className="text-center btn btn-info btn-sm" onClick={() => verCuponesEmpresa(empresa)}>Ver</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="d-flex justify-content-center mt-3">
+        <button className="navButton btn btn-success btn-sm mb-3">Crear Nuevo Usuario +</button>
       </div>
     </div>
   )
