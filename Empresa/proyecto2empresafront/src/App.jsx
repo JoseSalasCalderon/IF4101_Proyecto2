@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 // import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import './App.css';
 import LoginService from './services/LoginService';
@@ -8,6 +9,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { LoginComponent } from './components/LoginComponent';
 import { HomeAdminComponent } from './components/HomeAdminComponent';
 import { HomeUserComponent } from './components/HomeUserComponent';
+import { NavAdmin } from './components/NavAdmin';
+import { NavUser } from './components/NavUser';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -23,8 +26,14 @@ function App() {
     setUsuarioSesion(usuario);
   }
 
+  const logout= () => {
+    loginService.logout();
+    setUsuarioSesion(null);
+  }
+
   return (
     <Router>
+      {usuarioSesion && (usuarioSesion.isAdmin ? <NavAdmin logoutApp={logout} /> : <NavUser logoutApp={logout} />)}
       <Routes>
       <Route 
           path="/" 
@@ -52,11 +61,11 @@ function App() {
         />
         <Route 
           path="/homeAdmin" 
-          element={usuarioSesion ? (<HomeAdminComponent usuarioSesion={usuarioSesion} logoutApp={login} />) : (<Navigate to="/login" replace />)}
+          element={usuarioSesion ? (<HomeAdminComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
         />
         <Route 
           path="/homeUser" 
-          element={usuarioSesion ? (<HomeUserComponent usuarioSesion={usuarioSesion} logoutApp={login} />) : (<Navigate to="/login" replace />)}
+          element={usuarioSesion ? (<HomeUserComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
         />
       </Routes>
     </Router>

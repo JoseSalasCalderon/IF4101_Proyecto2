@@ -21,15 +21,15 @@ export const LoginComponent = ({ loginApp }) => {
             <div className="row justify-content-center">
                 <div className="col-md-6">
                     <div className="card">
-                        <div className="card-body text-center">
+                        <div className="formularioInicioSesion card-body text-center">
                         <BiUser style={{ fontSize: '5rem', marginBottom: '1rem' }} /> {/* Usa el ícono de usuario */}
-                            <h2 className="card-title text-center">Inicio Sesión</h2>
+                            <h2 className="titulo card-title text-center mb-4">Inicio de Sesión</h2>
                             <div className="form-group mb-3">
                                 <input 
                                     type="text" 
                                     className="form-control" 
                                     id="username" 
-                                    placeholder="Username" 
+                                    placeholder="Nombre de Usuario" 
                                     value={nombreUsuario} 
                                     onChange={e => setNombreUsuario(e.target.value)} 
                                 />
@@ -39,7 +39,7 @@ export const LoginComponent = ({ loginApp }) => {
                                     type="password" 
                                     className="form-control" 
                                     id="password" 
-                                    placeholder="Password" 
+                                    placeholder="Contrasenna" 
                                     value={contrasenna} 
                                     onChange={e => setContrasenna(e.target.value)} 
                                 />
@@ -50,7 +50,7 @@ export const LoginComponent = ({ loginApp }) => {
                                     className="btn btn-primary" 
                                     onClick={login}
                                 >
-                                    Login
+                                    Iniciar Sesión
                                 </button>
                             </div>
                         </div>
