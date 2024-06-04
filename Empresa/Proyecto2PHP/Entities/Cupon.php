@@ -2,7 +2,7 @@
 class Cupon {
     public $idCupon;
     public $idCategoria;
-    public $idUsuario;
+    public $nombreUsuario;
     public $codigo;
     public $nombre;
     public $precio;
@@ -14,10 +14,10 @@ class Cupon {
     public $fechaFinalizacion;
     public $activo;
 
-    public function __construct($idCupon, $idCategoria, $idUsuario, $codigo, $nombre, $precio, $descuento, $ubicacion, $imagenRepresentativa, $fechaCreacion, $fechaInicio, $fechaFinalizacion, $activo) {
+    public function __construct($idCupon, $idCategoria, $nombreUsuario, $codigo, $nombre, $precio, $descuento, $ubicacion, $imagenRepresentativa, $fechaCreacion, $fechaInicio, $fechaFinalizacion, $activo) {
         $this->idCupon = $idCupon;
         $this->idCategoria = $idCategoria;
-        $this->idUsuario = $idUsuario;
+        $this->nombreUsuario = $nombreUsuario;
         $this->codigo = $codigo;
         $this->nombre = $nombre;
         $this->precio = $precio;

@@ -15,15 +15,15 @@ class CuponBusiness {
     }
 
     public function crearCupon(Cupon $cupon) {
-        
+        return $this->cuponData->crearCupon($cupon);
     }
 
     public function actualizarCupon($idCupon, Cupon $cupon) {
-       
+        return $this->cuponData->actualizarCupon($idCupon, $cupon);
     }
 
     public function deshabilitarCupon($idCupon) {
-       
+        return $this->cuponData->deshabilitarCupon($idCupon);
     }
 
     public function listarCupones() {
