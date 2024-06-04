@@ -11,6 +11,7 @@ import { HomeAdminComponent } from './components/HomeAdminComponent';
 import { HomeUserComponent } from './components/HomeUserComponent';
 import { NavAdmin } from './components/NavAdmin';
 import { NavUser } from './components/NavUser';
+import { CuponesComponent } from './components/CuponesComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -61,11 +62,15 @@ function App() {
         />
         <Route 
           path="/homeAdmin" 
-          element={usuarioSesion ? (<HomeAdminComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
+          element={usuarioSesion ? (<HomeAdminComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
         />
         <Route 
           path="/homeUser" 
-          element={usuarioSesion ? (<HomeUserComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
+          element={usuarioSesion ? (<HomeUserComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
+        />
+        <Route 
+          path="/cupones" 
+          element={usuarioSesion ? (<CuponesComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
         />
       </Routes>
     </Router>
