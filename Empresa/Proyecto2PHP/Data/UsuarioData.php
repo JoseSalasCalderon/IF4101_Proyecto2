@@ -33,6 +33,46 @@ class UsuarioData {
         return $usuarios;
     }
 
+    public function loginUsuarioEmpresa($nombreUsuario, $contrasenna) {
+        if ($nombreUsuario !== null) {
+            $query = "SELECT 
+                        nombreUsuario
+                        , contrasenna
+                        , nombreEmpresa
+                        , direccion
+                        , cedulaFisicaOJuridica
+                        , fechaCreacion
+                        , correo
+                        , telefono
+                        , primeraVez
+                        , activo
+                    FROM usuario
+                    WHERE nombreUsuario = :nombreUsuario 
+                    AND contrasenna = :contrasenna
+                    AND activo = 1";
+            $sentencia = $this->pdo->prepare($query);
+            $sentencia->bindParam(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
+            $sentencia->bindParam(':contrasenna', $contrasenna, PDO::PARAM_STR);
+            $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+            $sentencia->execute();
+            $usuarioData = $sentencia->fetch();
+            if ($usuarioData) {
+                return  new Usuario(
+                    $usuarioData['nombreUsuario'],
+                    $usuarioData['contrasenna'],
+                    $usuarioData['nombreEmpresa'],
+                    $usuarioData['direccion'],
+                    $usuarioData['cedulaFisicaOJuridica'],
+                    $usuarioData['fechaCreacion'],
+                    $usuarioData['correo'],
+                    $usuarioData['telefono'],
+                    $usuarioData['primeraVez'],
+                    $usuarioData['activo']
+                );
+            }
+        }
+    }
+
     public function buscarUsuarioEmpresa($nombreUsuario) {
         if ($nombreUsuario !== null) {
             $query = "SELECT * FROM usuario WHERE nombreUsuario = :nombreUsuario";

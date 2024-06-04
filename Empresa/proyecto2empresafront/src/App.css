@@ -1,3 +1,35 @@
+body{
+  /* Agregar un fondo */
+  background-color: #001940;
+  
+}
+
+.main {
+  background-color: #FFF;
+}
+
+.formularioInicioSesion {
+  background-color: #cfcfcf;
+  color: #547ab7;
+}
+
+.navbar {
+  background-color: #2668d3;
+}
+
+.nav-item {
+  font-weight: bold;
+  padding: 0.3em;
+  margin-right: 0.5em;
+}
+
+.nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.navButton {
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }

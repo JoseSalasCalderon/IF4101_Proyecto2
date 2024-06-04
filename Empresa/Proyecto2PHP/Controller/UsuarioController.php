@@ -22,6 +22,15 @@ class UsuarioController {
         }
     }
 
+    public function loginUsuarioEmpresa() {
+        if (isset($_GET['nombreUsuario']) && isset($_GET['contrasenna'])) {
+            $resultado = $this->usuarioBusiness->loginUsuarioEmpresa($_GET['nombreUsuario'], $_GET['contrasenna']);
+            echo json_encode($resultado);
+        }else {
+            echo json_encode(null);
+        }
+    }
+
     public function buscarUsuarioEmpresa() {
         if (isset($_GET['nombreUsuario'])) {
             $resultado = $this->usuarioBusiness->buscarUsuarioEmpresa($_GET['nombreUsuario']);
