@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const NavUser = () => {
+export const NavUser = ({ usuarioSesion }) => {
   return (
     <div>NavUser</div>
   )

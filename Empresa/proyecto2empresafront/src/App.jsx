@@ -33,9 +33,9 @@ function App() {
 
   return (
     <Router>
-      {usuarioSesion && (usuarioSesion.isAdmin ? <NavAdmin logoutApp={logout} /> : <NavUser logoutApp={logout} />)}
+      {usuarioSesion && (usuarioSesion.isAdmin ? <NavAdmin usuarioSesion={usuarioSesion} logoutApp={logout} /> : <NavUser usuarioSesion={usuarioSesion} logoutApp={logout} />)}
       <Routes>
-      <Route 
+        <Route 
           path="/" 
           element={usuarioSesion ? (
             usuarioSesion.isAdmin ? (

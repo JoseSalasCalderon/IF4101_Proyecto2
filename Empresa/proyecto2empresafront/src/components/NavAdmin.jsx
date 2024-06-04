@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export const NavAdmin = ({ logoutApp }) => {
+export const NavAdmin = ({ usuarioSesion, logoutApp }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">TicketsFacil</Link>
+    <nav className="navbar navbar-expand-lg">
+      {/* <Link className="navbar-brand" to="/">TicketsFacil</Link> */}
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -21,7 +21,7 @@ export const NavAdmin = ({ logoutApp }) => {
             <Link className="nav-link" to="/empresas">Empresas</Link>
           </li> */}
         </ul>
-        <button className="btn btn-outline-danger my-2 my-sm-0" onClick={logoutApp}>Cerrar Sesión</button>
+        <button className="navButton btn btn-danger my-2 my-sm-0" onClick={logoutApp}>Cerrar Sesión</button>
       </div>
     </nav>
   )
