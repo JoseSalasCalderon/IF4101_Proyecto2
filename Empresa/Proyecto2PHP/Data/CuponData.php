@@ -54,15 +54,64 @@ class CuponData {
     }
 
     public function crearCupon(Cupon $cupon) {
-        
+      $query = "INSERT INTO Cupon (idCategoria, nombreUsuario, codigo, nombre, precio, descuento, ubicacion, imagenRepresentativa, fechaCreacion, fechaInicio, fechaFinalizacion, activo)
+      VALUES (:idCategoria, :nombreUsuario, :codigo, :nombre, :precio, :descuento, :ubicacion, :imagenRepresentativa, :fechaCreacion, :fechaInicio, :fechaFinalizacion, :activo)";
+        $sentencia = $this->pdo->prepare($query);
+        $sentencia->bindParam(':idCategoria', $cupon->idCategoria);
+        $sentencia->bindParam(':nombreUsuario', $cupon->nombreUsuario);
+        $sentencia->bindParam(':codigo', $cupon->codigo);
+        $sentencia->bindParam(':nombre', $cupon->nombre);
+        $sentencia->bindParam(':precio', $cupon->precio);
+        $sentencia->bindParam(':descuento', $cupon->descuento);
+        $sentencia->bindParam(':ubicacion', $cupon->ubicacion);
+        $sentencia->bindParam(':imagenRepresentativa', $cupon->imagenRepresentativa);
+        $sentencia->bindParam(':fechaCreacion', $cupon->fechaCreacion);
+        $sentencia->bindParam(':fechaInicio', $cupon->fechaInicio);
+        $sentencia->bindParam(':fechaFinalizacion', $cupon->fechaFinalizacion);
+        $sentencia->bindParam(':activo', $cupon->activo, PDO::PARAM_BOOL);
+        $resultado = $sentencia->execute();
+      return $resultado;
     }
 
     public function actualizarCupon($idCupon, Cupon $cupon) {
-       
+      $query = "UPDATE Cupon 
+      SET idCategoria = :idCategoria,
+          nombreUsuario = :nombreUsuario,
+          codigo = :codigo,
+          nombre = :nombre,
+          precio = :precio,
+          descuento = :descuento,
+          ubicacion = :ubicacion,
+          imagenRepresentativa = :imagenRepresentativa,
+          fechaCreacion = :fechaCreacion,
+          fechaInicio = :fechaInicio,
+          fechaFinalizacion = :fechaFinalizacion,
+          activo = :activo
+      WHERE idCupon = :idCupon";
+        $sentencia = $this->pdo->prepare($query);
+        $sentencia->bindParam(':idCategoria', $cupon->idCategoria);
+        $sentencia->bindParam(':nombreUsuario', $cupon->nombreUsuario);
+        $sentencia->bindParam(':codigo', $cupon->codigo);
+        $sentencia->bindParam(':nombre', $cupon->nombre);
+        $sentencia->bindParam(':precio', $cupon->precio);
+        $sentencia->bindParam(':descuento', $cupon->descuento);
+        $sentencia->bindParam(':ubicacion', $cupon->ubicacion);
+        $sentencia->bindParam(':imagenRepresentativa', $cupon->imagenRepresentativa);
+        $sentencia->bindParam(':fechaCreacion', $cupon->fechaCreacion);
+        $sentencia->bindParam(':fechaInicio', $cupon->fechaInicio);
+        $sentencia->bindParam(':fechaFinalizacion', $cupon->fechaFinalizacion);
+        $sentencia->bindParam(':activo', $cupon->activo, PDO::PARAM_BOOL);
+        $sentencia->bindParam(':idCupon', $idCupon);
+        $resultado = $sentencia->execute();
+      return $resultado;
     }
 
     public function deshabilitarCupon($idCupon) {
-       
+        $query = "UPDATE Cupon SET activo = 0 WHERE idCupon = :idCupon";
+        $sentencia = $this->pdo->prepare($query);
+        $sentencia->bindParam(':idCupon', $idCupon);
+        $resultado = $sentencia->execute();
+      return $resultado;
     }
 
     public function listarCupones() {
