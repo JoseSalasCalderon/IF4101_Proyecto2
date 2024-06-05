@@ -4,8 +4,34 @@ body{
   
 }
 
+footer {
+  position: static;
+  width: 100%;
+  background-color: #333;
+  color: #F2F7FC;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #F2F7FC;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #F2F7FC;
+}
+
 .main {
   background-color: #FFF;
+  /*Esto es necesario para que el footer funcione*/
+  min-height: 65vh;
+  margin-bottom: 8em;
 }
 
 .formularioInicioSesion {

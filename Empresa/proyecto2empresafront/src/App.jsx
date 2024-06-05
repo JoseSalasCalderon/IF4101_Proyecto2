@@ -12,6 +12,8 @@ import { HomeUserComponent } from './components/HomeUserComponent';
 import { NavAdmin } from './components/NavAdmin';
 import { NavUser } from './components/NavUser';
 import { CuponesComponent } from './components/CuponesComponent';
+import { FooterComponent } from './components/FooterComponent';
+import { CuponComponent } from './components/ModalCuponComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -72,8 +74,14 @@ function App() {
           path="/cupones" 
           element={usuarioSesion ? (<CuponesComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
         />
+        {/* <Route 
+          path="/cupon/:idCupon" 
+          element={usuarioSesion ? (<CuponComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
+        /> */}
       </Routes>
+      {usuarioSesion && <FooterComponent usuarioSesion={usuarioSesion} logoutApp={logout} />}
     </Router>
+    
     
     // <div className="App">
     //   <header className="App-header">
