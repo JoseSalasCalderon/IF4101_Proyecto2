@@ -42,15 +42,46 @@ class PromocionData {
     }
 
     public function crearPromocion(Promocion $promocion) {
-        
+        $query = "INSERT INTO promocion (idCupon, descuento, fechaInicio, fechaFinalizacion, activa, activaCupon)
+        VALUES (:idCupon, :descuento, :fechaInicio, :fechaFinalizacion, :activa, :activaCupon)";
+            $sentencia = $this->pdo->prepare($query);
+            $sentencia->bindParam(':idCupon', $promocion->idCupon);
+            $sentencia->bindParam(':descuento', $promocion->descuento);
+            $sentencia->bindParam(':fechaInicio', $promocion->fechaInicio);
+            $sentencia->bindParam(':fechaFinalizacion', $promocion->fechaFinalizacion);
+            $sentencia->bindParam(':activa', $promocion->activa, PDO::PARAM_BOOL);
+            $sentencia->bindParam(':activaCupon', $promocion->activaCupon, PDO::PARAM_BOOL);
+            $resultado = $sentencia->execute();
+        return $resultado;
     }
 
     public function actualizarPromocion($idPromocion, Promocion $promocion) {
-       
+        $query = "UPDATE promocion 
+                  SET idCupon = :idCupon,
+                      descuento = :descuento,
+                      fechaInicio = :fechaInicio,
+                      fechaFinalizacion = :fechaFinalizacion,
+                      activa = :activa,
+                      activaCupon = :activaCupon
+                  WHERE idPromocion = :idPromocion";
+        $sentencia = $this->pdo->prepare($query);
+        $sentencia->bindParam(':idCupon', $promocion->idCupon);
+        $sentencia->bindParam(':descuento', $promocion->descuento);
+        $sentencia->bindParam(':fechaInicio', $promocion->fechaInicio);
+        $sentencia->bindParam(':fechaFinalizacion', $promocion->fechaFinalizacion);
+        $sentencia->bindParam(':activa', $promocion->activa, PDO::PARAM_BOOL);
+        $sentencia->bindParam(':activaCupon', $promocion->activaCupon, PDO::PARAM_BOOL);
+        $sentencia->bindParam(':idPromocion', $idPromocion);
+        $resultado = $sentencia->execute();
+        return $resultado;
     }
 
     public function deshabilitarPromocion($idPromocion) {
-       
+        $query = "UPDATE promocion SET activa = 0 WHERE idPromocion = :idPromocion";
+        $sentencia = $this->pdo->prepare($query);
+        $sentencia->bindParam(':idPromocion', $idPromocion, PDO::PARAM_INT);
+        $resultado = $sentencia->execute();
+        return $resultado;
     }
 
     

@@ -33,15 +33,49 @@ class PromocionController {
     }
 
     public function crearPromocion() {
-        
+        if ($_POST['METHOD'] == 'POST') {
+            $idCupon = $_POST['idCupon'];
+            $descuento = $_POST['descuento'];
+            $fechaInicio = $_POST['fechaInicio'];
+            $fechaFinalizacion = $_POST['fechaFinalizacion'];
+            $activa = true;
+            $activaCupon = $_POST['activaCupon'];
+
+            $promocion = new Promocion(null, $idCupon, $descuento, $fechaInicio, $fechaFinalizacion, $activa, $activaCupon);
+            $resultado = $this->promocionBusiness->crearPromocion($promocion);
+            echo json_encode($resultado);
+            http_response_code(201);
+            exit();
+        }
     }
 
     public function actualizarPromocion() {
-       
+        if ($_POST['METHOD'] == 'PUT') {
+            unset($_POST['METHOD']);
+            $idPromocion = $_POST['idPromocion'];
+            $idCupon = $_POST['idCupon'];
+            $descuento = $_POST['descuento'];
+            $fechaInicio = $_POST['fechaInicio'];
+            $fechaFinalizacion = $_POST['fechaFinalizacion'];
+            $activa = $_POST['activa'];
+            $activaCupon = $_POST['activaCupon'];
+
+            $promocion = new Promocion($idPromocion, $idCupon, $descuento, $fechaInicio, $fechaFinalizacion, $activa, $activaCupon);
+            $resultado = $this->promocionBusiness->actualizarPromocion($idPromocion, $promocion);
+            echo json_encode($resultado);
+            http_response_code(200);
+            exit();
+        }
     }
 
     public function deshabilitarPromocion() {
-       
+        if ($_POST['METHOD'] == 'DELETE') {
+            $idPromocion = $_POST['idPromocion'];
+            $resultado = $this->promocionBusiness->deshabilitarPromocion($idPromocion);
+            echo json_encode($resultado);
+            http_response_code(200);
+            exit();
+        }
     }
 }
 

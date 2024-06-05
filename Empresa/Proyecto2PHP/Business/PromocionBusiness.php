@@ -15,15 +15,15 @@ class PromocionBusiness {
     }
 
     public function crearPromocion(Promocion $promocion) {
-        
+        return $this->promocionData->crearPromocion($promocion);
     }
 
     public function actualizarPromocion($idPromocion, Promocion $promocion) {
-       
+        return $this->promocionData->actualizarPromocion($idPromocion, $promocion);
     }
 
     public function deshabilitarPromocion($idPromocion) {
-       
+        return $this->promocionData->deshabilitarPromocion($idPromocion);
     }
 }
 ?>
