@@ -24,13 +24,15 @@ export const ModalCuponComponent = ({ isOpen, abrirCerrarModal, cupon, handleCha
 
     const actualizarCupon = async() => {
         cuponService.actualizarCupon(imagenCuponSeleccionada, cupon)
-        .then(cuponActualizado => {
-            console.log("CA: "+cuponActualizado);
-            handleChange({ target: { name: 'imagenRepresentativa', value: cuponActualizado.imagenRepresentativa } });
-            var cuponesNuevos= cupones;
-            // cuponesNuevos.map(cuponMap => {
-            //     //Mapea el nuevo en la lista
-            // });
+        .then(imagenActualizada => {
+            console.log("CA: "+imagenActualizada);
+            handleChange({ target: { name: 'imagenRepresentativa', value: imagenActualizada } });
+            const cuponesNuevos = cupones.map(cuponMap => {
+                if (cuponMap.idCupon === cupon.idCupon) {
+                  return { ...cuponMap, ...cupon };
+                }
+                return cuponMap;
+            });
             actualizarCupones(cuponesNuevos);
             abrirCerrarModal();
         })
