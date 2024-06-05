@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import CuponService from '../services/CuponService';
 import { useNavigate } from 'react-router-dom';
 import { ModalCuponComponent } from './ModalCuponComponent';
+import { FaArrowLeft } from 'react-icons/fa';
 
 export const CuponesComponent = ({ usuarioSesion }) => {
   const [cupones, setCupones]=useState([]);
@@ -60,9 +61,18 @@ export const CuponesComponent = ({ usuarioSesion }) => {
     //navigate(`/cupones`, {state: { empresa: empresa }});
   };
 
+  const volverAtras = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="main container mt-4">
-      <h2 className="mb-4 pt-3">Cupones de {empresa.nombreEmpresa}</h2>
+      <div className="d-flex align-items-center mb-4 pt-3">
+        <button className="btn btn-link" onClick={volverAtras} style={{ textDecoration: 'none', color: 'black' }}>
+          <FaArrowLeft size={20} />
+        </button>
+        <h2 className="mb-0 ml-3">Cupones de {empresa.nombreEmpresa}</h2>
+      </div>
       <div className="table-responsive">
         <table className="table table-bordered table-hover table-dark">
           <thead>

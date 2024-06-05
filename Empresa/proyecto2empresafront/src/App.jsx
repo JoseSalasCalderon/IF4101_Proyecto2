@@ -13,7 +13,6 @@ import { NavAdmin } from './components/NavAdmin';
 import { NavUser } from './components/NavUser';
 import { CuponesComponent } from './components/CuponesComponent';
 import { FooterComponent } from './components/FooterComponent';
-import { CuponComponent } from './components/ModalCuponComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
