@@ -58,7 +58,7 @@ class CuponController {
     public function actualizarCupon() {
         if ($_POST['METHOD'] == 'PUT') {
             unset($_POST['METHOD']);
-            $idCupon = $_POST['idCupon'];
+            $idCupon = $_GET['idCupon'];
             $idCategoria = $_POST['idCategoria'];
             $nombreUsuario = $_POST['nombreUsuario'];
             $codigo = $_POST['codigo'];
