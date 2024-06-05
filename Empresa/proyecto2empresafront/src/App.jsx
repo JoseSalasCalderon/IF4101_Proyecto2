@@ -69,6 +69,7 @@ function App() {
           path="/homeUser" 
           element={usuarioSesion ? (<HomeUserComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
         />
+        {/* Si el usario es userempresa, debo mandar al Cupones component un state de la empresa, También hay que guardar el nombre empresa en el userempresa al obtenerlo */}
         <Route 
           path="/cupones" 
           element={usuarioSesion ? (<CuponesComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
