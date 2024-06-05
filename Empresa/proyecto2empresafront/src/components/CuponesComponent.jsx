@@ -29,13 +29,23 @@ export const CuponesComponent = ({ usuarioSesion }) => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    cuponService.obtenerCuponesPorEmpresa(empresa.nombreUsuario)
-    .then(response => {
-      setCupones(response);
-    })
-    .catch(error=>{
-      console.log(error);
-    })
+    if (usuarioSesion.isAdmin) {
+      cuponService.obtenerCuponesPorEmpresa(empresa.nombreUsuario)
+      .then(response => {
+        setCupones(response);
+      })
+      .catch(error=>{
+        console.log(error);
+      })
+    }else{
+      cuponService.obtenerCuponesPorEmpresa(usuarioSesion.nombreUsuario)
+      .then(response => {
+        setCupones(response);
+      })
+      .catch(error=>{
+        console.log(error);
+      })
+    }
   }, []);
 
   const handleChange = (e) => {
@@ -68,10 +78,16 @@ export const CuponesComponent = ({ usuarioSesion }) => {
   return (
     <div className="main container mt-4">
       <div className="d-flex align-items-center mb-4 pt-3">
-        <button className="btn btn-link" onClick={volverAtras} style={{ textDecoration: 'none', color: 'black' }}>
-          <FaArrowLeft size={20} />
-        </button>
-        <h2 className="mb-0 ml-3">Cupones de {empresa.nombreEmpresa}</h2>
+        {usuarioSesion?.isAdmin && (
+          <button className="btn btn-link" onClick={volverAtras} style={{ textDecoration: 'none', color: 'black' }}>
+            <FaArrowLeft size={20} />
+          </button>
+        )}  
+        {usuarioSesion?.isAdmin ? (
+          <h2 className="mb-0 ml-3">Cupones de {empresa.nombreEmpresa}</h2>
+        ): (
+          <h2 className="mb-0 ml-3">Mis Cupones</h2>
+        )}
       </div>
       <div className="table-responsive">
         <table className="table table-bordered table-hover table-dark">
