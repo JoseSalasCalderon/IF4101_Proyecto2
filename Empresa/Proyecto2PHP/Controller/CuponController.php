@@ -33,15 +33,61 @@ class CuponController {
     }
 
     public function crearCupon() {
-        
+        if ($_POST['METHOD'] == 'POST') {
+            $idCategoria = $_POST['idCategoria'];
+            $nombreUsuario = $_POST['nombreUsuario'];
+            $codigo = $_POST['codigo'];
+            $nombre = $_POST['nombre'];
+            $precio = $_POST['precio'];
+            $descuento = $_POST['descuento'];
+            $ubicacion = $_POST['ubicacion'];
+            $imagenRepresentativa = $_POST['imagenRepresentativa'];
+            $fechaCreacion = $_POST['fechaCreacion'];
+            $fechaInicio = $_POST['fechaInicio'];
+            $fechaFinalizacion = $_POST['fechaFinalizacion'];
+            $activo = true;
+
+            $cupon = new Cupon(null, $idCategoria, $nombreUsuario, $codigo, $nombre, $precio, $descuento, $ubicacion, $imagenRepresentativa, $fechaCreacion, $fechaInicio, $fechaFinalizacion, $activo);
+            $resultado = $this->cuponBusiness->crearCupon($cupon);
+            echo json_encode($resultado);
+            http_response_code(201);
+            exit();
+        }
     }
 
     public function actualizarCupon() {
-    
+        if ($_POST['METHOD'] == 'PUT') {
+            unset($_POST['METHOD']);
+            $idCupon = $_POST['idCupon'];
+            $idCategoria = $_POST['idCategoria'];
+            $nombreUsuario = $_POST['nombreUsuario'];
+            $codigo = $_POST['codigo'];
+            $nombre = $_POST['nombre'];
+            $precio = $_POST['precio'];
+            $descuento = $_POST['descuento'];
+            $ubicacion = $_POST['ubicacion'];
+            $imagenRepresentativa = $_POST['imagenRepresentativa'];
+            $fechaCreacion = $_POST['fechaCreacion'];
+            $fechaInicio = $_POST['fechaInicio'];
+            $fechaFinalizacion = $_POST['fechaFinalizacion'];
+            $activo = $_POST['activo'];
+
+            $cupon = new Cupon($idCupon, $idCategoria, $nombreUsuario, $codigo, $nombre, $precio, $descuento, $ubicacion, $imagenRepresentativa, $fechaCreacion, $fechaInicio, $fechaFinalizacion, $activo);
+            $resultado = $this->cuponBusiness->actualizarCupon($idCupon, $cupon);
+            echo json_encode($resultado);
+            http_response_code(200);
+            exit();
+        }
     }
 
     public function deshabilitarCupon() {
-    
+        if ($_POST['METHOD'] == 'DELETE') {
+            $idCupon = $_POST['idCupon'];
+            $resultado = $this->cuponBusiness->deshabilitarCupon($idCupon);
+            echo json_encode($resultado);
+            http_response_code(200);
+            exit();
+        }
     }
 
     public function listarCupones() {
