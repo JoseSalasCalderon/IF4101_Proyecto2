@@ -7,7 +7,6 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
   const userService = new UserService();
   const navigate = useNavigate();
 
-
   useEffect(()=>{
       userService.obtenerUsuariosEmpresa()
       .then(response => {
@@ -24,6 +23,10 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
 
   const verCuponesEmpresa = (empresa) => {
     navigate(`/cupones`, {state: { empresa: empresa }});
+  };
+
+  const crearUsuarioEmpresa = () => {
+    navigate(`/crearUsuario`);
   };
 
   return (
@@ -72,7 +75,7 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
         </table>
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <button className="navButton btn btn-success btn-sm mb-3">Crear Nuevo Usuario +</button>
+        <button className="navButton btn btn-success btn-sm mb-3" onClick={crearUsuarioEmpresa}>Crear Nuevo Usuario +</button>
       </div>
     </div>
   )
