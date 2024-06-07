@@ -32,23 +32,46 @@ export const CreateUserComponent = () => {
 
     const crearUsuario = (e) => {
         e.preventDefault();
-        usuarioSerivce.crearUsuarioEmpresa(usuarioNuevo)
-        .then(response => {
-            if (response) {
-                alert("El usuario "+usuarioNuevo.nombreEmpresa+" ha sido creado.!");
-                volverAtras();
-            }else{
-                alert("El usuario no se pudo crear");
-            }
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+        if (usuarioNuevo.contrasenna !== "") {
+            usuarioSerivce.crearUsuarioEmpresa(usuarioNuevo)
+            .then(response => {
+                if (response) {
+                    alert("El usuario "+usuarioNuevo.nombreEmpresa+" ha sido creado.!");
+                    volverAtras();
+                }else{
+                    alert("El usuario no se pudo crear");
+                }
+            })
+            .catch(error=>{
+                console.log(error);
+            })
+        }else {
+            alert("Debe generar una contrasenna");
+        }
     };
 
     const generateRandomPassword = () => {
-        const randomPassword = Math.random().toString(36).slice(-8);
-        setUsuarioNuevo(prevState => ({ ...prevState, contrasenna: randomPassword }));
+        const getRandomChar = (chars) => chars[Math.floor(Math.random() * chars.length)];
+
+        const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+        const numbers = '0123456789';
+        const specials = '!@#$%^&*';
+
+        let password = '';
+        password += getRandomChar(uppercase);
+        password += getRandomChar(lowercase);
+        password += getRandomChar(numbers);
+        password += getRandomChar(specials);
+
+        const allChars = uppercase + lowercase + numbers + specials;
+        while (password.length < 8) {
+            password += getRandomChar(allChars);
+        }
+
+        password = password.split('').sort(() => 0.5 - Math.random()).join('');
+
+        handleChange({ target: { name: 'contrasenna', value: password } });
     };
 
     return (
@@ -75,21 +98,15 @@ export const CreateUserComponent = () => {
                             />
                         </div>
                         <div className="form-group">
-                            <label>Contraseña:</label>
                             <div className="input-group">
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    name="contrasenna"
-                                    value={usuarioNuevo.contrasenna}
-                                    onChange={handleChange}
-                                    required
-                                    readOnly
-                                />
-                                <div className="input-group-append">
-                                    <button type="button" className="btn btn-secondary" onClick={generateRandomPassword}>Generar</button>
+                                <div className="input-group-append d-flex flex-column align-items-start ml-3">
+                                    <label className="mb-0">Contraseña:</label>
+                                    <label className={`mb-0 ${usuarioNuevo.contrasenna ? 'text-success' : 'text-danger'}`}>
+                                        {usuarioNuevo.contrasenna ? 'Contraseña generada' : 'No hay contraseña generada'}
+                                    </label>
                                 </div>
                             </div>
+                            <button type="button" className="btn btn-secondary" onClick={generateRandomPassword}>Generar Contraseña</button>
                         </div>
                         <div className="form-group">
                             <label>Nombre de la Empresa:</label>

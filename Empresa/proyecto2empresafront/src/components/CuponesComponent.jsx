@@ -50,9 +50,9 @@ export const CuponesComponent = ({ usuarioSesion }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setCuponSeleccionado((prevState) => ({
-      ...prevState,
-      [name]: value,
+    setCuponSeleccionado(prevState => ({
+        ...prevState,
+        [name]: name === 'activo' ? parseInt(value) : value,
     }));
   };
 
