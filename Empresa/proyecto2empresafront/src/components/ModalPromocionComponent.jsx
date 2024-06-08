@@ -62,8 +62,8 @@ export const ModalPromocionComponent = ({ isOpen, abrirCerrarModal, promocion, h
                         name="fechaFinalizacion"
                         value={promocion?.fechaFinalizacion}
                         onChange={handleChange}
-                        min={promocion.fechaInicio} // Limita la fecha de fin al valor de fechaInicio
-                        max={cupon.fechaFinalizacion} //
+                        min={promocion.fechaInicio}
+                        max={cupon.fechaFinalizacion}
                     />
                     <label>Activa:</label>
                     <select
