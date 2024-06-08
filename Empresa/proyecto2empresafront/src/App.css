@@ -34,6 +34,70 @@ footer a:hover {
   margin-bottom: 8em;
 }
 
+.formCreateUser h3{
+  color: #547ab7;
+}
+
+.formCreateUser {
+  display: flex;
+  justify-content: center;
+}
+
+.formCreateUser .formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #cfcfcf;
+  width: 75%;
+  padding: 2em;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.formCreateUser .formContainer .form-group {
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.formCreateUser .formContainer .form-control {
+  width: 100%;
+  min-width: 20em; 
+}
+
+.formCreateCupon h3 {
+  color: #547ab7;
+}
+
+.formCreateCupon {
+  display: flex;
+  justify-content: center;
+}
+
+.formCreateCupon .formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #cfcfcf;
+  width: 75%;
+  padding: 2em;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.formCreateCupon .formContainer .form-group {
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.formCreateCupon .formContainer .form-control {
+  width: 100%;
+  min-width: 20em;
+}
+
+
+
 .formularioInicioSesion {
   background-color: #cfcfcf;
   color: #547ab7;
@@ -70,6 +134,12 @@ footer a:hover {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+
+  .formCreateUser .formContainer .form-control {
+    width: 100%;
+    min-width: 15em;
+  }
+  
 }
 
 .App-header {

@@ -7,7 +7,6 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
   const userService = new UserService();
   const navigate = useNavigate();
 
-
   useEffect(()=>{
       userService.obtenerUsuariosEmpresa()
       .then(response => {
@@ -26,6 +25,10 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
     navigate(`/cupones`, {state: { empresa: empresa }});
   };
 
+  const crearUsuarioEmpresa = () => {
+    navigate(`/crearUsuario`);
+  };
+
   return (
     <div className="main container mt-4">
       <h2 className="mb-4 pt-3">Empresas Registradas</h2>
@@ -34,7 +37,6 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
           <thead>
             <tr>
               <th className='text-center'>Nombre Usuario</th>
-              <th className='text-center'>Contraseña</th>
               <th className='text-center'>Empresa</th>
               <th className='text-center'>Dirección</th>
               <th className='text-center'>Cédula Física/Jurídica</th>
@@ -50,9 +52,7 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
           <tbody>
             {empresas.map((empresa) => (
               <tr className='table-light' key={empresa.nombreUsuario}>
-                <td className='text-center'>{empresa.nombreUsuario}</td>
-                <td className='text-center'>{empresa.contrasenna}</td>
-                <td className='text-center'>{empresa.nombreEmpresa}</td>
+                <td className='text-center'>{empresa.nombreUsuario}</td>                <td className='text-center'>{empresa.nombreEmpresa}</td>
                 <td className='text-center'>{empresa.direccion}</td>
                 <td className='text-center'>{empresa.cedulaFisicaOJuridica}</td>
                 <td className='text-center'>{empresa.fechaCreacion}</td>
@@ -72,7 +72,7 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
         </table>
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <button className="navButton btn btn-success btn-sm mb-3">Crear Nuevo Usuario +</button>
+        <button className="navButton btn btn-success btn-sm mb-3" onClick={crearUsuarioEmpresa}>Crear Nuevo Usuario +</button>
       </div>
     </div>
   )

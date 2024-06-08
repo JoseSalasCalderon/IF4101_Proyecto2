@@ -118,8 +118,7 @@ class UsuarioData {
             $sentencia->execute();
             return true;
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-            return false; // Devolver false en caso de error
+            return false;
         }
 
     }

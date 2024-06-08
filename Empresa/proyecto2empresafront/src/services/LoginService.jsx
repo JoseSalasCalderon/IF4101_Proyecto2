@@ -22,6 +22,7 @@ class LoginService {
         if (responseUser.data) {
           const user = {
             nombreUsuario: responseUser.data.nombreUsuario
+            , nombreEmpresa: responseUser.data.nombreEmpresa
             , contrasenna: responseUser.data.contrasenna
             , primeraVez: responseUser.data.primeraVez
             , isAdmin: false

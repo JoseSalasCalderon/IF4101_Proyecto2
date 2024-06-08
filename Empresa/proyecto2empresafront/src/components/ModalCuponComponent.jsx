@@ -1,4 +1,3 @@
-import { error } from 'jquery';
 import React, { useState } from 'react'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import CuponService from '../services/CuponService';

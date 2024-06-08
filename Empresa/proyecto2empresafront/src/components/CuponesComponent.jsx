@@ -29,28 +29,41 @@ export const CuponesComponent = ({ usuarioSesion }) => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    cuponService.obtenerCuponesPorEmpresa(empresa.nombreUsuario)
-    .then(response => {
-      setCupones(response);
-    })
-    .catch(error=>{
-      console.log(error);
-    })
+    if (usuarioSesion.isAdmin) {
+      cuponService.obtenerCuponesPorEmpresa(empresa.nombreUsuario)
+      .then(response => {
+        setCupones(response);
+      })
+      .catch(error=>{
+        console.log(error);
+      })
+    }else{
+      cuponService.obtenerCuponesPorEmpresa(usuarioSesion.nombreUsuario)
+      .then(response => {
+        setCupones(response);
+      })
+      .catch(error=>{
+        console.log(error);
+      })
+    }
   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setCuponSeleccionado((prevState) => ({
-      ...prevState,
-      [name]: value,
+    setCuponSeleccionado(prevState => ({
+        ...prevState,
+        [name]: name === 'activo' ? parseInt(value) : value,
     }));
   };
 
   const editarCupon = (cupon) => {
-    // navigate(`/cupon/${cupon.idCupon}`, {state: { cupon: cupon }});
     //Controlar si el modal se abre o no
     setCuponSeleccionado(cupon);
     setModalActualizar(true);
+  };
+
+  const crearCupon = () => {
+    navigate(`/crearCupon`, {state: { empresa: empresa }});
   };
 
   const abrirCerrarModal = () => {
@@ -58,7 +71,7 @@ export const CuponesComponent = ({ usuarioSesion }) => {
   };
 
   const verPromociones = (cupon) => {
-    //navigate(`/cupones`, {state: { empresa: empresa }});
+    navigate(`/promociones`, {state: { cupon: cupon }});
   };
 
   const volverAtras = () => {
@@ -68,10 +81,16 @@ export const CuponesComponent = ({ usuarioSesion }) => {
   return (
     <div className="main container mt-4">
       <div className="d-flex align-items-center mb-4 pt-3">
-        <button className="btn btn-link" onClick={volverAtras} style={{ textDecoration: 'none', color: 'black' }}>
-          <FaArrowLeft size={20} />
-        </button>
-        <h2 className="mb-0 ml-3">Cupones de {empresa.nombreEmpresa}</h2>
+        {usuarioSesion?.isAdmin && (
+          <button className="btn btn-link" onClick={volverAtras} style={{ textDecoration: 'none', color: 'black' }}>
+            <FaArrowLeft size={20} />
+          </button>
+        )}  
+        {usuarioSesion?.isAdmin ? (
+          <h2 className="mb-0 ml-3">Cupones de {empresa.nombreEmpresa}</h2>
+        ): (
+          <h2 className="mb-0 ml-3">Mis Cupones</h2>
+        )}
       </div>
       <div className="table-responsive">
         <table className="table table-bordered table-hover table-dark">
@@ -119,7 +138,7 @@ export const CuponesComponent = ({ usuarioSesion }) => {
         </table>
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <button className="navButton btn btn-success btn-sm mb-3">Crear Nuevo Cupón +</button>
+        <button className="navButton btn btn-success btn-sm mb-3" onClick={crearCupon}>Crear Nuevo Cupón +</button>
       </div>
       <ModalCuponComponent 
         usuarioSesion={usuarioSesion} 

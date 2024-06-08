@@ -53,6 +53,7 @@ class CuponService {
                     throw new Error('No se pudo actualizar la imagen');
                 }
             } else {
+                // Como la imagen es null, significa que el usario no la desea actualizarla
                 const formData = new FormData();
                     formData.append('idCategoria', cupon.idCategoria);
                     formData.append('nombreUsuario', cupon.nombreUsuario);
@@ -68,14 +69,14 @@ class CuponService {
                     formData.append('activo', cupon.activo);
                     formData.append("METHOD", "PUT");
 
-                    // Enviar la solicitud de actualización
-                    const responseUpdate = await axios.post(`${this.urlCupon}actualizarCupon`, formData, {params: {idCupon: cupon.idCupon}});
-        
-                    if (responseUpdate) {
-                        return cupon.imagenRepresentativa;
-                    } else {
-                        throw new Error('Error actualizando el cupón');
-                    }
+                // Enviar la solicitud de actualización
+                const responseUpdate = await axios.post(`${this.urlCupon}actualizarCupon`, formData, {params: {idCupon: cupon.idCupon}});
+    
+                if (responseUpdate) {
+                    return cupon.imagenRepresentativa;
+                } else {
+                    throw new Error('Error actualizando el cupón');
+                }
             }
             
         } catch (error) {

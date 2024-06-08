@@ -13,6 +13,9 @@ import { NavAdmin } from './components/NavAdmin';
 import { NavUser } from './components/NavUser';
 import { CuponesComponent } from './components/CuponesComponent';
 import { FooterComponent } from './components/FooterComponent';
+import { CreateUserComponent } from './components/CreateUserComponent';
+import { PromocionesComponent } from './components/PromocionesComponent';
+import CreateCuponComponent from './components/CreateCuponComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -69,15 +72,22 @@ function App() {
           path="/homeUser" 
           element={usuarioSesion ? (<HomeUserComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
         />
-        {/* Si el usario es userempresa, debo mandar al Cupones component un state de la empresa, También hay que guardar el nombre empresa en el userempresa al obtenerlo */}
         <Route 
           path="/cupones" 
           element={usuarioSesion ? (<CuponesComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
         />
-        {/* <Route 
-          path="/cupon/:idCupon" 
-          element={usuarioSesion ? (<CuponComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
-        /> */}
+        <Route
+          path="/crearUsuario" 
+          element={usuarioSesion ? (<CreateUserComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
+        />
+        <Route
+          path="/promociones" 
+          element={usuarioSesion ? (<PromocionesComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
+        />
+        <Route
+          path="/crearCupon" 
+          element={usuarioSesion ? (<CreateCuponComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
+        />
       </Routes>
       {usuarioSesion && <FooterComponent usuarioSesion={usuarioSesion} logoutApp={logout} />}
     </Router>
