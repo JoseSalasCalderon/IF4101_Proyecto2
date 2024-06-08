@@ -37,7 +37,6 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
           <thead>
             <tr>
               <th className='text-center'>Nombre Usuario</th>
-              <th className='text-center'>Contraseña</th>
               <th className='text-center'>Empresa</th>
               <th className='text-center'>Dirección</th>
               <th className='text-center'>Cédula Física/Jurídica</th>
@@ -53,9 +52,7 @@ export const HomeAdminComponent = ({ usuarioSesion }) => {
           <tbody>
             {empresas.map((empresa) => (
               <tr className='table-light' key={empresa.nombreUsuario}>
-                <td className='text-center'>{empresa.nombreUsuario}</td>
-                <td className='text-center'>{empresa.contrasenna}</td>
-                <td className='text-center'>{empresa.nombreEmpresa}</td>
+                <td className='text-center'>{empresa.nombreUsuario}</td>                <td className='text-center'>{empresa.nombreEmpresa}</td>
                 <td className='text-center'>{empresa.direccion}</td>
                 <td className='text-center'>{empresa.cedulaFisicaOJuridica}</td>
                 <td className='text-center'>{empresa.fechaCreacion}</td>

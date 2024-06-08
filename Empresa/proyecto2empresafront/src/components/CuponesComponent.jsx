@@ -57,10 +57,13 @@ export const CuponesComponent = ({ usuarioSesion }) => {
   };
 
   const editarCupon = (cupon) => {
-    // navigate(`/cupon/${cupon.idCupon}`, {state: { cupon: cupon }});
     //Controlar si el modal se abre o no
     setCuponSeleccionado(cupon);
     setModalActualizar(true);
+  };
+
+  const crearCupon = () => {
+    navigate(`/crearCupon`, {state: { empresa: empresa }});
   };
 
   const abrirCerrarModal = () => {
@@ -68,7 +71,7 @@ export const CuponesComponent = ({ usuarioSesion }) => {
   };
 
   const verPromociones = (cupon) => {
-    //navigate(`/cupones`, {state: { empresa: empresa }});
+    navigate(`/promociones`, {state: { cupon: cupon }});
   };
 
   const volverAtras = () => {
@@ -135,7 +138,7 @@ export const CuponesComponent = ({ usuarioSesion }) => {
         </table>
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <button className="navButton btn btn-success btn-sm mb-3">Crear Nuevo Cupón +</button>
+        <button className="navButton btn btn-success btn-sm mb-3" onClick={crearCupon}>Crear Nuevo Cupón +</button>
       </div>
       <ModalCuponComponent 
         usuarioSesion={usuarioSesion} 

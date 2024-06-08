@@ -17,7 +17,6 @@ class PromocionData {
                     , fechaInicio
                     , fechaFinalizacion
                     , activa
-                    , activaCupon
                 FROM promocion
                 WHERE idCupon = :idCupon";
         $sentencia = $this->pdo->prepare($query);
@@ -32,8 +31,7 @@ class PromocionData {
             $promocionData['descuento'],
             $promocionData['fechaInicio'],
             $promocionData['fechaFinalizacion'],
-            $promocionData['activa'],
-            $promocionData['activaCupon']
+            $promocionData['activa']
             );
             $promociones[] = $promocion;
         }
@@ -42,15 +40,14 @@ class PromocionData {
     }
 
     public function crearPromocion(Promocion $promocion) {
-        $query = "INSERT INTO promocion (idCupon, descuento, fechaInicio, fechaFinalizacion, activa, activaCupon)
-        VALUES (:idCupon, :descuento, :fechaInicio, :fechaFinalizacion, :activa, :activaCupon)";
+        $query = "INSERT INTO promocion (idCupon, descuento, fechaInicio, fechaFinalizacion, activa)
+        VALUES (:idCupon, :descuento, :fechaInicio, :fechaFinalizacion, :activa)";
             $sentencia = $this->pdo->prepare($query);
             $sentencia->bindParam(':idCupon', $promocion->idCupon);
             $sentencia->bindParam(':descuento', $promocion->descuento);
             $sentencia->bindParam(':fechaInicio', $promocion->fechaInicio);
             $sentencia->bindParam(':fechaFinalizacion', $promocion->fechaFinalizacion);
             $sentencia->bindParam(':activa', $promocion->activa, PDO::PARAM_BOOL);
-            $sentencia->bindParam(':activaCupon', $promocion->activaCupon, PDO::PARAM_BOOL);
             $resultado = $sentencia->execute();
         return $resultado;
     }
@@ -61,8 +58,7 @@ class PromocionData {
                       descuento = :descuento,
                       fechaInicio = :fechaInicio,
                       fechaFinalizacion = :fechaFinalizacion,
-                      activa = :activa,
-                      activaCupon = :activaCupon
+                      activa = :activa
                   WHERE idPromocion = :idPromocion";
         $sentencia = $this->pdo->prepare($query);
         $sentencia->bindParam(':idCupon', $promocion->idCupon);
@@ -70,7 +66,6 @@ class PromocionData {
         $sentencia->bindParam(':fechaInicio', $promocion->fechaInicio);
         $sentencia->bindParam(':fechaFinalizacion', $promocion->fechaFinalizacion);
         $sentencia->bindParam(':activa', $promocion->activa, PDO::PARAM_BOOL);
-        $sentencia->bindParam(':activaCupon', $promocion->activaCupon, PDO::PARAM_BOOL);
         $sentencia->bindParam(':idPromocion', $idPromocion);
         $resultado = $sentencia->execute();
         return $resultado;
