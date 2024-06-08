@@ -53,23 +53,47 @@ class PromocionData {
     }
 
     public function actualizarPromocion($idPromocion, Promocion $promocion) {
-        $query = "UPDATE promocion 
-                  SET idCupon = :idCupon,
-                      descuento = :descuento,
-                      fechaInicio = :fechaInicio,
-                      fechaFinalizacion = :fechaFinalizacion,
-                      activa = :activa
-                  WHERE idPromocion = :idPromocion";
-        $sentencia = $this->pdo->prepare($query);
-        $sentencia->bindParam(':idCupon', $promocion->idCupon);
-        $sentencia->bindParam(':descuento', $promocion->descuento);
-        $sentencia->bindParam(':fechaInicio', $promocion->fechaInicio);
-        $sentencia->bindParam(':fechaFinalizacion', $promocion->fechaFinalizacion);
-        $sentencia->bindParam(':activa', $promocion->activa, PDO::PARAM_BOOL);
-        $sentencia->bindParam(':idPromocion', $idPromocion);
-        $resultado = $sentencia->execute();
-        return $resultado;
+        // Iniciar una transacción
+        $this->pdo->beginTransaction();
+    
+        try {
+            // Si la promoción debe ser activa, primero desactivar todas las promociones activas
+            if ($promocion->activa === "1") {
+                $queryDesactivar = "UPDATE promocion SET activa = 0 WHERE activa = 1 AND idCupon = :idCupon";
+                $sentenciaDesactivar = $this->pdo->prepare($queryDesactivar);
+                $sentenciaDesactivar->bindParam(':idCupon', $promocion->idCupon);
+                $sentenciaDesactivar->execute();
+            }
+    
+            // Actualizar la promoción específica
+            $query = "UPDATE promocion 
+                      SET idCupon = :idCupon,
+                          descuento = :descuento,
+                          fechaInicio = :fechaInicio,
+                          fechaFinalizacion = :fechaFinalizacion,
+                          activa = :activa
+                      WHERE idPromocion = :idPromocion";
+            $sentencia = $this->pdo->prepare($query);
+            $sentencia->bindParam(':idCupon', $promocion->idCupon);
+            $sentencia->bindParam(':descuento', $promocion->descuento);
+            $sentencia->bindParam(':fechaInicio', $promocion->fechaInicio);
+            $sentencia->bindParam(':fechaFinalizacion', $promocion->fechaFinalizacion);
+            $sentencia->bindParam(':activa', $promocion->activa, PDO::PARAM_BOOL);
+            $sentencia->bindParam(':idPromocion', $idPromocion);
+            $resultado = $sentencia->execute();
+    
+            // Confirmar la transacción
+            $this->pdo->commit();
+    
+            return $resultado;
+    
+        } catch (Exception $e) {
+            // En caso de error, revertir la transacción
+            $this->pdo->rollBack();
+            throw $e;
+        }
     }
+    
 
     public function deshabilitarPromocion($idPromocion) {
         $query = "UPDATE promocion SET activa = 0 WHERE idPromocion = :idPromocion";
