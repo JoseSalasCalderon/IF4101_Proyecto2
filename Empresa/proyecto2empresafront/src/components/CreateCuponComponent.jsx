@@ -7,11 +7,20 @@ import CuponService from '../services/CuponService';
 export const CreateCuponComponent = ({ usuarioSesion }) => {
     const cuponService = new CuponService();
     const navigate = useNavigate();
+    const { state } = useLocation();
+    const empresa  = state?.empresa;
+
+    const obtenerFechaActual = () => {
+        const fechaHoy = new Date();
+        const dia = String(fechaHoy.getDate()).padStart(2, '0');
+        const mes = String(fechaHoy.getMonth() + 1).padStart(2, '0');
+        const anno = fechaHoy.getFullYear();
+        return `${dia}/${mes}/${anno}`;
+    };
 
     const [cuponNuevo, setCuponNuevo] = useState({
-        idCupon: 0,
         idCategoria: 0,
-        nombreUsuario: "",
+        nombreUsuario: usuarioSesion.isAdmin ? empresa.nombreUsuario: usuarioSesion.nombreUsuario,
         codigo: "",
         nombre: "",
         precio: 0.0,
@@ -23,13 +32,13 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
         fechaFinalizacion: "",
         activo: 1
     });
-    const { state } = useLocation();
-    const empresa  = state?.empresa;
+
     const [imagenCuponSeleccionada, setImagenCuponSeleccionada] = useState(null);
 
     useEffect(() => {
+        setCuponNuevo(prevState => ({...prevState, fechaCreacion: obtenerFechaActual()}))
         if (usuarioSesion.isAdmin) {
-            setCuponNuevo(prevState => ({ ...prevState, nombreUsuario: empresa }));
+            setCuponNuevo(prevState => ({ ...prevState, nombreUsuario: empresa.nombreUsuario }));
         } else {
             setCuponNuevo(prevState => ({ ...prevState, nombreUsuario: usuarioSesion.nombreUsuario }));
         }
@@ -39,7 +48,6 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
         const { name, value } = e.target;
         setCuponNuevo(prevState => ({ ...prevState, [name]: value }));
     };
-
 
     const volverAtras = () => {
         navigate(-1);
@@ -62,7 +70,8 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
 
     const crearCupon = (e) => {
         e.preventDefault();
-        cuponService.crearCupon(imagenCuponSeleccionada, cuponNuevo)
+        if (imagenCuponSeleccionada) {
+            cuponService.crearCupon(imagenCuponSeleccionada, cuponNuevo)
             .then(response => {
                 if (response) {
                     alert(`El cupón ${cuponNuevo.nombre} ha sido creado!`);
@@ -74,6 +83,9 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
             .catch(error => {
                 console.log(error);
             });
+        }else {
+            alert("Debe ingresar una imagen");
+        }
     };
 
     return (
@@ -88,6 +100,17 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
                 <div className="formContainer">
                     <h3>Nuevo Cupón</h3>
                     <form onSubmit={crearCupon}>
+                        <div className="form-group mt-2">
+                            <label>Categoría:</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                name="idCategoria"
+                                value={cuponNuevo.idCategoria}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
                         <div className="form-group mt-2">
                             <label>Código:</label>
                             <input
@@ -146,12 +169,13 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
                         <div className="form-group">
                             <label>Fecha de Creación:</label>
                             <input
-                                type="date"
+                                type="text"
                                 className="form-control"
                                 name="fechaCreacion"
                                 value={cuponNuevo.fechaCreacion}
                                 onChange={handleChange}
                                 required
+                                readOnly
                             />
                         </div>
                         <div className="form-group">
@@ -175,18 +199,6 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
                                 onChange={handleChange}
                                 required
                             />
-                        </div>
-                        <div className="form-group">
-                            <label>Activo:</label>
-                            <select
-                                className="form-control mb-3"
-                                name="activo"
-                                value={cuponNuevo.activo}
-                                onChange={handleChange}
-                            >
-                                <option value="1">Sí</option>
-                                <option value="0">No</option>
-                            </select>
                         </div>
                         <div className="form-group">
                             <label>Imagen Representativa:</label>
