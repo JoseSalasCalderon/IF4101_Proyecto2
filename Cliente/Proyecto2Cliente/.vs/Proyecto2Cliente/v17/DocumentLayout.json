@@ -1,34 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|e:\\documentos\\iciclo2024\\lenguajes\\proyecto-2\\desarrollo\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|solutionrelative:proyecto2cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D01BA42F-E880-4510-A120-DF6ACDEE065A}|Proyecto2.BC\\Proyecto2.BC.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bc\\modelos\\compradatoscupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D01BA42F-E880-4510-A120-DF6ACDEE065A}|Proyecto2.BC\\Proyecto2.BC.csproj|solutionrelative:proyecto2.bc\\modelos\\compradatoscupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|e:\\documentos\\iciclo2024\\lenguajes\\proyecto-2\\desarrollo\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\interfaces\\da\\igestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\interfaces\\da\\igestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\proyecto2.da\\acciones\\gestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.da\\acciones\\gestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|solutionrelative:proyecto2.da\\acciones\\gestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\proyecto2.bw\\cu\\gestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\cu\\gestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D01BA42F-E880-4510-A120-DF6ACDEE065A}|Proyecto2.BC\\Proyecto2.BC.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bc\\modelos\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D01BA42F-E880-4510-A120-DF6ACDEE065A}|Proyecto2.BC\\Proyecto2.BC.csproj|solutionrelative:proyecto2.bc\\modelos\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\proyecto2.bw\\interfaces\\bw\\igestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\interfaces\\bw\\igestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\proyecto2cliente\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2cliente\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|solutionrelative:proyecto2cliente\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\proyecto2.da\\contexto\\proyecto2context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33EE44E1-0B39-457D-AE86-4F35B18BFCC9}|Proyecto2.DA\\Proyecto2.DA.csproj|solutionrelative:proyecto2.da\\contexto\\proyecto2context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\cu\\gestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\cu\\gestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|c:\\users\\pc\\documents\\github\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\interfaces\\bw\\igestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\interfaces\\bw\\igestionarcomprabw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,93 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Program.cs",
-              "RelativeDocumentMoniker": "Proyecto2Cliente\\Program.cs",
-              "ToolTip": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Program.cs",
-              "RelativeToolTip": "Proyecto2Cliente\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAArAAAA",
+              "DocumentIndex": 3,
+              "Title": "CompraController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Controllers\\CompraController.cs",
+              "RelativeDocumentMoniker": "Proyecto2Cliente\\Controllers\\CompraController.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Controllers\\CompraController.cs",
+              "RelativeToolTip": "Proyecto2Cliente\\Controllers\\CompraController.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAuwDwAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T02:18:13.52Z",
+              "WhenOpened": "2024-06-08T06:50:41.184Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Proyecto2Context.cs",
-              "DocumentMoniker": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Contexto\\Proyecto2Context.cs",
-              "RelativeDocumentMoniker": "Proyecto2.DA\\Contexto\\Proyecto2Context.cs",
-              "ToolTip": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Contexto\\Proyecto2Context.cs",
-              "RelativeToolTip": "Proyecto2.DA\\Contexto\\Proyecto2Context.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAcwBYAAAAJAAAA",
+              "DocumentIndex": 4,
+              "Title": "GestionarCompraBW.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\CU\\GestionarCompraBW.cs",
+              "RelativeDocumentMoniker": "Proyecto2.BW\\CU\\GestionarCompraBW.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\CU\\GestionarCompraBW.cs",
+              "RelativeToolTip": "Proyecto2.BW\\CU\\GestionarCompraBW.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwCEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T01:16:05.249Z"
+              "WhenOpened": "2024-06-08T06:50:12.695Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CompraController.cs",
-              "DocumentMoniker": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Controllers\\CompraController.cs",
-              "RelativeDocumentMoniker": "Proyecto2Cliente\\Controllers\\CompraController.cs",
-              "ToolTip": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Controllers\\CompraController.cs",
-              "RelativeToolTip": "Proyecto2Cliente\\Controllers\\CompraController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAuwCsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T01:06:56.594Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "IGestionarCompraBW.cs",
-              "DocumentMoniker": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
               "RelativeDocumentMoniker": "Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
-              "ToolTip": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
               "RelativeToolTip": "Proyecto2.BW\\Interfaces\\BW\\IGestionarCompraBW.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T01:06:53.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GestionarCompraBW.cs",
-              "DocumentMoniker": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\CU\\GestionarCompraBW.cs",
-              "RelativeDocumentMoniker": "Proyecto2.BW\\CU\\GestionarCompraBW.cs",
-              "ToolTip": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\CU\\GestionarCompraBW.cs",
-              "RelativeToolTip": "Proyecto2.BW\\CU\\GestionarCompraBW.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAiwB0AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T01:06:51.985Z"
+              "WhenOpened": "2024-06-08T06:49:56.504Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IGestionarCompraDA.cs",
-              "DocumentMoniker": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
-              "RelativeDocumentMoniker": "Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
-              "ToolTip": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
-              "RelativeToolTip": "Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Title": "GestionarCompraDA.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
+              "RelativeDocumentMoniker": "Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
+              "RelativeToolTip": "Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAuwEcAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T01:06:47.916Z",
+              "WhenOpened": "2024-06-08T06:49:25.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CompraDatosCupon.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Modelos\\CompraDatosCupon.cs",
+              "RelativeDocumentMoniker": "Proyecto2.BC\\Modelos\\CompraDatosCupon.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Modelos\\CompraDatosCupon.cs",
+              "RelativeToolTip": "Proyecto2.BC\\Modelos\\CompraDatosCupon.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T06:48:55.942Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GestionarCompraDA.cs",
-              "DocumentMoniker": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
-              "RelativeDocumentMoniker": "Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
-              "ToolTip": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
-              "RelativeToolTip": "Proyecto2.DA\\Acciones\\GestionarCompraDA.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAuwDkAAAAJAAAA",
+              "Title": "Compra.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Modelos\\Compra.cs",
+              "RelativeDocumentMoniker": "Proyecto2.BC\\Modelos\\Compra.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Modelos\\Compra.cs",
+              "RelativeToolTip": "Proyecto2.BC\\Modelos\\Compra.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T01:06:45.173Z"
+              "WhenOpened": "2024-06-08T07:19:38.566Z",
+              "EditorCaption": ""
             }
           ]
         }

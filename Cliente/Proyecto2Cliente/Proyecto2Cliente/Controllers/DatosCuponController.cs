@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto2.BC.Modelos;
+using Proyecto2.BW.Interfaces.BW;
 using Proyecto2.BW.Interfaces.DA;
 using Proyecto2.DA.Acciones;
 

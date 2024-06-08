@@ -57,5 +57,25 @@ namespace Proyecto2.DA.Acciones
             return comprasConvertidas;
         }
 
+        public async Task<List<CompraDatosCupon>> ObtenerCompraConDatosCupon(string cedula)
+        {
+            var result = await proyecto2Context.CompraDA
+                .Where(c => c.cedula == cedula)
+                .SelectMany(c => c.DatosCupones.Select(dc => new CompraDatosCupon
+                {
+                    idCompra = dc.idCompra,
+                    cedula = c.cedula,
+                    PrecioTotal = c.precioTotal,
+                    DescuentoFinal = c.descuentoFinal,
+                    ImagenRepresentativa = dc.imagenRepresentativa,
+                    Ubicacion = dc.ubicacion,
+                    Empresa = dc.empresa,
+                    Cantidad = dc.cantidad
+                }))
+                .ToListAsync();
+
+            return result;
+        }
+
     }
 }

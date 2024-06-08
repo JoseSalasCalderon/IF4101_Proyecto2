@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Proyecto2.BC\Proyecto2.BC.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\SG\" />
-  </ItemGroup>
-
 </Project>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 interface Usuario {
   idUsuario: number;
@@ -17,6 +17,7 @@ interface Usuario {
 })
 export class UsuarioService {
 
+  usuarioSesionSubject: Subject<boolean> = new Subject<boolean>();
     // private usuarioSesion: Usuario | null = null;
     
   constructor(private http: HttpClient) { }
@@ -25,6 +26,20 @@ export class UsuarioService {
 
   buscarUsuario(correo: string, contrasenna: string): Observable<Usuario> {
     return this.http.get<Usuario>(this.apiUrlUsuario+'BuscarUsuario?correo='+correo+'&contrasenna='+contrasenna);
+  }
+
+  hayUsuarioEnSesion(): boolean {
+    const usuarioSesion = sessionStorage.getItem('usuarioSesion');
+    return usuarioSesion !== null; // Retorna true si hay un usuario en sesión, false de lo contrario
+  }
+
+  iniciarSesion() {
+    this.usuarioSesionSubject.next(true); // Emite un evento indicando que se ha iniciado sesión
+  }
+
+  cerrarSesion() {
+    sessionStorage.removeItem('usuarioSesion');
+    this.usuarioSesionSubject.next(false); // Emite un evento indicando que se ha cerrado sesión
   }
 
   // asignarUsuarioSesion(usuarioEncontrado: Usuario){

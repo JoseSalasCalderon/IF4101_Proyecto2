@@ -27,5 +27,10 @@ namespace Proyecto2.BW.CU
         {
             return await gestionarCompraDA.ObtenerComprasPorUsuario(cedula);
         }
+
+        public async Task<List<CompraDatosCupon>> ObtenerCompraConDatosCupon(string cedula)
+        {
+            return await gestionarCompraDA.ObtenerCompraConDatosCupon(cedula);
+        }
     }
 }
