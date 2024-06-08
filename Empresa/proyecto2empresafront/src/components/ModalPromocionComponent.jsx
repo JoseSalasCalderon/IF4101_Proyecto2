@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Input, FormGroup, Label } from 'reactstrap';
 import PromocionService from '../services/PromocionService';
 
-export const ModalPromocionComponent = ({ isOpen, abrirCerrarModal, promocion, handleChange, promociones, actualizarPromociones }) => {
+export const ModalPromocionComponent = ({ isOpen, abrirCerrarModal, promocion, handleChange, promociones, actualizarPromociones, cupon }) => {
     const promocionService = new PromocionService();
 
     const actualizarPromocion = async () => {
@@ -52,6 +52,8 @@ export const ModalPromocionComponent = ({ isOpen, abrirCerrarModal, promocion, h
                         name="fechaInicio"
                         value={promocion?.fechaInicio}
                         onChange={handleChange}
+                        min={cupon.fechaInicio}
+                        max={cupon.fechaFinalizacion}
                     />
                     <label>Fecha de Finalización:</label>
                     <input
@@ -60,6 +62,8 @@ export const ModalPromocionComponent = ({ isOpen, abrirCerrarModal, promocion, h
                         name="fechaFinalizacion"
                         value={promocion?.fechaFinalizacion}
                         onChange={handleChange}
+                        min={promocion.fechaInicio} // Limita la fecha de fin al valor de fechaInicio
+                        max={cupon.fechaFinalizacion} //
                     />
                     <label>Activa:</label>
                     <select

@@ -104,6 +104,7 @@ export const PromocionesComponent = () => {
                 handleChange={handleChange}
                 promociones={promociones}
                 actualizarPromociones={setPromociones}
+                cupon = {cupon}
             />
         </div>
     )

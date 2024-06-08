@@ -98,8 +98,8 @@ export const CreatePromocionComponent = ({ usuarioSesion }) => {
                                 name="fechaFinalizacion"
                                 value={promocionNueva.fechaFinalizacion}
                                 onChange={handleChange}
-                                min={promocionNueva.fechaInicio} // Limita la fecha de fin al valor de fechaInicio
-                                max={cupon.fechaFinalizacion} //
+                                min={promocionNueva.fechaInicio}
+                                max={cupon.fechaFinalizacion} 
                                 required
                             />
                         </div>
