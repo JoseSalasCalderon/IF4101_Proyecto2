@@ -16,6 +16,7 @@ import { FooterComponent } from './components/FooterComponent';
 import { CreateUserComponent } from './components/CreateUserComponent';
 import { PromocionesComponent } from './components/PromocionesComponent';
 import CreateCuponComponent from './components/CreateCuponComponent';
+import CreatePromocionComponent from './components/CreatePromocionComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -87,6 +88,10 @@ function App() {
         <Route
           path="/crearCupon" 
           element={usuarioSesion ? (<CreateCuponComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
+        />
+        <Route
+          path="/crearPromocion" 
+          element={usuarioSesion ? (<CreatePromocionComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
         />
       </Routes>
       {usuarioSesion && <FooterComponent usuarioSesion={usuarioSesion} logoutApp={logout} />}

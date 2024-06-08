@@ -84,6 +84,44 @@ class CuponService {
             return null;
         }// try-catch
     }// actualizarCupon
+
+    async crearCupon (imagenCupon, cupon) {
+        try {
+            // Subir la imagen a Cloudinary
+            const responseUploadImage = await this.uploadImageService.uploadToCloudinary(imagenCupon);
+            if (responseUploadImage) {
+                // Crear FormData y agregar todos los campos del cupon
+                const formData = new FormData();
+                formData.append('idCategoria', cupon.idCategoria);
+                formData.append('nombreUsuario', cupon.nombreUsuario);
+                formData.append('codigo', cupon.codigo);
+                formData.append('nombre', cupon.nombre);
+                formData.append('precio', cupon.precio);
+                formData.append('descuento', cupon.descuento);
+                formData.append('ubicacion', cupon.ubicacion);
+                formData.append('imagenRepresentativa', responseUploadImage.url);
+                formData.append('fechaCreacion', cupon.fechaCreacion);
+                formData.append('fechaInicio', cupon.fechaInicio);
+                formData.append('fechaFinalizacion', cupon.fechaFinalizacion);
+                formData.append('activo', cupon.activo);
+                formData.append("METHOD", "POST");
+
+                // Enviar la solicitud de actualización
+                const responseCreate = await axios.post(`${this.urlCupon}crearCupon`, formData);
+                if (responseCreate) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }else {
+                // No se pudo subir la imagen
+                return false;
+            }
+        } catch (error) {
+            console.error(error);
+            return null;
+        }// try-catch
+    }// crearCupon
 }
 
 export default CuponService;

@@ -3,9 +3,11 @@ import { useLocation } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import PromocionService from '../services/PromocionService';
+import ModalPromocionComponent from './ModalPromocionComponent';
 
 export const PromocionesComponent = () => {
     const [promociones, setPromociones] = useState([]);
+    const [modalActualizar, setModalActualizar] = useState(false);
     const [promocionSeleccionada, setPromocionSeleccionada] = useState({
         idPromocion: 0,
         idCupon: 0,
@@ -29,17 +31,29 @@ export const PromocionesComponent = () => {
             })
     }, []);
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setPromocionSeleccionada(prevState => ({
+            ...prevState,
+            [name]: name === 'activa' ? parseInt(value) : value,
+        }));
+    };
+
     const volverAtras = () => {
         navigate(-1);
     };
 
-    const editarPromocion = (promocion) => {
-        setPromocionSeleccionada(promocion);
-        // Abre un modal para editar la promoción, o navega a una página de edición
+    const crearPromocion = () => {
+        navigate(`/crearPromocion`, {state: { cupon: cupon }});
     };
 
-    const verDetallesPromocion = (promocion) => {
-        // Lógica para ver los detalles de la promoción
+    const abrirCerrarModal = () => {
+        setModalActualizar(!modalActualizar);
+    };
+
+    const editarPromocion = (promocion) => {
+        setPromocionSeleccionada(promocion);
+        abrirCerrarModal();
     };
 
     return (
@@ -81,8 +95,17 @@ export const PromocionesComponent = () => {
                 </table>
             </div>
             <div className="d-flex justify-content-center mt-3">
-                <button className="navButton btn btn-success btn-sm mb-3">Crear Nueva Promoción +</button>
+                <button className="navButton btn btn-success btn-sm mb-3" onClick={crearPromocion}>Crear Nueva Promoción +</button>
             </div>
+            <ModalPromocionComponent
+                isOpen={modalActualizar}
+                abrirCerrarModal={abrirCerrarModal}
+                promocion={promocionSeleccionada}
+                handleChange={handleChange}
+                promociones={promociones}
+                actualizarPromociones={setPromociones}
+                cupon = {cupon}
+            />
         </div>
     )
 }
