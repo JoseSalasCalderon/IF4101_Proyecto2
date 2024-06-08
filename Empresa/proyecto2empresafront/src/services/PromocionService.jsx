@@ -41,6 +41,29 @@ class PromocionService {
         }
     }// actualizarPromocion
 
+    async crearPromocion(promocion) {
+        try {
+            // Crear FormData y agregar todos los campos de la promoción
+            const formData = new FormData();
+            formData.append('idCupon', promocion.idCupon);
+            formData.append('descuento', promocion.descuento);
+            formData.append('fechaInicio', promocion.fechaInicio);
+            formData.append('fechaFinalizacion', promocion.fechaFinalizacion);
+            formData.append('METHOD', 'POST');
+
+            // Enviar la solicitud de actualización
+            const responseCreate = await axios.post(`${this.urlPromocion}crearPromocion`, formData);
+            if (responseCreate) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }// actualizarPromocion
+
 
 }
 

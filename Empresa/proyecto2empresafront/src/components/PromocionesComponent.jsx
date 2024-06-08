@@ -43,6 +43,10 @@ export const PromocionesComponent = () => {
         navigate(-1);
     };
 
+    const crearPromocion = () => {
+        navigate(`/crearPromocion`, {state: { cupon: cupon }});
+    };
+
     const abrirCerrarModal = () => {
         setModalActualizar(!modalActualizar);
     };
@@ -91,7 +95,7 @@ export const PromocionesComponent = () => {
                 </table>
             </div>
             <div className="d-flex justify-content-center mt-3">
-                <button className="navButton btn btn-success btn-sm mb-3">Crear Nueva Promoción +</button>
+                <button className="navButton btn btn-success btn-sm mb-3" onClick={crearPromocion}>Crear Nueva Promoción +</button>
             </div>
             <ModalPromocionComponent
                 isOpen={modalActualizar}
