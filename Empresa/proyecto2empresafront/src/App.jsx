@@ -18,6 +18,7 @@ import { PromocionesComponent } from './components/PromocionesComponent';
 import CreateCuponComponent from './components/CreateCuponComponent';
 import CreatePromocionComponent from './components/CreatePromocionComponent';
 import { ResetPasswordComponent } from './components/ResetPasswordComponent';
+import UpdateUserComponent from './components/UpdateUserComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -111,6 +112,10 @@ function App() {
         <Route
           path="/cambiarContrasenna" 
           element={usuarioSesion ? (<ResetPasswordComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
+        />
+        <Route
+          path="/misDatos" 
+          element={usuarioSesion ? (<UpdateUserComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
         />
       </Routes>
       {mostrarNavYFooter && <FooterComponent usuarioSesion={usuarioSesion} logoutApp={logout} />}

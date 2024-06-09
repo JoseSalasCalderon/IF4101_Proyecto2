@@ -16,6 +16,16 @@ class UserService {
         }
     }// obtenerUsuariosEmpresa
 
+    async buscarUsuarioEmpresa (nombreUsuario) {
+        try {
+            const responseUsers = await axios.get(`${this.urlUser}buscarUsuarioEmpresa&nombreUsuario=${nombreUsuario}`);
+            return responseUsers.data;
+        } catch (error) {
+            console.error('Error during obtain users:', error);
+            throw error;
+        }
+    }// obtenerUsuariosEmpresa
+
     async crearUsuarioEmpresa (nuevoUsuario) {
         try {
 
