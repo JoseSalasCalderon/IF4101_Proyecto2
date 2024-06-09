@@ -23,8 +23,8 @@ class UsuarioController {
     }
 
     public function loginUsuarioEmpresa() {
-        if (isset($_GET['nombreUsuario']) && isset($_GET['contrasenna'])) {
-            $resultado = $this->usuarioBusiness->loginUsuarioEmpresa($_GET['nombreUsuario'], $_GET['contrasenna']);
+        if ($_POST['METHOD']=='POST') {
+            $resultado = $this->usuarioBusiness->loginUsuarioEmpresa($_POST['nombreUsuario'], $_POST['contrasenna']);
             echo json_encode($resultado);
         }else {
             echo json_encode(null);

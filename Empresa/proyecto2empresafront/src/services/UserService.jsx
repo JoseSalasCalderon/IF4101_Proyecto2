@@ -41,6 +41,30 @@ class UserService {
         }
     }// crearUsuarioEmpresa
 
+    async actualizarUsuarioEmpresa (usuario) {
+        try {
+
+            const formData = new FormData();
+            formData.append('contrasenna', usuario.contrasenna);
+            formData.append('nombreEmpresa', usuario.nombreEmpresa);
+            formData.append('direccion', usuario.direccion);
+            formData.append('cedulaFisicaOJuridica', usuario.cedulaFisicaOJuridica);
+            formData.append('fechaCreacion', usuario.fechaCreacion);
+            formData.append('correo', usuario.correo);
+            formData.append('telefono', usuario.telefono);
+            formData.append('primeraVez', usuario.primeraVez);
+            formData.append('activo', usuario.activo);
+            formData.append('METHOD', 'PUT');
+
+            const responseUptadeUser = await axios.post(`${this.urlUser}actualizarUsuarioEmpresa`, formData, {params: {nombreUsuario: usuario.nombreUsuario}});
+            console.log(responseUptadeUser.data);
+            return responseUptadeUser.data;
+        } catch (error) {
+            console.error('Error during update user:', error);
+            throw error;
+        }
+    }// actualizarUsuarioEmpresa
+
 }// class
 
 export default UserService;

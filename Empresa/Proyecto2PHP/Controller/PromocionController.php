@@ -38,7 +38,7 @@ class PromocionController {
             $descuento = $_POST['descuento'];
             $fechaInicio = $_POST['fechaInicio'];
             $fechaFinalizacion = $_POST['fechaFinalizacion'];
-            $activa = true;
+            $activa = false;
 
             $promocion = new Promocion(null, $idCupon, $descuento, $fechaInicio, $fechaFinalizacion, $activa);
             $resultado = $this->promocionBusiness->crearPromocion($promocion);

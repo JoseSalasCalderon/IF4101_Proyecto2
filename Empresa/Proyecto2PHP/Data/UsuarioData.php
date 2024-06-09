@@ -48,7 +48,7 @@ class UsuarioData {
                         , activo
                     FROM usuario
                     WHERE nombreUsuario = :nombreUsuario 
-                    AND contrasenna = :contrasenna
+                    AND contrasenna LIKE :contrasenna
                     AND activo = 1";
             $sentencia = $this->pdo->prepare($query);
             $sentencia->bindParam(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
