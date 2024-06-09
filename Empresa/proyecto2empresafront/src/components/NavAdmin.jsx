@@ -16,13 +16,9 @@ export const NavAdmin = ({ usuarioSesion, logoutApp }) => {
           <li className="nav-item">
             <Link className="nav-link" to="/crearUsuario">Crear Usuario Empresa</Link>
           </li>
-          {/* Descomenta y agrega más enlaces según sea necesario */}
-          {/* <li className="nav-item">
-            <Link className="nav-link" to="/admin">Admin</Link>
-          </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/empresas">Empresas</Link>
-          </li> */}
+            <Link className="nav-link" to="/categorias">Categorias</Link>
+          </li>
         </ul>
         <button className="navButton btn btn-danger my-2 my-sm-0" onClick={logoutApp}>Cerrar Sesión</button>
       </div>

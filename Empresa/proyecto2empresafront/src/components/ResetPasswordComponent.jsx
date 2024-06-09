@@ -45,7 +45,7 @@ export const ResetPasswordComponent = ({ usuarioSesion, logoutApp }) => {
                                     type="password" 
                                     className="form-control" 
                                     id="password" 
-                                    placeholder="Contraseña" 
+                                    placeholder="Nueva Contraseña" 
                                     value={contrasennaNueva} 
                                     onChange={e => setContrasennaNueva(e.target.value)} 
                                 />

@@ -3,23 +3,16 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import CuponService from '../services/CuponService';
+import CategoriaService from '../services/CategoriaService';
 
 export const CreateCuponComponent = ({ usuarioSesion }) => {
     const cuponService = new CuponService();
     const navigate = useNavigate();
     const { state } = useLocation();
     const empresa  = state?.empresa;
-
-    const obtenerFechaActual = () => {
-        const fechaHoy = new Date();
-        const dia = String(fechaHoy.getDate()).padStart(2, '0');
-        const mes = String(fechaHoy.getMonth() + 1).padStart(2, '0');
-        const anno = fechaHoy.getFullYear();
-        return `${dia}/${mes}/${anno}`;
-    };
-
+    const categorias = state?.categorias;
     const [cuponNuevo, setCuponNuevo] = useState({
-        idCategoria: 0,
+        idCategoria: 1,
         nombreUsuario: usuarioSesion.isAdmin ? empresa.nombreUsuario: usuarioSesion.nombreUsuario,
         codigo: "",
         nombre: "",
@@ -32,8 +25,15 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
         fechaFinalizacion: "",
         activo: 1
     });
-
     const [imagenCuponSeleccionada, setImagenCuponSeleccionada] = useState(null);
+
+    const obtenerFechaActual = () => {
+        const fechaHoy = new Date();
+        const dia = String(fechaHoy.getDate()).padStart(2, '0');
+        const mes = String(fechaHoy.getMonth() + 1).padStart(2, '0');
+        const anno = fechaHoy.getFullYear();
+        return `${dia}/${mes}/${anno}`;
+    };
 
     useEffect(() => {
         setCuponNuevo(prevState => ({...prevState, fechaCreacion: obtenerFechaActual()}))
@@ -102,14 +102,19 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
                     <form onSubmit={crearCupon}>
                         <div className="form-group mt-2">
                             <label>Categoría:</label>
-                            <input
-                                type="text"
+                            <select
                                 className="form-control"
                                 name="idCategoria"
                                 value={cuponNuevo.idCategoria}
                                 onChange={handleChange}
                                 required
-                            />
+                            >
+                                {categorias.map(categoria => (
+                                    <option key={categoria.idCategoria} value={categoria.idCategoria}>
+                                        {categoria.nombreCategoria}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                         <div className="form-group mt-2">
                             <label>Código:</label>
