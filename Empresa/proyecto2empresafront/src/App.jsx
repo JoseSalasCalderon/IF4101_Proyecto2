@@ -19,6 +19,7 @@ import CreateCuponComponent from './components/CreateCuponComponent';
 import CreatePromocionComponent from './components/CreatePromocionComponent';
 import { ResetPasswordComponent } from './components/ResetPasswordComponent';
 import UpdateUserComponent from './components/UpdateUserComponent';
+import { CategoriasComponent } from './components/CategoriasComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -116,6 +117,10 @@ function App() {
         <Route
           path="/misDatos" 
           element={usuarioSesion ? (<UpdateUserComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
+        />
+        <Route
+          path="/categorias" 
+          element={usuarioSesion ? (<CategoriasComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
         />
       </Routes>
       {mostrarNavYFooter && <FooterComponent usuarioSesion={usuarioSesion} logoutApp={logout} />}

@@ -1,7 +1,10 @@
-body{
+body {
   /* Agregar un fondo */
   background-color: #001940;
-  
+}
+
+.table-responsive {
+  max-height: 35em;
 }
 
 footer {
@@ -127,6 +130,36 @@ footer a:hover {
   min-width: 20em;
 }
 
+.formCreateCategoria h3 {
+  color: #547ab7;
+}
+
+.formCreateCategoria {
+  display: flex;
+  justify-content: center;
+}
+
+.formCreateCategoria .formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #cfcfcf;
+  width: 75%;
+  padding: 2em;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.formCreateCategoria .formContainer .form-group {
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.formCreateCategoria .formContainer .form-control {
+  width: 100%;
+  min-width: 20em;
+}
 
 .formularioInicioSesion {
   background-color: #cfcfcf;

@@ -16,28 +16,19 @@ class CategoriaService {
         }
     }// obtenerCategorias
 
-    async crearCategoria(promocion) {
+    async crearCategoria(categoria) {
         try {
-            // Crear FormData y agregar todos los campos de la promoción
-            const formData = new FormData();
-            formData.append('idCupon', promocion.idCupon);
-            formData.append('descuento', promocion.descuento);
-            formData.append('fechaInicio', promocion.fechaInicio);
-            formData.append('fechaFinalizacion', promocion.fechaFinalizacion);
-            formData.append('METHOD', 'POST');
-
-            // Enviar la solicitud de actualización
-            const responseCreate = await axios.post(`${this.urlCategoria}crearPromocion`, formData);
-            if (responseCreate) {
-                return true;
-            } else {
-                return false;
-            }
+          const formData = new FormData();
+          formData.append('nombreCategoria', categoria.nombreCategoria);
+          formData.append('METHOD', 'POST');
+    
+          const responseCreate = await axios.post(`${this.urlCategoria}crearCategoria`, formData);
+          return responseCreate.data;
         } catch (error) {
-            console.error(error);
-            return null;
+          console.error('Error creating category:', error);
+          throw error;
         }
-    }// crearCategoria
+      }// crearCategoria
 
 }
 
