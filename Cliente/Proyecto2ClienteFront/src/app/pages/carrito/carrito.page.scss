@@ -1,0 +1,19 @@
+ion-button[ion-text="Comprar"] {
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quantity-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  
+    ion-button {
+      margin: 0 5px;
+    }
+  }
+  

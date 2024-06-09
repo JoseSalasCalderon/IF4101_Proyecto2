@@ -1,6 +1,7 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { CuponService } from 'src/app/services/cupon.service';
 import { Cupon } from 'src/app/services/cupon.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomePage implements OnInit, DoCheck {
   searchText: string = '';
   filterBy: string = 'none';
 
-  constructor(private cuponService: CuponService) {}
+  constructor(private cuponService: CuponService, private router: Router) {}
 
   ngOnInit(): void {
     this.cuponService.obtenerCupones().subscribe((cupones) => {
@@ -49,5 +50,22 @@ export class HomePage implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     this.filtrarCupones();
+  }
+
+  agregarAlCarrito(cupon: Cupon): void {
+    let carrito = JSON.parse(sessionStorage.getItem('carrito') || '[]');
+
+    const existingCupon = carrito.find((item: any) => item.idCupon === cupon.idCupon);
+    if (existingCupon) {
+      existingCupon.cantidad += 1;
+    } else {
+      carrito.push({ ...cupon, cantidad: 1 });
+    }
+
+    sessionStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+
+  redirigirACupon() {
+    this.router.navigate(['/carrito']);
   }
 }

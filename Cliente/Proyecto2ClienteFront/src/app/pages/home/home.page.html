@@ -37,8 +37,11 @@
               <p class="ion-text-center">{{cupon.nombreUsuario}}</p>
               <p class="ion-text-center">{{cupon.idCategoria}}</p>
               <p class="ion-text-center">{{cupon.precio}}</p>
-              <ion-button expand="block" class="add-to-cart-button" fill="outline" shape="round">
+              <ion-button expand="block" class="add-to-cart-button" fill="outline" shape="round" (click)="agregarAlCarrito(cupon)">
                 Agregar al carrito
+              </ion-button>
+              <ion-button expand="block" class="view-button" fill="outline" shape="round" (click)="redirigirACupon()">
+                Ver Carrito
               </ion-button>
             </ion-card-content>
           </ion-card>
