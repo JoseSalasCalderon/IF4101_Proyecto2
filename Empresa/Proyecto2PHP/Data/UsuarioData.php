@@ -48,7 +48,7 @@ class UsuarioData {
                         , activo
                     FROM usuario
                     WHERE nombreUsuario = :nombreUsuario 
-                    AND contrasenna = :contrasenna
+                    AND contrasenna LIKE :contrasenna
                     AND activo = 1";
             $sentencia = $this->pdo->prepare($query);
             $sentencia->bindParam(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
@@ -152,8 +152,25 @@ class UsuarioData {
             $sentencia->execute();
             return true;
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-            return false; // Devolver false en caso de error
+            return false;
+        }
+    }
+
+    public function actualizarContrasennaUsuarioEmpresa($nombreUsuario, $contrasenna) {
+        $query = "UPDATE usuario SET 
+                    contrasenna = :contrasenna,
+                    primeraVez = 0
+                WHERE nombreUsuario = :nombreUsuario";
+        
+        try {
+            $sentencia = $this->pdo->prepare($query);
+            $sentencia->bindParam(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
+            $sentencia->bindParam(':contrasenna', $contrasenna, PDO::PARAM_STR);
+
+            $sentencia->execute();
+            return true;
+        } catch (PDOException $e) {
+            return false; 
         }
     }
     

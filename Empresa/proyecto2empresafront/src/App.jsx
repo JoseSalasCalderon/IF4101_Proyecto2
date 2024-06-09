@@ -17,6 +17,7 @@ import { CreateUserComponent } from './components/CreateUserComponent';
 import { PromocionesComponent } from './components/PromocionesComponent';
 import CreateCuponComponent from './components/CreateCuponComponent';
 import CreatePromocionComponent from './components/CreatePromocionComponent';
+import { ResetPasswordComponent } from './components/ResetPasswordComponent';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState(null);
@@ -37,9 +38,15 @@ function App() {
     setUsuarioSesion(null);
   }
 
+  const mostrarNavYFooter = usuarioSesion && (usuarioSesion.isAdmin || usuarioSesion.primeraVez === 0);
+
   return (
     <Router>
-      {usuarioSesion && (usuarioSesion.isAdmin ? <NavAdmin usuarioSesion={usuarioSesion} logoutApp={logout} /> : <NavUser usuarioSesion={usuarioSesion} logoutApp={logout} />)}
+      {mostrarNavYFooter && (
+        usuarioSesion.isAdmin ? 
+          <NavAdmin usuarioSesion={usuarioSesion} logoutApp={logout} /> : 
+          <NavUser usuarioSesion={usuarioSesion} logoutApp={logout} />
+      )}
       <Routes>
         <Route 
           path="/" 
@@ -47,10 +54,14 @@ function App() {
             usuarioSesion.isAdmin ? (
               <Navigate to="/homeAdmin" replace />
             ) : (
-              <Navigate to="/homeUser" replace />
+              usuarioSesion.primeraVez === 0 ? (
+                <Navigate to="/homeUser" replace />
+              ):(
+                <Navigate to="/cambiarContrasenna" replace />
+              )
             )
           ) : (
-            <LoginComponent loginApp={login} />
+            <Navigate to="/login" replace />
           )}
         />
         <Route 
@@ -59,7 +70,11 @@ function App() {
             usuarioSesion.isAdmin ? (
               <Navigate to="/homeAdmin" replace />
             ) : (
-              <Navigate to="/homeUser" replace />
+              usuarioSesion.primeraVez === 0 ? (
+                <Navigate to="/homeUser" replace />
+              ):(
+                <Navigate to="/cambiarContrasenna" replace />
+              )
             )
           ) : (
             <LoginComponent loginApp={login} />
@@ -93,8 +108,12 @@ function App() {
           path="/crearPromocion" 
           element={usuarioSesion ? (<CreatePromocionComponent usuarioSesion={usuarioSesion} />) : (<Navigate to="/login" replace />)}
         />
+        <Route
+          path="/cambiarContrasenna" 
+          element={usuarioSesion ? (<ResetPasswordComponent usuarioSesion={usuarioSesion} logoutApp={logout} />) : (<Navigate to="/login" replace />)}
+        />
       </Routes>
-      {usuarioSesion && <FooterComponent usuarioSesion={usuarioSesion} logoutApp={logout} />}
+      {mostrarNavYFooter && <FooterComponent usuarioSesion={usuarioSesion} logoutApp={logout} />}
     </Router>
     
     

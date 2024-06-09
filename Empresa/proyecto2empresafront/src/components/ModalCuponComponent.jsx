@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import CuponService from '../services/CuponService';
 
 export const ModalCuponComponent = ({ isOpen, abrirCerrarModal, cupon, handleChange, cupones, actualizarCupones }) => {

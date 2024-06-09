@@ -41,6 +41,45 @@ class UserService {
         }
     }// crearUsuarioEmpresa
 
+    async actualizarUsuarioEmpresa (usuario) {
+        try {
+
+            const formData = new FormData();
+            formData.append('contrasenna', usuario.contrasenna);
+            formData.append('nombreEmpresa', usuario.nombreEmpresa);
+            formData.append('direccion', usuario.direccion);
+            formData.append('cedulaFisicaOJuridica', usuario.cedulaFisicaOJuridica);
+            formData.append('fechaCreacion', usuario.fechaCreacion);
+            formData.append('correo', usuario.correo);
+            formData.append('telefono', usuario.telefono);
+            formData.append('primeraVez', usuario.primeraVez);
+            formData.append('activo', usuario.activo);
+            formData.append('METHOD', 'PUT');
+
+            const responseUptadeUser = await axios.post(`${this.urlUser}actualizarUsuarioEmpresa`, formData, {params: {nombreUsuario: usuario.nombreUsuario}});
+            console.log(responseUptadeUser.data);
+            return responseUptadeUser.data;
+        } catch (error) {
+            console.error('Error during update user:', error);
+            throw error;
+        }
+    }// actualizarUsuarioEmpresa
+
+    async cambiarContrasennaUsuarioEmpresa(nombreUsuario, contrasennaNueva) {
+        try {
+    
+          const formData = new FormData();
+          formData.append('contrasenna', contrasennaNueva);
+          formData.append('METHOD', 'PUT');
+    
+          const responseResetPassword = await axios.post(`${this.urlUser}actualizarContrasennaUsuarioEmpresa`, formData, {params: {nombreUsuario: nombreUsuario}});
+          return responseResetPassword.data;
+        } catch (error) {
+            console.error('Error during reset password:', error);
+            throw error;
+        }
+    }// cambiarContrasennaUsuarioEmpresa
+
 }// class
 
 export default UserService;

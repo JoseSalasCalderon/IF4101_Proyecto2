@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Input, FormGroup, Label } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import PromocionService from '../services/PromocionService';
 
 export const ModalPromocionComponent = ({ isOpen, abrirCerrarModal, promocion, handleChange, promociones, actualizarPromociones, cupon }) => {

@@ -16,7 +16,7 @@ class AdministradorData {
                         , contrasenna 
                       FROM administrador 
                       WHERE nombreUsuario = :nombreUsuario 
-                      AND contrasenna = :contrasenna";
+                      AND contrasenna LIKE :contrasenna";
             $sentencia = $this->pdo->prepare($query);
             $sentencia->bindParam(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
             $sentencia->bindParam(':contrasenna', $contrasenna, PDO::PARAM_STR);

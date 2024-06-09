@@ -32,5 +32,9 @@ class UsuarioBusiness {
         return $this->usuarioData->actualizarUsuarioEmpresa($nombreUsuario, $usuario);
     }
 
+    public function actualizarContrasennaUsuarioEmpresa($nombreUsuario, $contrasenna) {
+        return $this->usuarioData->actualizarContrasennaUsuarioEmpresa($nombreUsuario, $contrasenna);
+    }
+
 }
 ?>

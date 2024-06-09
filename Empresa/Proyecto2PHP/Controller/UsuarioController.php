@@ -23,8 +23,8 @@ class UsuarioController {
     }
 
     public function loginUsuarioEmpresa() {
-        if (isset($_GET['nombreUsuario']) && isset($_GET['contrasenna'])) {
-            $resultado = $this->usuarioBusiness->loginUsuarioEmpresa($_GET['nombreUsuario'], $_GET['contrasenna']);
+        if ($_POST['METHOD']=='POST') {
+            $resultado = $this->usuarioBusiness->loginUsuarioEmpresa($_POST['nombreUsuario'], $_POST['contrasenna']);
             echo json_encode($resultado);
         }else {
             echo json_encode(null);
@@ -77,6 +77,18 @@ class UsuarioController {
 
             $usuario = new Usuario($nombreUsuario, $contrasenna, $nombreEmpresa, $direccion, $cedulaFisicaOJuridica, $fechaCreacion, $correo, $telefono, $primeraVez, $activo);
             $resultado = $this->usuarioBusiness->actualizarUsuarioEmpresa($nombreUsuario, $usuario);
+            echo json_encode($resultado);
+            http_response_code(200);
+            exit();
+        }
+    }
+
+    public function actualizarContrasennaUsuarioEmpresa() {
+        if($_POST['METHOD']=='PUT'){
+            unset($_POST['METHOD']);
+            $nombreUsuario = $_GET['nombreUsuario'];
+            $contrasenna = $_POST['contrasenna'];
+            $resultado = $this->usuarioBusiness->actualizarContrasennaUsuarioEmpresa($nombreUsuario, $contrasenna);
             echo json_encode($resultado);
             http_response_code(200);
             exit();
