@@ -82,6 +82,18 @@ class UsuarioController {
             exit();
         }
     }
+
+    public function actualizarContrasennaUsuarioEmpresa() {
+        if($_POST['METHOD']=='PUT'){
+            unset($_POST['METHOD']);
+            $nombreUsuario = $_GET['nombreUsuario'];
+            $contrasenna = $_POST['contrasenna'];
+            $resultado = $this->usuarioBusiness->actualizarContrasennaUsuarioEmpresa($nombreUsuario, $contrasenna);
+            echo json_encode($resultado);
+            http_response_code(200);
+            exit();
+        }
+    }
 }
 
 // $controller = new UsuarioController();

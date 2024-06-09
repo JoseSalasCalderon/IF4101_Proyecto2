@@ -65,6 +65,21 @@ class UserService {
         }
     }// actualizarUsuarioEmpresa
 
+    async cambiarContrasennaUsuarioEmpresa(nombreUsuario, contrasennaNueva) {
+        try {
+    
+          const formData = new FormData();
+          formData.append('contrasenna', contrasennaNueva);
+          formData.append('METHOD', 'PUT');
+    
+          const responseResetPassword = await axios.post(`${this.urlUser}actualizarContrasennaUsuarioEmpresa`, formData, {params: {nombreUsuario: nombreUsuario}});
+          return responseResetPassword.data;
+        } catch (error) {
+            console.error('Error during reset password:', error);
+            throw error;
+        }
+    }// cambiarContrasennaUsuarioEmpresa
+
 }// class
 
 export default UserService;

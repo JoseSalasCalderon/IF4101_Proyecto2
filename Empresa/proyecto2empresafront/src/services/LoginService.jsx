@@ -53,6 +53,7 @@ class LoginService {
     const user = sessionStorage.getItem('usuarioSesion');
     return JSON.parse(user);
   }
+
 }
 
 export default LoginService;
