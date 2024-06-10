@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import CuponService from '../services/CuponService';
-import CategoriaService from '../services/CategoriaService';
 
 export const CreateCuponComponent = ({ usuarioSesion }) => {
     const cuponService = new CuponService();
