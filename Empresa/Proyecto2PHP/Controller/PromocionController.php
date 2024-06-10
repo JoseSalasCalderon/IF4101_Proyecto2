@@ -38,10 +38,9 @@ class PromocionController {
             $descuento = $_POST['descuento'];
             $fechaInicio = $_POST['fechaInicio'];
             $fechaFinalizacion = $_POST['fechaFinalizacion'];
-            $activa = true;
-            $activaCupon = $_POST['activaCupon'];
+            $activa = false;
 
-            $promocion = new Promocion(null, $idCupon, $descuento, $fechaInicio, $fechaFinalizacion, $activa, $activaCupon);
+            $promocion = new Promocion(null, $idCupon, $descuento, $fechaInicio, $fechaFinalizacion, $activa);
             $resultado = $this->promocionBusiness->crearPromocion($promocion);
             echo json_encode($resultado);
             http_response_code(201);
@@ -52,15 +51,14 @@ class PromocionController {
     public function actualizarPromocion() {
         if ($_POST['METHOD'] == 'PUT') {
             unset($_POST['METHOD']);
-            $idPromocion = $_POST['idPromocion'];
+            $idPromocion = $_GET['idPromocion'];
             $idCupon = $_POST['idCupon'];
             $descuento = $_POST['descuento'];
             $fechaInicio = $_POST['fechaInicio'];
             $fechaFinalizacion = $_POST['fechaFinalizacion'];
             $activa = $_POST['activa'];
-            $activaCupon = $_POST['activaCupon'];
 
-            $promocion = new Promocion($idPromocion, $idCupon, $descuento, $fechaInicio, $fechaFinalizacion, $activa, $activaCupon);
+            $promocion = new Promocion($idPromocion, $idCupon, $descuento, $fechaInicio, $fechaFinalizacion, $activa);
             $resultado = $this->promocionBusiness->actualizarPromocion($idPromocion, $promocion);
             echo json_encode($resultado);
             http_response_code(200);

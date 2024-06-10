@@ -1,9 +1,8 @@
-import { error } from 'jquery';
 import React, { useState } from 'react'
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import CuponService from '../services/CuponService';
 
-export const ModalCuponComponent = ({ isOpen, abrirCerrarModal, cupon, handleChange, cupones, actualizarCupones }) => {
+export const ModalCuponComponent = ({ isOpen, abrirCerrarModal, cupon, handleChange, cupones, categorias, actualizarCupones }) => {
     const [imagenCuponSeleccionada, setImagenCuponSeleccionada] = useState(null);
     const cuponService = new CuponService();
 
@@ -47,6 +46,20 @@ export const ModalCuponComponent = ({ isOpen, abrirCerrarModal, cupon, handleCha
             <ModalBody>
                 <div className="form-group">
                     <div className='mb-3'><strong>ID:</strong> {cupon?.idCupon}</div>
+                    <label>Categoría:</label>
+                    <select
+                        className="form-control"
+                        name="idCategoria"
+                        value={cupon.idCategoria}
+                        onChange={handleChange}
+                        required
+                    >
+                        {categorias.map(categoria => (
+                            <option key={categoria.idCategoria} value={categoria.idCategoria}>
+                                {categoria.nombreCategoria}
+                            </option>
+                        ))}
+                    </select>
                     <label>Código:</label>
                     <input
                         type="text"

@@ -1,7 +1,8 @@
 import React from 'react'
+import { CuponesComponent } from './CuponesComponent'
 
 export const HomeUserComponent = ({ usuarioSesion }) => {
   return (
-    <div>HomeUserComponent {usuarioSesion.nombreUsuario}</div>
+    <CuponesComponent usuarioSesion={usuarioSesion}></CuponesComponent>
   )
 }

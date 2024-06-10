@@ -10,8 +10,8 @@ class AdministradorController {
     }
 
     public function loginUsuarioAdministrador() {
-        if (isset($_GET['nombreUsuario']) && isset($_GET['contrasenna'])) {
-            $resultado = $this->administradorBusiness->loginUsuarioAdministrador($_GET['nombreUsuario'], $_GET['contrasenna']);
+        if ($_POST['METHOD']=='POST') {
+            $resultado = $this->administradorBusiness->loginUsuarioAdministrador($_POST['nombreUsuario'], $_POST['contrasenna']);
             echo json_encode($resultado);
         }else {
             echo json_encode(null);

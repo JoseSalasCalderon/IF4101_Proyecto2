@@ -10,7 +10,11 @@ class LoginService {
   async login(nombreUsuario, contrasenna) {
     try {
       // Se verifica si es un usario administrador
-      const responseAdmin = await axios.get(`${this.urlAdmin}&nombreUsuario=${nombreUsuario}&contrasenna=${contrasenna}`);
+      const formData = new FormData();
+      formData.append('nombreUsuario', nombreUsuario);
+      formData.append('contrasenna', contrasenna);
+      formData.append('METHOD', 'POST');
+      const responseAdmin = await axios.post(`${this.urlAdmin}`, formData);
       // Guardamos variable nueva porquen es any
       if (responseAdmin.data) {
         responseAdmin.data.isAdmin = true;
@@ -18,10 +22,11 @@ class LoginService {
         return responseAdmin.data;
       } else {
         // De lo contrario, se verifica si es un usario de empresa
-        const responseUser = await axios.get(`${this.urlUser}&nombreUsuario=${nombreUsuario}&contrasenna=${contrasenna}`);
+        const responseUser = await axios.post(`${this.urlUser}`, formData);
         if (responseUser.data) {
           const user = {
             nombreUsuario: responseUser.data.nombreUsuario
+            , nombreEmpresa: responseUser.data.nombreEmpresa
             , contrasenna: responseUser.data.contrasenna
             , primeraVez: responseUser.data.primeraVez
             , isAdmin: false
@@ -48,6 +53,7 @@ class LoginService {
     const user = sessionStorage.getItem('usuarioSesion');
     return JSON.parse(user);
   }
+
 }
 
 export default LoginService;
