@@ -18,7 +18,7 @@ export const NavUser = ({ usuarioSesion, logoutApp }) => {
           </li>
         </ul>
         <div className='d-flex ml-auto align-items-center'>
-          <h5 className='nav-item mr-3 mb-0'>Usuario: {usuarioSesion.nombreUsuario}</h5>
+          <h6 className='nav-item mr-3 mb-0'>Usuario: {usuarioSesion.nombreUsuario}</h6>
           <button className="nav-item navButton btn btn-danger my-2 my-sm-0" onClick={logoutApp}>Cerrar Sesión</button>
         </div>      
       </div>
