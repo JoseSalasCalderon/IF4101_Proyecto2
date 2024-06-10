@@ -30,23 +30,56 @@ export const CreateUserComponent = () => {
         setUsuarioNuevo(prevState => ({ ...prevState, [name]: value }));
     };
 
+    const validarCampos = () => {
+        const regexNombreEmpresaDireccion = /^.{1,200}$/;
+        const regexCedulaFisica = /^\d{2}-\d{4}-\d{4}$/;
+        const regexCedulaJuridica = /^\d{2}-\d{3}-\d{6}$/;
+        const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const regexContrasenna = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+        const regexTelefono = /^\d{4}-\d{4}$/;
+
+        if (!regexNombreEmpresaDireccion.test(usuarioNuevo.nombreEmpresa)) {
+            alert('Nombre de la empresa debe tener hasta 200 caracteres.');
+            return false;
+        }
+        if (!regexContrasenna.test(usuarioNuevo.contrasenna)) {
+            alert('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
+            return false;
+        }
+        if (!regexNombreEmpresaDireccion.test(usuarioNuevo.direccion)) {
+            alert('Dirección debe tener hasta 200 caracteres.');
+            return false;
+        }
+        if (!(regexCedulaFisica.test(usuarioNuevo.cedulaFisicaOJuridica) || regexCedulaJuridica.test(usuarioNuevo.cedulaFisicaOJuridica))) {
+            alert('Cédula debe cumplir con el formato adecuado.');
+            return false;
+        }
+        if (!regexCorreo.test(usuarioNuevo.correo)) {
+            alert('Correo electrónico no tiene un formato válido.');
+            return false;
+        }
+        if (!regexTelefono.test(usuarioNuevo.telefono)) {
+            alert('Teléfono debe cumplir con el formato 0000-0000.');
+            return false;
+        }
+        return true;
+    };
+
     const crearUsuario = (e) => {
         e.preventDefault();
-        if (usuarioNuevo.contrasenna !== "") {
+        if (validarCampos()) {
             usuarioSerivce.crearUsuarioEmpresa(usuarioNuevo)
             .then(response => {
                 if (response) {
-                    alert("El usuario "+usuarioNuevo.nombreEmpresa+" ha sido creado.!");
+                    alert("El usuario " + usuarioNuevo.nombreEmpresa + " ha sido creado.!");
                     volverAtras();
-                }else{
+                } else {
                     alert("El usuario no se pudo crear");
                 }
             })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error);
-            })
-        }else {
-            alert("Debe generar una contrasenna");
+            });
         }
     };
 
