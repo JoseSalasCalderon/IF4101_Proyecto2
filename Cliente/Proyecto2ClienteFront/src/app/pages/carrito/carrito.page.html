@@ -26,10 +26,11 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-button ion-text="Comprar" (click)="pasarACompra()">Comprar</ion-button>
+    
     <!-- Mensaje si no hay cupones en el carrito -->
-    <div *ngIf="carrito.length === 0">
+    <div class="no-cupones" *ngIf="carrito.length === 0">
       <p>No hay cupones en el carrito.</p>
     </div>
+    <ion-button *ngIf="carrito.length > 0" ion-text="Comprar" (click)="pasarACompra()">Comprar</ion-button>
   </div>
 </ion-content>

@@ -16,4 +16,13 @@ ion-button[ion-text="Comprar"] {
       margin: 0 5px;
     }
   }
+
+  .no-cupones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px; // Opcional: Añadir un poco de padding para el texto
+  }
   

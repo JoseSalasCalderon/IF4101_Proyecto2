@@ -39,6 +39,7 @@ export class UsuarioService {
 
   cerrarSesion() {
     sessionStorage.removeItem('usuarioSesion');
+    sessionStorage.removeItem('carrito');
     this.usuarioSesionSubject.next(false); // Emite un evento indicando que se ha cerrado sesión
   }
 

@@ -44,7 +44,12 @@ export class CarritoPage implements OnInit {
   }
 
   pasarACompra(): void {
-    this.router.navigate(['/compra']);
+    const usuarioSesion = sessionStorage.getItem('usuarioSesion');
+    if (usuarioSesion) {
+      this.router.navigate(['/compra']);
+    } else {
+      this.router.navigate(['/usuario']);
+    }
   }
 
 }
