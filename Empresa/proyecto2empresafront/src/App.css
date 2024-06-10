@@ -179,6 +179,10 @@ footer a:hover {
   color: #FFF;
 }
 
+.navbar-toggler {
+  background-color: #a8c9ff;
+}
+
 .nav-link {
   color: #FFF;
 }
