@@ -104,7 +104,7 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
 
     return (
         <Modal isOpen={isOpen} toggle={cerrarModalYReiniciarContrasenna}>
-            <ModalHeader toggle={cerrarModalYReiniciarContrasenna}>Editar Usuario</ModalHeader>
+            <ModalHeader className="custom-modal-header" toggle={cerrarModalYReiniciarContrasenna}>Editar Usuario</ModalHeader>
             <ModalBody>
                 <div className="form-group">
                     <div className='mb-3'><strong>Nombre de Usuario:</strong> {usuarioEmpresa?.nombreUsuario}</div>

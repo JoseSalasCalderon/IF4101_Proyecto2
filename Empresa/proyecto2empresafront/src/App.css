@@ -3,6 +3,22 @@ body {
   background-color: #001940;
 }
 
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  margin-left: 5px;
+}
+
+
+.custom-modal-header {
+  background-color: #001940;
+  color: #FFF;
+}
+
+.custom-modal-header .btn-close{
+  background-color: #61dafb;
+}
+
 .table-responsive {
   max-height: 35em;
 }

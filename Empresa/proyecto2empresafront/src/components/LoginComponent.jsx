@@ -10,7 +10,11 @@ export const LoginComponent = ({ loginApp }) => {
         try {
             const loginService = new LoginService();
             const usuarioObtenido = await loginService.login(nombreUsuario, contrasenna);
-            loginApp(usuarioObtenido);
+            if (usuarioObtenido) {
+                loginApp(usuarioObtenido);
+            }else {
+                alert("Credenciales incorrectas.");
+            }
         } catch (error) {
             alert("Hi"+error);
         }

@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom';
 export const NavUser = ({ usuarioSesion, logoutApp }) => {
   return (
     <nav className="navbar navbar-expand-lg">
-      {/* <Link className="navbar-brand" to="/">TicketsFacil</Link> */}
+      <a className="navbar-brand" href="/homeUser">
+        <img 
+          src="https://res.cloudinary.com/dqpootcvr/image/upload/v1718083665/mg9ywwrik93uz5pqnmwj.webp" 
+          alt="Logo" 
+          className="navbar-logo"
+        />
+      </a> 
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
