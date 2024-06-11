@@ -31,7 +31,7 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
         const dia = String(fechaHoy.getDate()).padStart(2, '0');
         const mes = String(fechaHoy.getMonth() + 1).padStart(2, '0');
         const anno = fechaHoy.getFullYear();
-        return `${dia}/${mes}/${anno}`;
+        return `${anno}-${mes}-${dia}`;
     };
 
     useEffect(() => {
@@ -69,7 +69,12 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
 
     const crearCupon = (e) => {
         e.preventDefault();
+        console.log(cuponNuevo.fechaCreacion);
+            console.log(cuponNuevo.fechaInicio);
+            console.log(cuponNuevo.fechaFinalizacion);
+
         if (imagenCuponSeleccionada) {
+            
             cuponService.crearCupon(imagenCuponSeleccionada, cuponNuevo)
             .then(response => {
                 if (response) {
