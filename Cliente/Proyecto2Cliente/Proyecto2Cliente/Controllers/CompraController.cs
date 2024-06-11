@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Proyecto2.BC.Modelos;
 using Proyecto2.BW.CU;
+using Proyecto2.BW.Interfaces.BW;
 using Proyecto2.BW.Interfaces.DA;
 using Proyecto2.DA.Acciones;
 
@@ -11,11 +12,11 @@ namespace Proyecto2Cliente.Controllers
     [ApiController]
     public class CompraController : ControllerBase
     {
-        private readonly IGestionarCompraDA gestionarCompraDA;
+        private readonly IGestionarCompraBW gestionarCompraBW;
 
-        public CompraController(IGestionarCompraDA gestionarCompraDA)
+        public CompraController(IGestionarCompraBW gestionarCompraBW)
         {
-            this.gestionarCompraDA = gestionarCompraDA;
+            this.gestionarCompraBW = gestionarCompraBW;
         }
 
         [HttpPost]
@@ -27,7 +28,7 @@ namespace Proyecto2Cliente.Controllers
                 return BadRequest("Compra es null.");
             }
 
-            var nuevaCompra = await gestionarCompraDA.crearCompra(compra);
+            var nuevaCompra = await gestionarCompraBW.CrearCompra(compra);
             return Ok(nuevaCompra);
         }
 
@@ -37,7 +38,7 @@ namespace Proyecto2Cliente.Controllers
         {
             try
             {
-                var compras = await gestionarCompraDA.ObtenerComprasPorUsuario(cedula);
+                var compras = await gestionarCompraBW.ObtenerComprasPorUsuario(cedula);
                 if (compras == null || compras.Count == 0)
                 {
                     return NotFound($"No se encontraron compras para el usuario con cédula: {cedula}");
@@ -57,7 +58,7 @@ namespace Proyecto2Cliente.Controllers
         {
             try
             {
-                var result = await gestionarCompraDA.ObtenerCompraConDatosCupon(cedula);
+                var result = await gestionarCompraBW.ObtenerCompraConDatosCupon(cedula);
                 if (result == null || result.Count == 0)
                 {
                     return NotFound($"No se encontraron compras con cupones para el usuario con cédula: {cedula}");
@@ -69,6 +70,12 @@ namespace Proyecto2Cliente.Controllers
             {
                 return StatusCode(500, $"Error al obtener las compras con cupones del usuario: {ex.Message}");
             }
+        }
+
+        [HttpGet("buscarIdDisponible")]
+        public async Task<int> buscarIdDisponible()
+        {
+            return await gestionarCompraBW.buscarIdDisponible();
         }
     }
 }

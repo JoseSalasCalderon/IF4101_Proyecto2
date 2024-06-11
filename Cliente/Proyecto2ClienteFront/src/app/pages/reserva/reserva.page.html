@@ -5,29 +5,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-card *ngFor="let compra of comprasConDatosCupon">
-    <ion-card-header>
-      <ion-card-title>Compra: {{ compra.idCompra }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-row>
-        <ion-col size="6">
-          <p>Cédula: {{ compra.cedula }}</p>
-          <p>Precio Total: ₡{{ compra.precioTotal }}</p>
-          <p>Descuento Final: ₡{{ compra.descuentoFinal }}</p>
-        </ion-col>
-        <ion-col size="6">
-          <p>Ubicación: {{ compra.ubicacion }}</p>
-          <p>Empresa: {{ compra.empresa }}</p>
-          <p>Cantidad: {{ compra.cantidad }}</p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12">
-          <p>Imagen Representativa:</p>
-          <ion-img [src]="compra.imagenRepresentativa"></ion-img>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
+  <div class="cards-container">
+    <ion-card *ngFor="let compra of comprasAgrupadas" class="custom-card">
+      <ion-img src="assets/icon/Gracias.png" alt="Imagen de Cédula" class="card-header-image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Compra: {{ compra.idCompra }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="12" class="card-info">
+            <h3>Información de Compra</h3>
+            <p><strong>Cédula:</strong> {{ compra.cedula }}</p>
+            <p><strong>Precio Total:</strong> ₡{{ compra.precioTotal }}</p>
+            <p><strong>Descuento Final:</strong> ₡{{ compra.descuentoFinal }}</p>
+            
+            <div *ngFor="let cupon of compra.cupones" class="cupon-section">
+              <hr> <!-- Separador -->
+              <h4>Información del Cupón: {{ cupon.idCupon }}</h4>
+              <ion-img [src]="cupon.imagenRepresentativa" alt="Imagen Representativa"></ion-img>
+              <p><strong>Ubicación:</strong> {{ cupon.ubicacion }}</p>
+              <p><strong>Empresa:</strong> {{ cupon.empresa }}</p>
+              <p><strong>Cantidad:</strong> {{ cupon.cantidad }}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

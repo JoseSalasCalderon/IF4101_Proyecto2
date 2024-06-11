@@ -118,7 +118,9 @@ class CuponData {
         $query = "SELECT 
                     c.idCupon
                     , c.idCategoria
+                    , ca.nombreCategoria
                     , c.nombreUsuario
+                    , u.nombreEmpresa
                     , c.codigo
                     , c.nombre
                     , c.precio
@@ -129,31 +131,17 @@ class CuponData {
                     , c.fechaInicio
                     , c.fechaFinalizacion
                     , c.activo
-                FROM Cupon c
-                WHERE c.activo = 1";
+                  FROM Cupon c
+                  JOIN usuario AS u
+                    ON c.nombreUsuario = u.nombreUsuario
+                      JOIN categoria AS ca
+                        ON c.idCategoria = ca.idCategoria
+                  WHERE c.activo = 1";
         $sentencia = $this->pdo->prepare($query);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute();
-        $cupones = [];
-        while ($cuponData = $sentencia->fetch()) {
-            $cupon = new Cupon(
-              $cuponData['idCupon'],
-              $cuponData['idCategoria'],
-              $cuponData['nombreUsuario'],
-              $cuponData['codigo'],
-              $cuponData['nombre'],
-              $cuponData['precio'],
-              $cuponData['descuento'],
-              $cuponData['ubicacion'],
-              $cuponData['imagenRepresentativa'],
-              $cuponData['fechaCreacion'],
-              $cuponData['fechaInicio'],
-              $cuponData['fechaFinalizacion'],
-              $cuponData['activo']
-            );
-            $cupones[] = $cupon;
-          }
-        return $cupones;
+       
+        return $sentencia->fetchAll();
     }
     
 }// Class

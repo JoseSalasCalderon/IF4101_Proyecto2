@@ -1,9 +1,17 @@
 <ion-app>
-  <ion-header>
+  <ion-header [translucent]="true">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
+      
+      <ion-buttons slot="end">
+        <ion-button (click)="redirigirACupon()">
+          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  
+      <ion-title>Facil Cupones</ion-title>
     </ion-toolbar>
   </ion-header>
 

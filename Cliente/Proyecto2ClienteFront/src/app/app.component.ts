@@ -24,4 +24,8 @@ export class AppComponent implements OnInit {
     this.usuarioService.cerrarSesion();
     this.router.navigate(['/home']);
   }
+
+  redirigirACupon() {
+    this.router.navigate(['/carrito']);
+  }
 }

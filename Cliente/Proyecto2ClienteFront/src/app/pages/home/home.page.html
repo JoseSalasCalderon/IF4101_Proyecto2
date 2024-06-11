@@ -15,16 +15,14 @@
       <ion-input [(ngModel)]="searchText" placeholder="Escribe para filtrar..."></ion-input>
     </ion-item>
     
-    <!-- Combo box para seleccionar el tipo de filtrado -->
-    <ion-item>
-      <ion-label>Filtrar por:</ion-label>
-      <ion-select [(ngModel)]="filterBy">
-        <ion-select-option value="none">Ninguno</ion-select-option>
-        <ion-select-option value="1">Deportes</ion-select-option>
-        <ion-select-option value="2">Comida</ion-select-option>
-        <ion-select-option value="3">Ropa</ion-select-option>
-      </ion-select>
-    </ion-item>
+   <!-- Combo box para seleccionar la categoría -->
+<ion-item>
+  <ion-label>Filtrar por:</ion-label>
+  <ion-select [(ngModel)]="filterBy">
+    <ion-select-option value="none">Ninguno</ion-select-option>
+    <ion-select-option *ngFor="let categoria of categorias" [value]="categoria.nombreCategoria">{{ categoria.nombreCategoria }}</ion-select-option>
+  </ion-select>
+</ion-item>
     
 
     <ion-grid *ngIf="filteredCupones.length > 0">
@@ -34,14 +32,10 @@
             <ion-img [src]="cupon.imagenRepresentativa" class="full-img"></ion-img>
             <ion-card-content>
               <p class="ion-text-center">{{cupon.ubicacion}}</p>
-              <p class="ion-text-center">{{cupon.nombreUsuario}}</p>
-              <!-- <p class="ion-text-center">{{cupon.idCategoria}}</p> -->
+              <p class="ion-text-center">{{cupon.nombreEmpresa}}</p>
               <p class="ion-text-center">{{cupon.precio}}</p>
               <ion-button expand="block" class="add-to-cart-button" fill="outline" shape="round" (click)="agregarAlCarrito(cupon)">
                 Agregar al carrito
-              </ion-button>
-              <ion-button expand="block" class="view-button" fill="outline" shape="round" (click)="redirigirACupon()">
-                Ver Carrito
               </ion-button>
             </ion-card-content>
           </ion-card>

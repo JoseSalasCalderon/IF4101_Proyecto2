@@ -7,13 +7,17 @@ import { Router } from '@angular/router';
   templateUrl: './carrito.page.html',
   styleUrls: ['./carrito.page.scss'],
 })
-export class CarritoPage implements OnInit {
+export class CarritoPage  {
 
   carrito: (Cupon & { cantidad: number })[] = [];
 
   constructor(private router: Router) { }
 
-    ngOnInit(): void {
+  ionViewWillEnter(): void {
+    this.cargarCarrito();
+  }
+
+  cargarCarrito(): void {
     const carritoData = sessionStorage.getItem('carrito');
     if (carritoData) {
       this.carrito = JSON.parse(carritoData);

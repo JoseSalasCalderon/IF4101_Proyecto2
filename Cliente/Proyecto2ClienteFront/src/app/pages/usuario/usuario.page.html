@@ -3,7 +3,6 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="login-container">
-    <!-- <ion-img src="/assets/icon/InicioSesion.png" class="login-icon"></ion-img> -->
     <div class="app-title">
       <h1>Facil Cupones</h1>
     </div>
@@ -12,6 +11,7 @@
       <ion-input #emailInput type="email" placeholder="Correo"></ion-input>
       <ion-input #passwordInput type="password" placeholder="Contraseña"></ion-input>
       <ion-button expand="block" class="login-button" type="button" (click)="login()">Iniciar sesión</ion-button>
+      <ion-button expand="block" class="login-button" type="button" (click)="registrar()">Registrarse</ion-button>
     </form>
     
   </div>

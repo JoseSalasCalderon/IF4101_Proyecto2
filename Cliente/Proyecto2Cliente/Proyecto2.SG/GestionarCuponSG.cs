@@ -41,9 +41,11 @@ namespace Proyecto2.SG
             {
                 Cupon cupon = new Cupon();
 
-       cupon.idCupon = int.Parse(jsonCupon.GetProperty("idCupon").GetString());
+                cupon.idCupon = int.Parse(jsonCupon.GetProperty("idCupon").GetString());
                 cupon.idCategoria = int.Parse(jsonCupon.GetProperty("idCategoria").GetString());
+                cupon.nombreCategoria = jsonCupon.TryGetProperty("nombreCategoria", out var nombreCategoria) ? nombreCategoria.GetString() : null;
                 cupon.nombreUsuario = jsonCupon.TryGetProperty("nombreUsuario", out var nombreUsuario) ? nombreUsuario.GetString() : null;
+                cupon.nombreEmpresa = jsonCupon.TryGetProperty("nombreEmpresa", out var nombreEmpresa) ? nombreEmpresa.GetString() : null;
                 cupon.codigo = jsonCupon.GetProperty("codigo").GetString();
                 cupon.nombre = jsonCupon.GetProperty("nombre").GetString();
                 cupon.precio = double.Parse(jsonCupon.GetProperty("precio").GetString(), CultureInfo.InvariantCulture);

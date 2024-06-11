@@ -12,5 +12,6 @@ namespace Proyecto2.BW.Interfaces.BW
         Task<Compra> CrearCompra(Compra compra);
         Task<List<Compra>> ObtenerComprasPorUsuario(string cedula);
         Task<List<CompraDatosCupon>> ObtenerCompraConDatosCupon(string cedula);
+        Task<int> buscarIdDisponible();
     }
 }

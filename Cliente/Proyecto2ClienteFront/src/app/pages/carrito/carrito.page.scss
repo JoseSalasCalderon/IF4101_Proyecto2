@@ -1,28 +1,32 @@
-ion-button[ion-text="Comprar"] {
-  margin-top: 20px;
-  align-items: center;
+.main-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 16px; /* Espacio entre los elementos */
 }
 
 .quantity-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  
-    ion-button {
-      margin: 0 5px;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Espacio entre los botones */
+}
 
-  .no-cupones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    text-align: center;
-    padding: 20px; // Opcional: Añadir un poco de padding para el texto
-  }
-  
+.full-img {
+  width: 100%;
+  height: auto;
+  max-height: 150px; /* Ajusta la altura según sea necesario */
+  object-fit: cover;
+}
+
+ion-card {
+  padding: 16px;
+}
+
+ion-row {
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+}
+
+ion-row:last-child {
+  border-bottom: none;
+}

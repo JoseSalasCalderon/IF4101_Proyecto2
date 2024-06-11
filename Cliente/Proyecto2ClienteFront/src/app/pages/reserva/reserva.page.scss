@@ -1,0 +1,53 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+}
+
+.custom-card {
+  --background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header-image {
+  width: 100px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto; 
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-info {
+  p {
+    margin: 0;
+    padding: 4px 0;
+    font-size: 0.9rem;
+  }
+  
+  p strong {
+    font-weight: bold;
+  }
+
+  h3, h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .cupon-section {
+    margin-top: 20px;
+
+    ion-img {
+      margin-top: 10px;
+      width: 100px; 
+      height: auto;
+      display: block;
+    }
+  }
+}

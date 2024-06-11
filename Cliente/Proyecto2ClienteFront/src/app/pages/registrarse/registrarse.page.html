@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="login-container">
+    <div class="app-title">
+      <h1>Registrarse</h1>
+    </div>
+
+    <form (ngSubmit)="confirmar()">
+      <ion-input [(ngModel)]="usuario.nombre" name="nombre" type="text" placeholder="Nombre"></ion-input> 
+      <ion-input [(ngModel)]="usuario.cedula" name="cedula" type="text" placeholder="Cedula"></ion-input> 
+      <ion-input [(ngModel)]="usuario.apellidos" name="apellidos" type="text" placeholder="Apellido"></ion-input>
+      <ion-input [(ngModel)]="usuario.fechaNacimiento" name="fechaNacimiento" type="date" placeholder="Fecha de Nacimiento"></ion-input>
+      <ion-input [(ngModel)]="usuario.correo" name="correo" type="email" placeholder="Correo"></ion-input>
+      <ion-input [(ngModel)]="usuario.contrasenna" name="contrasenna" type="password" placeholder="Contraseña"></ion-input>
+      <ion-button expand="block" class="login-button" type="submit">Confirmar</ion-button>
+      <ion-button expand="block" fill="outline" class="register-button" (click)="atras()">Atrás</ion-button>
+    </form>
+    
+  </div>
+</ion-content>

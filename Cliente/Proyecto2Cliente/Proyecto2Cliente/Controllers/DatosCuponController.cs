@@ -11,11 +11,11 @@ namespace Proyecto2Cliente.Controllers
     [ApiController]
     public class DatosCuponController : ControllerBase
     {
-        private readonly IGestionarDatosCuponDA gestionarDatosCuponDA;
+        private readonly IGestionarDatosCuponBW gestionarDatosCuponBW;
 
-        public DatosCuponController(IGestionarDatosCuponDA gestionarDatosCuponDA)
+        public DatosCuponController(IGestionarDatosCuponBW gestionarDatosCuponBW)
         {
-            this.gestionarDatosCuponDA = gestionarDatosCuponDA;
+            this.gestionarDatosCuponBW = gestionarDatosCuponBW;
         }
 
         [HttpPost]
@@ -27,7 +27,7 @@ namespace Proyecto2Cliente.Controllers
                 return BadRequest("DatosCupon es null.");
             }
 
-            var nuevoDatosCupon = await gestionarDatosCuponDA.crearDatosCupon(datosCupon);
+            var nuevoDatosCupon = await gestionarDatosCuponBW.crearDatosCupon(datosCupon);
             return Ok(nuevoDatosCupon);
         }
     }

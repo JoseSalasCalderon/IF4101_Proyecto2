@@ -30,7 +30,7 @@ export class UsuarioService {
 
   hayUsuarioEnSesion(): boolean {
     const usuarioSesion = sessionStorage.getItem('usuarioSesion');
-    return usuarioSesion !== null; // Retorna true si hay un usuario en sesión, false de lo contrario
+    return usuarioSesion !== null; // Retorna true si hay un usuario en sesión, false si no
   }
 
   iniciarSesion() {

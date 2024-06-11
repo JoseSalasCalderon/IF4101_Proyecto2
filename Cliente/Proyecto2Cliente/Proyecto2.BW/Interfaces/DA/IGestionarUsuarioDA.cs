@@ -11,5 +11,7 @@ namespace Proyecto2.BW.Interfaces.DA
     {
 
         Task<Usuario> buscarUsuario(string correo, string contrasenna);
+
+        Task<bool> registrarUsuario(Usuario usuario);
     }
 }

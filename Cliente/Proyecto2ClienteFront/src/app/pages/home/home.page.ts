@@ -2,6 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { CuponService } from 'src/app/services/cupon.service';
 import { Cupon } from 'src/app/services/cupon.service';
 import { Router } from '@angular/router';
+import { Categoria, CategoriaService } from 'src/app/services/categoria.service';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +12,27 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit, DoCheck {
 
   cupones: Cupon[] = [];
+  categorias: Categoria[] = [];
   filteredCupones: Cupon[] = [];
   searchText: string = '';
   filterBy: string = 'none';
 
-  constructor(private cuponService: CuponService, private router: Router) {}
+  constructor(
+    private cuponService: CuponService, 
+    private router: Router, 
+    private categoriaService: CategoriaService
+  ) {}
 
   ngOnInit(): void {
     this.cuponService.obtenerCupones().subscribe((cupones) => {
       this.cupones = cupones;
       this.filteredCupones = cupones;
       this.filtrarCupones(); 
+    });
+
+    // Cargar categorías
+    this.categoriaService.obtenerCategorias().subscribe((categorias) => {
+      this.categorias = categorias;
     });
   }
 
@@ -30,7 +41,7 @@ export class HomePage implements OnInit, DoCheck {
 
     // Filtro por categoría
     if (this.filterBy !== 'none') {
-      tempCupones = tempCupones.filter(cupon => cupon.idCategoria.toString() === this.filterBy);
+      tempCupones = tempCupones.filter(categoria => categoria.nombreCategoria === this.filterBy);
     }
 
     // Filtro por texto de búsqueda
@@ -63,9 +74,5 @@ export class HomePage implements OnInit, DoCheck {
     }
 
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
-  }
-
-  redirigirACupon() {
-    this.router.navigate(['/carrito']);
   }
 }

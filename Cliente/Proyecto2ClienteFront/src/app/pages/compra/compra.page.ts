@@ -53,68 +53,38 @@ export class CompraPage implements OnInit {
     await alert.present();
   }
 
+  validarCVV(cvv: string): boolean {
+    return /^\d{3}$/.test(cvv);
+  }
+
   async comprar() {
-    // Obtener datos del carrito desde sessionStorage
-    let carrito = JSON.parse(sessionStorage.getItem('carrito') || '[]');
-
-    // Obtener precio total y descuento final del carrito
-    let precioTotal = 0;
-    let descuentoFinal = 0;
-    for (let item of carrito) {
-      precioTotal += item.precio * item.cantidad;
-      descuentoFinal += item.descuento * item.cantidad;
+    // Valida que el nombre del tarjetahabiente solo contenga letras
+    if (!/^[a-zA-Z\s]+$/.test(this.tarjetaHabiente)) {
+      this.presentAlert('Error', 'El nombre del tarjetahabiente solo debe contener letras.');
+      return;
+}
+  
+    // Valida que la fecha de vencimiento no esté vacía
+    if (this.fechaVencimiento.trim() === '') {
+      this.presentAlert('Error', 'Debes ingresar la fecha de vencimiento.');
+      return;
     }
-
-    // Crear objeto de Compra
-    let compra: Compra = {
-      idCompra: 0,
-      cedula: '', // Aquí deberías obtener la cédula del usuario desde alguna fuente
-      precioTotal: precioTotal,
-      descuentoFinal: descuentoFinal,
-      tarjeta: this.numeroTarjeta // Supongo que aquí quieres guardar el número de tarjeta, ajusta según tus necesidades
-    };
-
-    // Insertar la compra en la base de datos
-    this.cuponService.crearCompra(compra).subscribe((response) => {
-      // Obtener el id de la compra creada
-      const idCompra = response.idCompra;
-
-      // Crear y insertar los datos de cupón asociados
-      for (let item of carrito) {
-        let datosCupon: DatosCupon = {
-          idCupon: item.idCupon,
-          idCompra: idCompra,
-          precio: item.precio,
-          descuento: item.descuento,
-          imagenRepresentativa: item.imagenRepresentativa,
-          ubicacion: item.ubicacion,
-          empresa: item.empresa,
-          categoria: item.categoria,
-          cantidad: item.cantidad
-        };
-
-        // Insertar los datos del cupón en la base de datos
-        this.cuponService.crearDatosCupon(datosCupon).subscribe(() => {
-          // Éxito al insertar datos del cupón
-        }, (error) => {
-          // Manejar errores al insertar datos del cupón
-          console.error('Error al insertar datos del cupón:', error);
-        });
-      }
-
-      // Limpiar el carrito en sessionStorage después de la compra
-      sessionStorage.removeItem('carrito');
-
-      // Mostrar alerta de compra exitosa
-      this.presentAlert('Compra exitosa', 'Su compra ha sido procesada correctamente.');
-
-      // Limpiar los campos del formulario después de la compra
-      this.limpiarCampos();
-    }, (error) => {
-      // Manejar errores al insertar la compra
-      console.error('Error al realizar la compra:', error);
-      this.presentAlert('Error', 'Ocurrió un error al procesar su compra. Por favor, inténtelo de nuevo más tarde.');
-    });
+  
+    // Valida el CVV
+    if (!this.validarCVV(this.cvv)) {
+      this.presentAlert('Error', 'El CVV debe tener exactamente 3 dígitos numéricos.');
+      return;
+    }
+  
+    // Valida el número de tarjeta
+    if (!this.validarNumeroTarjeta(this.numeroTarjeta)) {
+      this.presentAlert('Error', 'El número de tarjeta no es válido.');
+      return;
+    }
+  
+    // Si todas las validaciones pasan, puedes proceder con la compra
+    console.log('Compra exitosa');
+    this.limpiarCampos();
   }
 
   limpiarCampos() {

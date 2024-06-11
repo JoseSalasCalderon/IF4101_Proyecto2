@@ -32,5 +32,10 @@ namespace Proyecto2.BW.CU
         {
             return await gestionarCompraDA.ObtenerCompraConDatosCupon(cedula);
         }
+
+        public async Task<int> buscarIdDisponible()
+        {
+            return await gestionarCompraDA.buscarIdDisponible();
+        }
     }
 }

@@ -1,0 +1,79 @@
+ion-content {
+    --background: #ffffff; /* Fondo blanco para todo el contenido */
+  }
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .login-icon {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .app-title {
+      text-align: center;
+      margin-bottom: 20px;
+
+      h1 {
+        font-size: 24px;
+        color: #333;
+        margin: 0;
+        font-weight: bold;
+      }
+    }
+
+    .custom-item {
+      margin-bottom: 15px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2em;
+        width: 25%;
+      
+        ion-input {
+            --border-color: #ccc; 
+            --border-radius: 50px; 
+            --background: #f4f4f4; 
+            color: #484848;
+            --padding-start: 10px; 
+            --padding-end: 10px; 
+            --padding-top: 8px; 
+            --padding-bottom: 8px; 
+            width: 80%; 
+            margin-bottom: 10px; 
+          }
+          
+      
+        .login-button,
+        .register-button {
+          --border-radius: 50px; 
+          color: white; 
+          width: 80%; 
+          margin-bottom: 10px; 
+          height: 100%;
+        }
+        .register-button {
+            color: #716f6f;
+        }
+      }
+      
+  }
+
+  .login-container {
+  
+    form {
+  
+      @media (max-width: 768px) {
+        width: 100%; 
+      }
+    }
+  }
+  

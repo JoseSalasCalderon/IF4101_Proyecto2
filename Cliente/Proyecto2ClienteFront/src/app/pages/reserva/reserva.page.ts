@@ -1,38 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservaService, CompraDatosCupon } from 'src/app/services/reserva.service';
 
+interface CompraAgrupada {
+  idCompra: number;
+  cedula: string;
+  precioTotal: number;
+  descuentoFinal: number;
+  cupones: CompraDatosCupon[];
+}
+
 @Component({
   selector: 'app-reserva',
   templateUrl: './reserva.page.html',
   styleUrls: ['./reserva.page.scss'],
 })
 export class ReservaPage implements OnInit {
-  comprasConDatosCupon: CompraDatosCupon[] = [];
+  comprasAgrupadas: CompraAgrupada[] = [];
   mensajeNoReservas: string = '';
 
   constructor(private reservaService: ReservaService) { }
 
   ngOnInit(): void {
-    // Obtener el usuario en sesión del sessionStorage
     const usuarioSesionString = sessionStorage.getItem('usuarioSesion');
     
     if (usuarioSesionString) {
-      // Si la cadena del usuario en sesión está presente, convertirla a objeto JSON
       const usuarioSesion = JSON.parse(usuarioSesionString);
       
-      // Verificar que el objeto tenga una cédula válida
       if (usuarioSesion && usuarioSesion.cedula) {
-        // Si la cédula está presente en el usuario en sesión, llamar al servicio para obtener las compras con datos de cupón
         this.reservaService.obtenerCompraConDatosCupon(usuarioSesion.cedula)
           .subscribe((compras) => {
             if (compras.length === 0) {
-              // No hay reservas, establecer el mensaje personalizado
               this.mensajeNoReservas = 'No existen reservas asociadas a este usuario.';
             } else {
-              this.comprasConDatosCupon = compras;
+              this.comprasAgrupadas = this.agruparComprasPorId(compras);
             }
           }, (error) => {
-            console.error('Error al obtener las reservas:');
+            console.error('Error al obtener las reservas:', error);
           });
       } else {
         console.error('No se encontró la cédula del usuario en sesión.');
@@ -40,5 +43,24 @@ export class ReservaPage implements OnInit {
     } else {
       console.error('No se encontró ningún usuario en sesión.');
     }
+  }
+
+  agruparComprasPorId(compras: CompraDatosCupon[]): CompraAgrupada[] {
+    const agrupadas: { [key: number]: CompraAgrupada } = {};
+
+    compras.forEach((compra) => {
+      if (!agrupadas[compra.idCompra]) {
+        agrupadas[compra.idCompra] = {
+          idCompra: compra.idCompra,
+          cedula: compra.cedula,
+          precioTotal: compra.precioTotal,
+          descuentoFinal: compra.descuentoFinal,
+          cupones: []
+        };
+      }
+      agrupadas[compra.idCompra].cupones.push(compra);
+    });
+
+    return Object.values(agrupadas);
   }
 }

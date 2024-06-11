@@ -9,6 +9,8 @@ namespace Proyecto2.BC.Modelos
     public class CompraDatosCupon
     {
         public int idCompra { get; set; }
+
+        public int idCupon { get; set; }
         public string cedula { get; set; } = null!;
         public decimal PrecioTotal { get; set; }
         public decimal DescuentoFinal { get; set; }

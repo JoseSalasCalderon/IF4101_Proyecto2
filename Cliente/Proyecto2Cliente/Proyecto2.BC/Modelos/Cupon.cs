@@ -10,9 +10,12 @@ namespace Proyecto2.BC.Modelos
     {
         public int idCupon { get; set; }
         public int idCategoria { get; set; }
+
         public string? nombreUsuario { get; set; }
+        public string? nombreCategoria { get; set; }
         public string codigo { get; set; } = null!;
         public string nombre { get; set; } = null!;
+        public string? nombreEmpresa { get; set; }
         public double precio { get; set; }
         public double? descuento { get; set; }
         public string? ubicacion { get; set; }
