@@ -50,7 +50,7 @@ export class HomePage implements OnInit, DoCheck {
       tempCupones = tempCupones.filter(cupon => {
         return (
           (cupon.ubicacion ?? '').toLowerCase().includes(searchTextLower) ||
-          cupon.nombreUsuario.toLowerCase().includes(searchTextLower) ||
+          cupon.nombreEmpresa.toLowerCase().includes(searchTextLower) ||
           cupon.precio.toString().includes(searchTextLower)
         );
       });

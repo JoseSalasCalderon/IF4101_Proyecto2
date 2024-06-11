@@ -26,6 +26,8 @@ builder.Services.AddTransient<IGestionarDatosCuponBW, GestionarDatosCuponBW>();
 builder.Services.AddTransient<IGestionarDatosCuponDA, GestionarDatosCuponDA>();
 builder.Services.AddTransient<IGestionarCuponBW, GestionarCuponBW>();
 builder.Services.AddTransient<IGestionarCuponSG, GestionarCuponSG>();
+builder.Services.AddTransient<IGestionarCategoriaBW, GestionarCategoriaBW>();
+builder.Services.AddTransient<IGestionarCategoriaSG, GestionarCategoriaSG>();
 
 //Conexión a BD
 builder.Services.AddDbContext<Proyecto2Context>(options =>

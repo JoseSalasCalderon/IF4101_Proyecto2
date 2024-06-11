@@ -12,7 +12,7 @@ export interface Categoria {
 })
 export class CategoriaService {
 
-  private categoriasUrl = 'http://localhost/Proyecto2PHP/?controller=Categoria&action=listarCategorias';
+  private categoriasUrl = 'https://localhost:7272/api/Categoria';
 
   constructor(private http: HttpClient) { }
 
