@@ -9,7 +9,7 @@ export const FooterComponent = () => {
             <a href="https://twitter.com/?lang=es">X</a> |
             <a href="https://www.instagram.com/">Instagram</a>
         </div>
-        <p>Derechos de autor &copy; 2024 Tickets Fácil</p>
+        <p>Derechos de autor &copy; 2024 Fácil Cupones</p>
     </footer>
   )
 }

@@ -32,37 +32,31 @@ export const CuponesComponent = ({ usuarioSesion }) => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    if (usuarioSesion.isAdmin) {
-      cuponService.obtenerCuponesPorEmpresa(empresa.nombreUsuario)
-      .then(responseCupones => {
-        categoariaService.obtenerCategorias()
-        .then(responseCategorias => {
+    categoariaService.obtenerCategorias()
+    .then(responseCategorias => {
+        if (usuarioSesion.isAdmin) {
+          cuponService.obtenerCuponesPorEmpresa(empresa.nombreUsuario)
+          .then(responseCupones => {
             setCupones(responseCupones);
-            setCategorias(responseCategorias);
-        })
-        .catch(error=>{
+          })
+          .catch(error=>{
             console.log(error);
-        });
-      })
-      .catch(error=>{
-        console.log(error);
-      })
-    }else{
-      cuponService.obtenerCuponesPorEmpresa(usuarioSesion.nombreUsuario)
-      .then(responseCupones => {
-        categoariaService.obtenerCategorias()
-        .then(responseCategorias => {
+          })
+        }else{
+          cuponService.obtenerCuponesPorEmpresa(usuarioSesion.nombreUsuario)
+          .then(responseCupones => {
             setCupones(responseCupones);
-            setCategorias(responseCategorias);
-        })
-        .catch(error=>{
+          })
+          .catch(error=>{
             console.log(error);
-        });
-      })
-      .catch(error=>{
+          })
+        }
+        setCategorias(responseCategorias);
+    })
+    .catch(error=>{
         console.log(error);
-      })
-    }
+    });
+    
   }, []);
 
   const handleChange = (e) => {

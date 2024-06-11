@@ -42,7 +42,7 @@ export const ModalCuponComponent = ({ isOpen, abrirCerrarModal, cupon, handleCha
 
     return (
         <Modal isOpen={isOpen} toggle={abrirCerrarModal}>
-            <ModalHeader toggle={abrirCerrarModal}>Editar Cupón</ModalHeader>
+            <ModalHeader className="custom-modal-header" toggle={abrirCerrarModal}>Editar Cupón</ModalHeader>
             <ModalBody>
                 <div className="form-group">
                     <div className='mb-3'><strong>ID:</strong> {cupon?.idCupon}</div>

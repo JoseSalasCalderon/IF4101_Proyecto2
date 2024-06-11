@@ -3,6 +3,22 @@ body {
   background-color: #001940;
 }
 
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  margin-left: 5px;
+}
+
+
+.custom-modal-header {
+  background-color: #001940;
+  color: #FFF;
+}
+
+.custom-modal-header .btn-close{
+  background-color: #61dafb;
+}
+
 .table-responsive {
   max-height: 35em;
 }
@@ -177,6 +193,10 @@ footer a:hover {
   padding: 0.3em;
   margin-right: 0.5em;
   color: #FFF;
+}
+
+.navbar-toggler {
+  background-color: #a8c9ff;
 }
 
 .nav-link {

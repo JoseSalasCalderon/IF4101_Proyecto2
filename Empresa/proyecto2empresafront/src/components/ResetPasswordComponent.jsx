@@ -8,30 +8,44 @@ export const ResetPasswordComponent = ({ usuarioSesion, logoutApp }) => {
     const userService = new UserService();
 
     const cambiarContrasenna = () => {
-        
-        // FALTA VALIDAR LOS CAMPOS
-
-        if (contrasennaNueva === contrasennaNuevaConfirmation) {
-            if (contrasennaNueva !== usuarioSesion.contrasenna) {
-                userService.cambiarContrasennaUsuarioEmpresa(usuarioSesion.nombreUsuario, contrasennaNueva)
-                .then(response => {
-                    if (response) {
-                        alert("La contraseña se ha cambiado con éxito!");
-                        logoutApp();
-                    }else {
-                        alert("No se ha podido actualizar la contraseña");
-                    }
-                })
-                .catch(error=>{
-                    console.log(error);
-                });
+        if (validarCampos()) {
+            if (contrasennaNueva === contrasennaNuevaConfirmation) {
+                if (contrasennaNueva !== usuarioSesion.contrasenna) {
+                    userService.cambiarContrasennaUsuarioEmpresa(usuarioSesion.nombreUsuario, contrasennaNueva)
+                    .then(response => {
+                        if (response) {
+                            alert("La contraseña se ha cambiado con éxito!");
+                            logoutApp();
+                        }else {
+                            alert("No se ha podido actualizar la contraseña");
+                        }
+                    })
+                    .catch(error=>{
+                        console.log(error);
+                    });
+                }else {
+                    alert("La contraseña debe ser distinta a la actual");
+                }
             }else {
-                alert("La contraseña debe ser distinta a la actual");
+                alert("Debe confiormar su contraseña");
             }
-        }else {
-            alert("Debe confiormar su contraseña");
         }
     }
+
+    const validarCampos = () => {
+        const validarContrasenna = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+
+        if (!validarContrasenna.test(contrasennaNueva)) {
+            alert('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
+            return false;
+        }
+
+        if (!validarContrasenna.test(contrasennaNuevaConfirmation)) {
+            alert('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
+            return false;
+        }
+        return true;
+    };
 
     return (
        <div className="container mt-5">
