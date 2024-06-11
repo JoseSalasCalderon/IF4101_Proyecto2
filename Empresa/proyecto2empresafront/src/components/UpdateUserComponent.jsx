@@ -41,18 +41,55 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
 
     const actualizarUsuario = (e) => {
         e.preventDefault();
-        userService.actualizarUsuarioEmpresa(usuarioActual)
-        .then(response => {
-            if (response) {
-                alert("Su información ha sido actualizada con éxito!");
-                volverAtras();
-            } else {
-                alert("No se pudo actualizar la información.");
-            }
-        })
-        .catch(error => {
-            console.error('Error al actualizar la información:', error);
-        });
+        if (validarCampos()) {
+            userService.actualizarUsuarioEmpresa(usuarioActual)
+            .then(response => {
+                if (response) {
+                    alert("Su información ha sido actualizada con éxito!");
+                    volverAtras();
+                } else {
+                    alert("No se pudo actualizar la información.");
+                }
+            })
+            .catch(error => {
+                console.error('Error al actualizar la información:', error);
+            });
+        }
+    };
+
+    const validarCampos = () => {
+        const validarNombreEmpresaDireccion = /^.{0,200}$/;
+        const validarCedulaFisica = /^\d{2}-\d{4}-\d{4}$/;
+        const validarCedulaJuridica = /^\d{2}-\d{3}-\d{6}$/;
+        const validarCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const validarContrasenna = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+        const validarTelefono = /^\d{4}-\d{4}$/;
+
+        if (!validarNombreEmpresaDireccion.test(usuarioActual.nombreEmpresa)) {
+            alert('Nombre de la empresa debe tener hasta 200 caracteres.');
+            return false;
+        }
+        if (!validarContrasenna.test(usuarioActual.contrasenna)) {
+            alert('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
+            return false;
+        }
+        if (!validarNombreEmpresaDireccion.test(usuarioActual.direccion)) {
+            alert('Dirección debe tener hasta 200 caracteres.');
+            return false;
+        }
+        if (!(validarCedulaFisica.test(usuarioActual.cedulaFisicaOJuridica) || validarCedulaJuridica.test(usuarioActual.cedulaFisicaOJuridica)) && usuarioActual.cedulaFisicaOJuridica !== '') {
+            alert('Cédula debe cumplir con el formato adecuado.');
+            return false;
+        }
+        if (!validarCorreo.test(usuarioActual.correo)  && usuarioActual.correo !== '') {
+            alert('Correo electrónico no tiene un formato válido.');
+            return false;
+        }
+        if (!validarTelefono.test(usuarioActual.telefono)  && usuarioActual.telefono !== '') {
+            alert('Teléfono debe cumplir con el formato 0000-0000.');
+            return false;
+        }
+        return true;
     };
 
     return (

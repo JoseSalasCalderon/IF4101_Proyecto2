@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{6ACCD80A-F6BC-4B5B-BBB5-121C2C0E3430}|Proyecto2Cliente\\Proyecto2Cliente.csproj|solutionrelative:proyecto2cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|e:\\documentos\\iciclo2024\\lenguajes\\proyecto-2\\desarrollo\\if4101_proyecto2\\cliente\\proyecto2cliente\\proyecto2.bw\\interfaces\\da\\igestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\proyecto2.bw\\interfaces\\da\\igestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CAED7F4-C4F2-47D3-B5CD-D3D03483025D}|Proyecto2.BW\\Proyecto2.BW.csproj|solutionrelative:proyecto2.bw\\interfaces\\da\\igestionarcomprada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "Proyecto2Cliente\\Program.cs",
               "ToolTip": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Program.cs",
               "RelativeToolTip": "Proyecto2Cliente\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAArAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T02:18:13.52Z",
               "EditorCaption": ""
@@ -111,8 +111,7 @@
               "RelativeToolTip": "Proyecto2.BW\\Interfaces\\DA\\IGestionarCompraDA.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T01:06:47.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T01:06:47.916Z"
             },
             {
               "$type": "Document",

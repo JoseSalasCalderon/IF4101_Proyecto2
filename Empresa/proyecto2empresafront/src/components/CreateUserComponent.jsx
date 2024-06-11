@@ -31,35 +31,15 @@ export const CreateUserComponent = () => {
     };
 
     const validarCampos = () => {
-        const regexNombreEmpresaDireccion = /^.{1,200}$/;
-        const regexCedulaFisica = /^\d{2}-\d{4}-\d{4}$/;
-        const regexCedulaJuridica = /^\d{2}-\d{3}-\d{6}$/;
-        const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const regexContrasenna = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
-        const regexTelefono = /^\d{4}-\d{4}$/;
+        const validarNombreEmpresaDireccion = /^.{1,200}$/;
+        const validarContrasenna = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
 
-        if (!regexNombreEmpresaDireccion.test(usuarioNuevo.nombreEmpresa)) {
+        if (!validarNombreEmpresaDireccion.test(usuarioNuevo.nombreEmpresa)) {
             alert('Nombre de la empresa debe tener hasta 200 caracteres.');
             return false;
         }
-        if (!regexContrasenna.test(usuarioNuevo.contrasenna)) {
+        if (!validarContrasenna.test(usuarioNuevo.contrasenna)) {
             alert('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
-            return false;
-        }
-        if (!regexNombreEmpresaDireccion.test(usuarioNuevo.direccion)) {
-            alert('Dirección debe tener hasta 200 caracteres.');
-            return false;
-        }
-        if (!(regexCedulaFisica.test(usuarioNuevo.cedulaFisicaOJuridica) || regexCedulaJuridica.test(usuarioNuevo.cedulaFisicaOJuridica))) {
-            alert('Cédula debe cumplir con el formato adecuado.');
-            return false;
-        }
-        if (!regexCorreo.test(usuarioNuevo.correo)) {
-            alert('Correo electrónico no tiene un formato válido.');
-            return false;
-        }
-        if (!regexTelefono.test(usuarioNuevo.telefono)) {
-            alert('Teléfono debe cumplir con el formato 0000-0000.');
             return false;
         }
         return true;

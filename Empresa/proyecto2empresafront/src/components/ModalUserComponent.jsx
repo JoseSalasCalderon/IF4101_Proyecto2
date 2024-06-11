@@ -18,22 +18,24 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
             fechaCreacion: usuarioEmpresa.fechaCreacion === '' ? '0000-00-00' : usuarioEmpresa.fechaCreacion
         };
 
-        setGenerarContrasenna(false);
+        if (validarCampos()) {
+            setGenerarContrasenna(false);
 
-        userService.actualizarUsuarioEmpresa(usuarioParaActualizar)
-        .then(() => {
-            const usuariosActualizados = usuarios.map(usuarioMap => {
-                if (usuarioMap.nombreUsuario === usuarioEmpresa.nombreUsuario) {
-                    return { ...usuarioMap, ...usuarioEmpresa };
-                }
-                return usuarioMap;
+            userService.actualizarUsuarioEmpresa(usuarioParaActualizar)
+            .then(() => {
+                const usuariosActualizados = usuarios.map(usuarioMap => {
+                    if (usuarioMap.nombreUsuario === usuarioEmpresa.nombreUsuario) {
+                        return { ...usuarioMap, ...usuarioEmpresa };
+                    }
+                    return usuarioMap;
+                });
+                actualizarUsuarios(usuariosActualizados);
+                abrirCerrarModal();
+            })
+            .catch(error => {
+                console.log(error);
             });
-            actualizarUsuarios(usuariosActualizados);
-            abrirCerrarModal();
-        })
-        .catch(error => {
-            console.log(error);
-        });
+        }
     };
 
     const generateRandomPassword = () => {
@@ -58,6 +60,41 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
         password = password.split('').sort(() => 0.5 - Math.random()).join('');
         setGenerarContrasenna(true);
         handleChange({ target: { name: 'contrasenna', value: password } });
+    };
+
+    const validarCampos = () => {
+        const validarNombreEmpresaDireccion = /^.{0,200}$/;
+        const validarCedulaFisica = /^\d{2}-\d{4}-\d{4}$/;
+        const validarCedulaJuridica = /^\d{2}-\d{3}-\d{6}$/;
+        const validarCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const validarContrasenna = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+        const validarTelefono = /^\d{4}-\d{4}$/;
+
+        if (!validarNombreEmpresaDireccion.test(usuarioEmpresa.nombreEmpresa)) {
+            alert('Nombre de la empresa debe tener hasta 200 caracteres.');
+            return false;
+        }
+        if (generarContrasenna && !validarContrasenna.test(usuarioEmpresa.contrasenna)) {
+            alert('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
+            return false;
+        }
+        if (!validarNombreEmpresaDireccion.test(usuarioEmpresa.direccion)) {
+            alert('Dirección debe tener hasta 200 caracteres.');
+            return false;
+        }
+        if (!(validarCedulaFisica.test(usuarioEmpresa.cedulaFisicaOJuridica) || validarCedulaJuridica.test(usuarioEmpresa.cedulaFisicaOJuridica)) && usuarioEmpresa.cedulaFisicaOJuridica !== '') {
+            alert('Cédula debe cumplir con el formato adecuado.');
+            return false;
+        }
+        if (!validarCorreo.test(usuarioEmpresa.correo)  && usuarioEmpresa.correo !== '') {
+            alert('Correo electrónico no tiene un formato válido.');
+            return false;
+        }
+        if (!validarTelefono.test(usuarioEmpresa.telefono)  && usuarioEmpresa.telefono !== '') {
+            alert('Teléfono debe cumplir con el formato 0000-0000.');
+            return false;
+        }
+        return true;
     };
 
     const cerrarModalYReiniciarContrasenna = () => {
