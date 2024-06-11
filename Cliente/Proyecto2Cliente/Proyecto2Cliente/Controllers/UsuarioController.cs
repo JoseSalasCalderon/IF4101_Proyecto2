@@ -21,5 +21,11 @@ namespace Proyecto2Cliente.Controllers
         {
             return await gestionarUsuarioBW.buscarUsuario(correo, contrasenna);
         }
+
+        [HttpPost("RegistrarUsuario")]
+        public async Task<bool> registrarUsuario(Usuario usuario)
+        {
+            return await gestionarUsuarioBW.registrarUsuario(usuario);
+        }
     }
 }

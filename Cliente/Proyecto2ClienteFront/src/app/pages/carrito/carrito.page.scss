@@ -1,0 +1,32 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espacio entre los elementos */
+}
+
+.quantity-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Espacio entre los botones */
+}
+
+.full-img {
+  width: 100%;
+  height: auto;
+  max-height: 150px; /* Ajusta la altura según sea necesario */
+  object-fit: cover;
+}
+
+ion-card {
+  padding: 16px;
+}
+
+ion-row {
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+}
+
+ion-row:last-child {
+  border-bottom: none;
+}

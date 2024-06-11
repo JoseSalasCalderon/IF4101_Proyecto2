@@ -43,5 +43,28 @@ namespace Proyecto2.DA.Acciones
 
             return null;
         }
+
+        public async Task<bool> registrarUsuario(Usuario usuario)
+        {
+            Entidades.UsuarioDA usuarioBD = new()
+            {
+                idUsuario = usuario.idUsuario,
+                cedula = usuario.cedula,
+                nombre = usuario.nombre,
+                apellidos = usuario.apellidos,
+                fechaNacimiento = usuario.fechaNacimiento,
+                correo = usuario.correo,
+                contrasenna = usuario.contrasenna
+            };
+
+            await proyecto2Context.UsuarioDA.AddAsync(usuarioBD);
+
+            var resultado = await proyecto2Context.SaveChangesAsync();
+
+            if (resultado < 0)
+                return false;
+
+            return true;
+        }
     }
 }

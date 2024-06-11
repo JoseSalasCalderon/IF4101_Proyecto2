@@ -23,5 +23,10 @@ namespace Proyecto2.BW.CU
             return await gestionarUsuarioDA.buscarUsuario(correo, contrasenna);
         }
 
+        public async Task<bool> registrarUsuario(Usuario usuario)
+        {
+            return await gestionarUsuarioDA.registrarUsuario(usuario);
+        }
+
     }
 }

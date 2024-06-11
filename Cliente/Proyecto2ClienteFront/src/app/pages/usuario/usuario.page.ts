@@ -20,6 +20,7 @@ export class UsuarioPage {
   ionViewWillEnter(): void {
     this.limpiarCampos();
   }
+  
 
   async login() {
     const email = this.emailInput.value?.toString();
@@ -54,8 +55,9 @@ export class UsuarioPage {
           };
           // Se guarda en sesión
           sessionStorage.setItem('usuarioSesion', JSON.stringify(datosUsuario));
-          // Se pasa a la siguiente página
-          // this.router.navigate(['/concierto']);
+
+          this.usuarioService.iniciarSesion();
+          this.router.navigate(['/home']);
           console.log('Inicio de sesión exitoso');
         } else {
           await this.presentAlert('Error', 'Datos incorrectos');
@@ -81,5 +83,9 @@ export class UsuarioPage {
     });
 
     await alert.present();
+  }
+
+  registrar() {
+    this.router.navigate(['/registrarse']);
   }
 }

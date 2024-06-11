@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Proyecto2Cliente.csproj": {}
+    "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Proyecto2Cliente.csproj": {}
   },
   "projects": {
-    "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
+    "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj",
         "projectName": "Proyecto2.BC",
-        "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj",
-        "packagesPath": "C:\\Users\\50671\\.nuget\\packages\\",
-        "outputPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\50671\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,21 +60,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
+    "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj",
         "projectName": "Proyecto2.BW",
-        "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj",
-        "packagesPath": "C:\\Users\\50671\\.nuget\\packages\\",
-        "outputPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\50671\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
-                "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj"
+              "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
+                "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj"
               }
             }
           }
@@ -124,21 +124,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj": {
+    "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj",
         "projectName": "Proyecto2.DA",
-        "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj",
-        "packagesPath": "C:\\Users\\50671\\.nuget\\packages\\",
-        "outputPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\50671\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -152,8 +152,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
-                "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj"
+              "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
+                "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj"
               }
             }
           }
@@ -194,21 +194,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj": {
+    "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj",
         "projectName": "Proyecto2.SG",
-        "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj",
-        "packagesPath": "C:\\Users\\50671\\.nuget\\packages\\",
-        "outputPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\50671\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -222,11 +222,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
-                "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj"
+              "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
+                "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj"
               },
-              "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
-                "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj"
+              "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
+                "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj"
               }
             }
           }
@@ -261,21 +261,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Proyecto2Cliente.csproj": {
+    "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Proyecto2Cliente.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Proyecto2Cliente.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Proyecto2Cliente.csproj",
         "projectName": "Proyecto2Cliente",
-        "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Proyecto2Cliente.csproj",
-        "packagesPath": "C:\\Users\\50671\\.nuget\\packages\\",
-        "outputPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\Proyecto2Cliente.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2Cliente\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\50671\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -289,17 +289,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
-                "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj"
+              "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj": {
+                "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BC\\Proyecto2.BC.csproj"
               },
-              "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
-                "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj"
+              "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj": {
+                "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.BW\\Proyecto2.BW.csproj"
               },
-              "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj": {
-                "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj"
+              "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj": {
+                "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.DA\\Proyecto2.DA.csproj"
               },
-              "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj": {
-                "projectPath": "E:\\Documentos\\ICiclo2024\\Lenguajes\\Proyecto-2\\Desarrollo\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj"
+              "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj": {
+                "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\IF4101_Proyecto2\\Cliente\\Proyecto2Cliente\\Proyecto2.SG\\Proyecto2.SG.csproj"
               }
             }
           }
@@ -351,7 +351,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

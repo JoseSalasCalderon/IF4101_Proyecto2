@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto2.BC.Modelos;
+using Proyecto2.BW.Interfaces.BW;
 using Proyecto2.BW.Interfaces.DA;
 using Proyecto2.DA.Acciones;
 
@@ -10,11 +11,11 @@ namespace Proyecto2Cliente.Controllers
     [ApiController]
     public class DatosCuponController : ControllerBase
     {
-        private readonly IGestionarDatosCuponDA gestionarDatosCuponDA;
+        private readonly IGestionarDatosCuponBW gestionarDatosCuponBW;
 
-        public DatosCuponController(IGestionarDatosCuponDA gestionarDatosCuponDA)
+        public DatosCuponController(IGestionarDatosCuponBW gestionarDatosCuponBW)
         {
-            this.gestionarDatosCuponDA = gestionarDatosCuponDA;
+            this.gestionarDatosCuponBW = gestionarDatosCuponBW;
         }
 
         [HttpPost]
@@ -26,7 +27,7 @@ namespace Proyecto2Cliente.Controllers
                 return BadRequest("DatosCupon es null.");
             }
 
-            var nuevoDatosCupon = await gestionarDatosCuponDA.crearDatosCupon(datosCupon);
+            var nuevoDatosCupon = await gestionarDatosCuponBW.crearDatosCupon(datosCupon);
             return Ok(nuevoDatosCupon);
         }
     }
