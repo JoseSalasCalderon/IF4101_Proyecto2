@@ -55,7 +55,7 @@ namespace Proyecto2.SG
                 cupon.fechaCreacion = DateTime.Parse(jsonCupon.GetProperty("fechaCreacion").GetString());
                 cupon.fechaInicio = DateTime.Parse(jsonCupon.GetProperty("fechaInicio").GetString());
                 cupon.fechaFinalizacion = DateTime.Parse(jsonCupon.GetProperty("fechaFinalizacion").GetString());
-                if(jsonCupon.GetProperty("activo").GetInt16() == 1)
+                if (jsonCupon.GetProperty("activo").GetInt16() == 1)
                 {
                     cupon.activo = true;
                 }
@@ -63,7 +63,7 @@ namespace Proyecto2.SG
                 {
                     cupon.activo = false;
                 }
-               
+
 
 
                 cupones.Add(cupon);
