@@ -31,8 +31,8 @@ builder.Services.AddTransient<IGestionarCuponSG, GestionarCuponSG>();
 builder.Services.AddDbContext<Proyecto2Context>(options =>
 {
     // Usar la cadena de conexión desde la configuración
-    var connectionString = "Data Source=DESKTOP-FEUS1TM;User Id=sa;Password=sa123456;Initial Catalog=Proyecto2Lenguajes;TrustServerCertificate=true;";
-    //var connectionString = "Data Source=(local);User Id=sa;Password=12345;Initial Catalog=Proyecto2Lenguajes;TrustServerCertificate=true;";
+    //var connectionString = "Data Source=DESKTOP-FEUS1TM;User Id=sa;Password=sa123456;Initial Catalog=Proyecto2Lenguajes;TrustServerCertificate=true;";
+    var connectionString = "Data Source=(local);User Id=sa;Password=12345;Initial Catalog=Proyecto2Lenguajes;TrustServerCertificate=true;";
     options.UseSqlServer(connectionString);
     // Otros ajustes del contexto de base de datos pueden ser configurados aquí, si es necesario
 });

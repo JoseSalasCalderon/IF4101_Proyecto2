@@ -41,8 +41,8 @@ namespace Proyecto2.SG
             {
                 Cupon cupon = new Cupon();
 
-                cupon.idCupon = int.Parse(jsonCupon.GetProperty("idCupon").GetString());
-                cupon.idCategoria = int.Parse(jsonCupon.GetProperty("idCategoria").GetString());
+                cupon.idCupon = jsonCupon.GetProperty("idCupon").GetInt32();
+                cupon.idCategoria = jsonCupon.GetProperty("idCategoria").GetInt32();
                 cupon.nombreCategoria = jsonCupon.TryGetProperty("nombreCategoria", out var nombreCategoria) ? nombreCategoria.GetString() : null;
                 cupon.nombreUsuario = jsonCupon.TryGetProperty("nombreUsuario", out var nombreUsuario) ? nombreUsuario.GetString() : null;
                 cupon.nombreEmpresa = jsonCupon.TryGetProperty("nombreEmpresa", out var nombreEmpresa) ? nombreEmpresa.GetString() : null;
@@ -55,7 +55,7 @@ namespace Proyecto2.SG
                 cupon.fechaCreacion = DateTime.Parse(jsonCupon.GetProperty("fechaCreacion").GetString());
                 cupon.fechaInicio = DateTime.Parse(jsonCupon.GetProperty("fechaInicio").GetString());
                 cupon.fechaFinalizacion = DateTime.Parse(jsonCupon.GetProperty("fechaFinalizacion").GetString());
-                if(jsonCupon.GetProperty("activo").GetString() == "1")
+                if(jsonCupon.GetProperty("activo").GetInt16() == 1)
                 {
                     cupon.activo = true;
                 }

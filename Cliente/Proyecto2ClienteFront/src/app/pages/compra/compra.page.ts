@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { CuponService, Compra, DatosCupon } from 'src/app/services/cupon.service';
+import { CuponService } from 'src/app/services/cupon.service';
 
 @Component({
   selector: 'app-compra',
