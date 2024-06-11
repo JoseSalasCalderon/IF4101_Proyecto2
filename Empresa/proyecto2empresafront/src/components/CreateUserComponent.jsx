@@ -30,23 +30,36 @@ export const CreateUserComponent = () => {
         setUsuarioNuevo(prevState => ({ ...prevState, [name]: value }));
     };
 
+    const validarCampos = () => {
+        const validarNombreEmpresaDireccion = /^.{1,200}$/;
+        const validarContrasenna = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+
+        if (!validarNombreEmpresaDireccion.test(usuarioNuevo.nombreEmpresa)) {
+            alert('Nombre de la empresa debe tener hasta 200 caracteres.');
+            return false;
+        }
+        if (!validarContrasenna.test(usuarioNuevo.contrasenna)) {
+            alert('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
+            return false;
+        }
+        return true;
+    };
+
     const crearUsuario = (e) => {
         e.preventDefault();
-        if (usuarioNuevo.contrasenna !== "") {
+        if (validarCampos()) {
             usuarioSerivce.crearUsuarioEmpresa(usuarioNuevo)
             .then(response => {
                 if (response) {
-                    alert("El usuario "+usuarioNuevo.nombreEmpresa+" ha sido creado.!");
+                    alert("El usuario " + usuarioNuevo.nombreEmpresa + " ha sido creado.!");
                     volverAtras();
-                }else{
+                } else {
                     alert("El usuario no se pudo crear");
                 }
             })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error);
-            })
-        }else {
-            alert("Debe generar una contrasenna");
+            });
         }
     };
 

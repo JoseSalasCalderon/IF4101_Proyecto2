@@ -25,7 +25,7 @@ export const ModalPromocionComponent = ({ isOpen, abrirCerrarModal, promocion, h
 
     return (
         <Modal isOpen={isOpen} toggle={abrirCerrarModal}>
-            <ModalHeader toggle={abrirCerrarModal}>Editar Promoción</ModalHeader>
+            <ModalHeader className="custom-modal-header" toggle={abrirCerrarModal}>Editar Promoción</ModalHeader>
             <ModalBody>
                 <div className="form-group">
                     <div className='mb-3'><strong>ID Promoción:</strong> {promocion?.idPromocion}</div>
