@@ -74,7 +74,7 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
             alert('Nombre de la empresa debe tener hasta 200 caracteres.');
             return false;
         }
-        if (generarContrasenna && !validarContrasenna.test(usuarioEmpresa.contrasenna)) {
+        if (!validarContrasenna.test(usuarioEmpresa.contrasenna)) {
             alert('La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.');
             return false;
         }
@@ -82,15 +82,15 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
             alert('Dirección debe tener hasta 200 caracteres.');
             return false;
         }
-        if (!(validarCedulaFisica.test(usuarioEmpresa.cedulaFisicaOJuridica) || validarCedulaJuridica.test(usuarioEmpresa.cedulaFisicaOJuridica)) && usuarioEmpresa.cedulaFisicaOJuridica !== '') {
+        if (!(validarCedulaFisica.test(usuarioEmpresa.cedulaFisicaOJuridica) || validarCedulaJuridica.test(usuarioEmpresa.cedulaFisicaOJuridica))) {
             alert('Cédula debe cumplir con el formato adecuado.');
             return false;
         }
-        if (!validarCorreo.test(usuarioEmpresa.correo)  && usuarioEmpresa.correo !== '') {
+        if (!validarCorreo.test(usuarioEmpresa.correo)) {
             alert('Correo electrónico no tiene un formato válido.');
             return false;
         }
-        if (!validarTelefono.test(usuarioEmpresa.telefono)  && usuarioEmpresa.telefono !== '') {
+        if (!validarTelefono.test(usuarioEmpresa.telefono)) {
             alert('Teléfono debe cumplir con el formato 0000-0000.');
             return false;
         }
