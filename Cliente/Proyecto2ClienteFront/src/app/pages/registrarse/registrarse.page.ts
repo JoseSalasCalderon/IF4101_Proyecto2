@@ -37,9 +37,43 @@ export class RegistrarsePage {
       return;
     }
 
+    if (nombre.length > 11) {
+      this.presentAlert('Error', 'El nombre debe tener menos de 12 caracteres');
+      return;
+    }
+
+    const nombreValido = /^[a-zA-Z\s]+$/.test(nombre);
+    if (!nombreValido) {
+      this.presentAlert('Error', 'El nombre solo debe contener letras y espacios');
+      return;
+    }
+
+    if (apellidos.length >= 30) {
+      this.presentAlert('Error', 'El apellido debe tener menos de 30 caracteres');
+      return;
+    }
+
+    const apellidoValido = /^[a-zA-Z\s]+$/.test(apellidos);
+    if (!apellidoValido) {
+      this.presentAlert('Error', 'El apellido solo debe contener letras y espacios');
+      return;
+    }
+
     const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
     if (!correoValido) {
       this.presentAlert('Error', 'Por favor ingrese un correo válido');
+      return;
+    }
+
+    const cedulaValida = /^\d{2}-\d{4}-\d{4}$/.test(cedula);
+    if (!cedulaValida) {
+      this.presentAlert('Error', 'La cédula debe tener el formato 00-0000-0000');
+      return;
+    }
+
+    const contrasennaValida = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(contrasenna);
+    if (!contrasennaValida) {
+      this.presentAlert('Error', 'La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula, un número y un carácter especial');
       return;
     }
 
