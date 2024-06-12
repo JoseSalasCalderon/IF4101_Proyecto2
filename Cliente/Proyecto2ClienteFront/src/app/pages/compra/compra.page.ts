@@ -4,6 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { Compra, CompraService } from 'src/app/services/compra.service';
 import { Cupon, CuponService } from 'src/app/services/cupon.service';
 import { DatosCupon, DatosCuponService } from 'src/app/services/datos-cupon.service';
+import { EmailJSResponseStatus, init, send } from 'emailjs-com';
 
 @Component({
   selector: 'app-compra',
@@ -16,13 +17,18 @@ export class CompraPage implements OnInit {
   numeroTarjeta: string = '';
   fechaVencimiento: string = '';
   cvv: string = '';
+  fechaActual: Date = new Date();
+  fechaFormateada = `${String(this.fechaActual.getDate()).padStart(2, '0')}-${String(this.fechaActual.getMonth() + 1).padStart(2, '0')}-${this.fechaActual.getFullYear().toString()}
+  `;
 
   constructor(
     private alertController: AlertController
     , private compraService: CompraService
     , private datosCuponService: DatosCuponService
     , private router: Router
-  ) {}
+  ) {
+    init('5BRsUkUtWPltRgAML');
+  }
 
   ngOnInit() {
     ""
@@ -94,7 +100,6 @@ export class CompraPage implements OnInit {
     
     this.compraService.buscarIdDisponile().subscribe(responseIdDisponible => {
       if (responseIdDisponible) {
-        console.log(responseIdDisponible);
         const usuarioSesion = sessionStorage.getItem('usuarioSesion');
         const carritoSesion = sessionStorage.getItem('carrito');
 
@@ -126,7 +131,6 @@ export class CompraPage implements OnInit {
         };
 
         this.compraService.insertarCompra(compra).subscribe(response => {
-          console.log(response);
           const promesas = [];
           for (let j = 0; j < carrito.length; j++) {
             const datosCupon: DatosCupon = {
@@ -150,14 +154,13 @@ export class CompraPage implements OnInit {
 
           Promise.all(promesas).then(results => {
             const funciono = results.some(result => result);
-            console.log(funciono ? 1 : 0);
             if (funciono) {
               sessionStorage.removeItem('carrito');
               this.presentAlert('Registro', 'Reserva Exitosa!');
+              // Se llama al enviar correo
+              this.darFormatoYEnviarEmail(compra, carrito, usuario);
               this.limpiarCampos();
               this.router.navigate(['/home']);
-              // Se llama al enviar correo
-              //this.darFormatoYEnviarEmail(response, asientosArray, usuario);
             }
           }).catch(error => {
             console.error('Error en una de las peticiones', error);
@@ -169,6 +172,51 @@ export class CompraPage implements OnInit {
       }// if
     });
   }// compra
+
+  darFormatoYEnviarEmail(compra: any, cupones: any[], usuario: any){
+    let cuponesString = ``;
+
+    for (let index = 0; index < cupones.length; index++) {
+        cuponesString += `
+            <div style="border: 1px solid #d0d0d0; padding: 10px; margin-bottom: 10px;">
+                <img src="${cupones[index].imagenRepresentativa}" alt="Imagen Representativa" style="width: 100px; height: auto; display: block; margin-bottom: 10px;">
+                <p><strong>Empresa:</strong> ${cupones[index].nombreEmpresa}</p>
+                <p><strong>Ubicación:</strong> ${cupones[index].ubicacion}</p>
+                <p><strong>Cantidad:</strong> ${cupones[index].cantidad}</p>
+                <p><strong>Precio:</strong> ₡${cupones[index].precio.toFixed(2)}</p>
+                <p><strong>Descuento:</strong> ${cupones[index].descuento}%</p>
+            </div>
+        `;
+    };
+
+    // Se crea el formato del email
+    const parametrosEmail = {
+      destinatario: usuario.correo,
+      remitente: 'Facil Cupones',
+      titulo: 'Comprobante Facil Cupones',
+      nombre: usuario.nombre,
+      apellidos: usuario.apellidos,
+      idCompra: compra.idCompra,
+      precioTotal: compra.precioTotal.toFixed(2),
+      descuentoTotal: compra.descuentoFinal.toFixed(2),
+      tarjeta: this.numeroTarjeta.slice(0, -4).replace(/\d/g, '*') + this.numeroTarjeta.slice(-4),
+      fechaActual: this.fechaFormateada,
+      cupones: cuponesString
+    };
+
+    // Enviamos el email
+    this.enviarEmail(parametrosEmail);
+    
+  }
+
+  enviarEmail(templateParams: any) {
+    return send('service_5qnmhtj', 'template_m67lxmr', templateParams)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      }, (err) => {
+        console.error('FAILED...', err);
+      });
+  }
 
   limpiarCampos() {
     this.tarjetaHabiente = '';
