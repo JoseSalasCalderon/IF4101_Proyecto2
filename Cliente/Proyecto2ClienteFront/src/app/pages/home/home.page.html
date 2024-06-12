@@ -33,7 +33,9 @@
             <ion-card-content>
               <p class="ion-text-center">{{cupon.ubicacion}}</p>
               <p class="ion-text-center">{{cupon.nombreEmpresa}}</p>
-              <p class="ion-text-center">{{cupon.precio}}</p>
+              <p class="ion-text-center">Precio: ${{cupon.precio}}</p>
+              <p *ngIf="cupon.descuento && cupon.descuento > 0" class="ion-text-center">Descuento: ${{precioFinalPorCupon(cupon)}}</p>
+
               <ion-button expand="block" class="add-to-cart-button" fill="outline" shape="round" (click)="agregarAlCarrito(cupon)">
                 Agregar al carrito
               </ion-button>

@@ -11,7 +11,7 @@ export interface Cupon {
   codigo: string;
   nombre: string;
   precio: number;
-  descuento: number | null;
+  descuento: number;
   ubicacion: string | null;
   imagenRepresentativa: string | null;
   fechaCreacion: Date;

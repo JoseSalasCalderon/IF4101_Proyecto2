@@ -17,9 +17,13 @@ export class CompraService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrlCompra = 'https://localhost:7272/api/Compra/CrearCompra';
+  private apiUrlCompra = 'https://localhost:7272/api/Compra/';
 
   insertarCompra(compra: Compra): Observable<{ idCompra: number }> {
-    return this.http.post<{ idCompra: number }>(this.apiUrlCompra, compra);
+    return this.http.post<{ idCompra: number }>(this.apiUrlCompra+"CrearCompra", compra);
+  }
+
+  buscarIdDisponile(): Observable<number> {
+    return this.http.get<number>(this.apiUrlCompra+'buscarIdDisponible');
   }
 }
