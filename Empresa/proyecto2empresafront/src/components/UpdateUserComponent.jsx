@@ -58,7 +58,7 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
     };
 
     const validarCampos = () => {
-        const validarNombreEmpresaDireccion = /^.{0,200}$/;
+        const validarNombreEmpresaDireccion = /^.{1,200}$/;
         const validarCedulaFisica = /^\d{2}-\d{4}-\d{4}$/;
         const validarCedulaJuridica = /^\d{2}-\d{3}-\d{6}$/;
         const validarCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

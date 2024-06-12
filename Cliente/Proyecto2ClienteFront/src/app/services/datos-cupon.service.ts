@@ -6,9 +6,9 @@ export interface DatosCupon {
   idCupon: number;
   idCompra: number;
   precio: number;
-  descuento: number | null;
-  imagenRepresentativa: string | null;
-  ubicacion: string | null;
+  descuento: number;
+  imagenRepresentativa: string;
+  ubicacion: string;
   empresa: string;
   categoria: string;
   cantidad: number;

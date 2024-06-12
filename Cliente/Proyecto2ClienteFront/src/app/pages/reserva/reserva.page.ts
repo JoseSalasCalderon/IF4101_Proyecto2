@@ -1,21 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservaService, CompraDatosCupon } from 'src/app/services/reserva.service';
 
-interface CompraAgrupada {
-  idCompra: number;
-  cedula: string;
-  precioTotal: number;
-  descuentoFinal: number;
-  cupones: CompraDatosCupon[];
-}
-
 @Component({
   selector: 'app-reserva',
   templateUrl: './reserva.page.html',
   styleUrls: ['./reserva.page.scss'],
 })
 export class ReservaPage implements OnInit {
-  comprasAgrupadas: CompraAgrupada[] = [];
+  comprasAgrupadas: CompraDatosCupon[] = [];
   mensajeNoReservas: string = '';
 
   constructor(private reservaService: ReservaService) { }
@@ -32,7 +24,7 @@ export class ReservaPage implements OnInit {
             if (compras.length === 0) {
               this.mensajeNoReservas = 'No existen reservas asociadas a este usuario.';
             } else {
-              this.comprasAgrupadas = this.agruparComprasPorId(compras);
+              this.comprasAgrupadas = compras;
             }
           }, (error) => {
             console.error('Error al obtener las reservas:', error);
@@ -45,22 +37,4 @@ export class ReservaPage implements OnInit {
     }
   }
 
-  agruparComprasPorId(compras: CompraDatosCupon[]): CompraAgrupada[] {
-    const agrupadas: { [key: number]: CompraAgrupada } = {};
-
-    compras.forEach((compra) => {
-      if (!agrupadas[compra.idCompra]) {
-        agrupadas[compra.idCompra] = {
-          idCompra: compra.idCompra,
-          cedula: compra.cedula,
-          precioTotal: compra.precioTotal,
-          descuentoFinal: compra.descuentoFinal,
-          cupones: []
-        };
-      }
-      agrupadas[compra.idCompra].cupones.push(compra);
-    });
-
-    return Object.values(agrupadas);
-  }
 }
