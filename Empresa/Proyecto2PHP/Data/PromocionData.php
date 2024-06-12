@@ -58,7 +58,7 @@ class PromocionData {
     
         try {
             // Si la promoción debe ser activa, primero desactivar todas las promociones activas
-            if ($promocion->activa === "1") {
+            if ($promocion->activa) {
                 $queryDesactivar = "UPDATE promocion SET activa = 0 WHERE activa = 1 AND idCupon = :idCupon";
                 $sentenciaDesactivar = $this->pdo->prepare($queryDesactivar);
                 $sentenciaDesactivar->bindParam(':idCupon', $promocion->idCupon);
@@ -78,7 +78,8 @@ class PromocionData {
             $sentencia->bindParam(':descuento', $promocion->descuento);
             $sentencia->bindParam(':fechaInicio', $promocion->fechaInicio);
             $sentencia->bindParam(':fechaFinalizacion', $promocion->fechaFinalizacion);
-            $sentencia->bindParam(':activa', $promocion->activa, PDO::PARAM_BOOL);
+            $activa = $promocion->activa ? 1 : 0;
+            $sentencia->bindParam(':activa', $activa, PDO::PARAM_INT);
             $sentencia->bindParam(':idPromocion', $idPromocion);
             $resultado = $sentencia->execute();
     

@@ -100,7 +100,8 @@ class CuponData {
         $sentencia->bindParam(':fechaCreacion', $cupon->fechaCreacion);
         $sentencia->bindParam(':fechaInicio', $cupon->fechaInicio);
         $sentencia->bindParam(':fechaFinalizacion', $cupon->fechaFinalizacion);
-        $sentencia->bindParam(':activo', $cupon->activo, PDO::PARAM_BOOL);
+        $activo = $cupon->activo ? 1 : 0;
+        $sentencia->bindParam(':activo', $activo, PDO::PARAM_INT);
         $sentencia->bindParam(':idCupon', $idCupon);
         $resultado = $sentencia->execute();
       return $resultado;

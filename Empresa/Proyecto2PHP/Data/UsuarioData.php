@@ -146,8 +146,11 @@ class UsuarioData {
             $sentencia->bindParam(':fechaCreacion', $usuario->fechaCreacion, PDO::PARAM_STR);
             $sentencia->bindParam(':correo', $usuario->correo, PDO::PARAM_STR);
             $sentencia->bindParam(':telefono', $usuario->telefono, PDO::PARAM_STR);
-            $sentencia->bindParam(':primeraVez', $usuario->primeraVez, PDO::PARAM_BOOL);
-            $sentencia->bindParam(':activo', $usuario->activo, PDO::PARAM_BOOL);
+            
+            $primeraVez = $usuario->primeraVez ? 1 : 0;
+            $sentencia->bindParam(':primeraVez', $primeraVez, PDO::PARAM_INT);
+            $activo = $usuario->activo ? 1 : 0;
+            $sentencia->bindParam(':activo', $activo, PDO::PARAM_INT);
             
             $sentencia->execute();
             return true;
