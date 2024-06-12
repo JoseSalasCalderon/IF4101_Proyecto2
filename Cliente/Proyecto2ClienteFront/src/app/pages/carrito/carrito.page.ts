@@ -11,10 +11,15 @@ export class CarritoPage  {
 
   carrito: (Cupon & { cantidad: number })[] = [];
 
+  precioTotal: number = 0;
+  descuentoTotal: number = 0;
+  precioTotalConDescuento: number = 0;
+
   constructor(private router: Router) { }
 
   ionViewWillEnter(): void {
     this.cargarCarrito();
+    this.calcularTotales();
   }
 
   cargarCarrito(): void {
@@ -45,6 +50,26 @@ export class CarritoPage  {
 
   actualizarCarrito(): void {
     sessionStorage.setItem('carrito', JSON.stringify(this.carrito));
+    this.calcularTotales();
+  }
+
+  calcularTotales(): void {
+    this.precioTotal = 0;
+    this.precioTotalConDescuento = 0;
+    this.descuentoTotal = 0;
+    
+    const carritoObtenido = sessionStorage.getItem('carrito');
+    const carritoCompleto = carritoObtenido? JSON.parse(carritoObtenido): null;
+
+    for (let index = 0; index < carritoCompleto.length; index++) {
+      this.precioTotal+=carritoCompleto[index].precio*carritoCompleto[index].cantidad;
+      this.precioTotalConDescuento+=((carritoCompleto[index].precio*carritoCompleto[index].cantidad)-((carritoCompleto[index].precio*carritoCompleto[index].cantidad)*(carritoCompleto[index].descuento/100)));
+    }
+
+    this.precioTotal = parseFloat(this.precioTotal.toFixed(2));
+    this.precioTotalConDescuento = parseFloat(this.precioTotalConDescuento.toFixed(2));
+    this.descuentoTotal = ((this.precioTotal-this.precioTotalConDescuento)/this.precioTotal)*100;
+    this.descuentoTotal = parseFloat(this.descuentoTotal.toFixed(2));
   }
 
   pasarACompra(): void {
