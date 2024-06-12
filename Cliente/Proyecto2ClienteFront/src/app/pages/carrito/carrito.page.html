@@ -30,6 +30,13 @@
                   <ion-button size="small" (click)="aumentarCantidad(cupon)">+</ion-button>
                 </ion-col>
               </ion-row>
+              <ion-row>
+                <ion-col size="12">
+                  <p class="ion-text">Total: ${{ precioTotal }}</p>
+                  <p class="ion-text">Descuento: {{ descuentoTotal }}%</p>
+                  <p class="ion-text"><strong class="precioTotalConDescuento">Total Con Descuento: ${{ precioTotalConDescuento }}</strong></p>
+                </ion-col>
+              </ion-row>
             </ion-grid>
         </ion-col>
       </ion-row>
