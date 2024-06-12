@@ -122,12 +122,14 @@ export class CompraPage implements OnInit {
 
         descuentoTotal = ((precioTotal-precioTotalConDescuento)/precioTotal)*100;
 
+        const tarjetaEnmascarada = this.numeroTarjeta.slice(0, -4).replace(/\d/g, '#') + this.numeroTarjeta.slice(-4);
+
         const compra: Compra = {
           idCompra: responseIdDisponible,
           cedula: usuario.cedula,
           precioTotal: precioTotal,
           descuentoFinal: descuentoTotal,
-          tarjeta: this.numeroTarjeta
+          tarjeta: tarjetaEnmascarada
         };
 
         this.compraService.insertarCompra(compra).subscribe(response => {

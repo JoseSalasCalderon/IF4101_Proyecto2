@@ -6,7 +6,7 @@ CREATE TABLE Usuario
 	idusuario INT IDENTITY
 	, nombre NVARCHAR(MAX) NOT NULL
 	, apellidos NVARCHAR(MAX) NOT NULL
-	, cedula NVARCHAR(9) PRIMARY KEY NOT NULL
+	, cedula NVARCHAR(12) PRIMARY KEY NOT NULL
 	, fechaNacimiento DATE NOT NULL
 	, correo NVARCHAR(MAX) NOT NULL
 	, contrasenna NVARCHAR(MAX) NOT NULL
@@ -26,7 +26,7 @@ SELECT * FROM Usuario
 CREATE TABLE Compra
 (
     idCompra INT NOT NULL,
-    cedula NVARCHAR(9) NOT NULL,
+    cedula NVARCHAR(12) NOT NULL,
     precioTotal DECIMAL(18, 2) NOT NULL,
     descuentoFinal DECIMAL(18, 2) NOT NULL,
     tarjeta NVARCHAR(MAX) NOT NULL,
@@ -59,3 +59,7 @@ INSERT INTO DatosCupon (idCupon, idCompra, precio, descuento, imagenRepresentati
 VALUES (1, 1, 100.00, 10.00, 'imagen.jpg', 'Ubicación A', 'Empresa X', 'Deportes', 3);
 
 SELECT * FROM DatosCupon
+
+DROP TABLE DatosCupon
+DROP TABLE Compra
+DROP TABLE Usuario

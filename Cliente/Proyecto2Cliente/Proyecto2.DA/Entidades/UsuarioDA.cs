@@ -17,7 +17,7 @@ namespace Proyecto2.DA.Entidades
 
         [Key]
         [Required]
-        [MaxLength(9)]
+        [MaxLength(12)]
         public string cedula { get; set; }
 
         [Required]
