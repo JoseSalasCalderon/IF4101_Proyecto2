@@ -61,18 +61,26 @@ namespace Proyecto2.DA.Acciones
         {
             var result = await proyecto2Context.CompraDA
                 .Where(c => c.cedula == cedula)
-                .SelectMany(c => c.DatosCupones.Select(dc => new CompraDatosCupon
+                .Select(c => new CompraDatosCupon
                 {
-                    idCompra = dc.idCompra,
-                    idCupon = dc.idCupon,
+                    idCompra = c.idCompra,
                     cedula = c.cedula,
-                    PrecioTotal = c.precioTotal,
-                    DescuentoFinal = c.descuentoFinal,
-                    ImagenRepresentativa = dc.imagenRepresentativa,
-                    Ubicacion = dc.ubicacion,
-                    Empresa = dc.empresa,
-                    Cantidad = dc.cantidad
-                }))
+                    precioTotal = c.precioTotal,
+                    descuentoFinal = c.descuentoFinal,
+                    tarjeta = c.tarjeta,
+                    Cupones = c.DatosCupones.Select(dc => new DatosCupon
+                    {
+                        idCupon = dc.idCupon,
+                        idCompra = dc.idCompra,
+                        precio = dc.precio,
+                        descuento = dc.descuento,
+                        imagenRepresentativa = dc.imagenRepresentativa,
+                        ubicacion = dc.ubicacion,
+                        empresa = dc.empresa,
+                        categoria = dc.categoria,
+                        cantidad = dc.cantidad
+                    }).ToList()
+                })
                 .ToListAsync();
 
             return result;
