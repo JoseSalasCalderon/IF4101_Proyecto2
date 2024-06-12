@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { DatosCupon } from './datos-cupon.service';
 
 export interface CompraDatosCupon {
   idCompra: number;
-  idCupon: number;
   cedula: string;
   precioTotal: number;
   descuentoFinal: number;
-  imagenRepresentativa: string;
-  ubicacion: string;
-  empresa: string;
-  cantidad: number;
+  tarjeta: string;
+  cupones: DatosCupon[];
 }
 
 @Injectable({

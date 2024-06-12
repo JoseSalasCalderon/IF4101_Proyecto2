@@ -21,14 +21,14 @@
             <p><strong>Descuento Final:</strong> {{ compra.descuentoFinal }}%</p>
             
             <div *ngFor="let cupon of compra.cupones" class="cupon-section">
-              <hr> <!-- Separador -->
+              <hr> 
               <h4>Información del Cupón: {{ cupon.idCupon }}</h4>
               <ion-img [src]="cupon.imagenRepresentativa" alt="Imagen Representativa"></ion-img>
               <p><strong>Ubicación:</strong> {{ cupon.ubicacion }}</p>
               <p><strong>Empresa:</strong> {{ cupon.empresa }}</p>
               <p><strong>Cantidad:</strong> {{ cupon.cantidad }}</p>
-              <!-- <p><strong>Precio:</strong> {{ cupon.precio }}</p>
-              <p><strong>Descuento:</strong> {{ cupon.descuento }}</p> -->
+              <p><strong>Precio:</strong> ₡{{ cupon.precio }}</p>
+              <p><strong>Descuento:</strong> {{ cupon.descuento }}%</p>
             </div>
           </ion-col>
         </ion-row>
