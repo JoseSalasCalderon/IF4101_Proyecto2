@@ -1,7 +1,6 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { CuponService } from 'src/app/services/cupon.service';
 import { Cupon } from 'src/app/services/cupon.service';
-import { Router } from '@angular/router';
 import { Categoria, CategoriaService } from 'src/app/services/categoria.service';
 
 @Component({
@@ -19,22 +18,31 @@ export class HomePage implements OnInit, DoCheck {
 
   constructor(
     private cuponService: CuponService, 
-    private router: Router, 
     private categoriaService: CategoriaService
   ) {}
 
   ngOnInit(): void {
     this.cuponService.obtenerCupones().subscribe((cupones) => {
-      this.cupones = cupones;
-      this.filteredCupones = cupones;
-      this.filtrarCupones(); 
-    });
+    this.cupones = cupones;
+    this.filteredCupones = cupones;
+    this.filtrarCupones(); 
+  });
 
     // Cargar categorías
     this.categoriaService.obtenerCategorias().subscribe((categorias) => {
       this.categorias = categorias;
     });
   }
+
+  precioFinalPorCupon(cupon: Cupon){
+    if (cupon.descuento) {
+      const precioFinal = (cupon.precio-(cupon.precio*(cupon.descuento/100)));
+      return precioFinal.toFixed(2);
+    }else {
+      return cupon.precio;
+    }
+  }
+
 
   filtrarCupones(): void {
     let tempCupones = this.cupones;

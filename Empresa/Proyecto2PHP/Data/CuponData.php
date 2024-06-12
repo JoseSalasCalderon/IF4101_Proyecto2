@@ -116,28 +116,35 @@ class CuponData {
     }
 
     public function listarCupones() {
-        $query = "SELECT 
-                    c.idCupon
-                    , c.idCategoria
-                    , ca.nombreCategoria
-                    , c.nombreUsuario
-                    , u.nombreEmpresa
-                    , c.codigo
-                    , c.nombre
-                    , c.precio
-                    , c.descuento
-                    , c.ubicacion
-                    , c.imagenRepresentativa
-                    , c.fechaCreacion
-                    , c.fechaInicio
-                    , c.fechaFinalizacion
-                    , c.activo
+        $query = "SELECT DISTINCT
+                      c.idCupon,
+                      c.idCategoria,
+                      ca.nombreCategoria,
+                      c.nombreUsuario,
+                      u.nombreEmpresa,
+                      c.codigo,
+                      c.nombre,
+                      c.precio,
+                      COALESCE(p.descuento+c.descuento, c.descuento) AS descuento,
+                      c.ubicacion,
+                      c.imagenRepresentativa,
+                      c.fechaCreacion,
+                      c.fechaInicio,
+                      c.fechaFinalizacion,
+                      c.activo
                   FROM Cupon c
-                  JOIN usuario AS u
-                    ON c.nombreUsuario = u.nombreUsuario
-                      JOIN categoria AS ca
-                        ON c.idCategoria = ca.idCategoria
-                  WHERE c.activo = 1";
+                  LEFT JOIN Usuario AS u ON c.nombreUsuario = u.nombreUsuario
+                  LEFT JOIN Categoria AS ca ON c.idCategoria = ca.idCategoria
+                  LEFT JOIN (
+                      SELECT 
+                          idCupon, 
+                          descuento 
+                      FROM Promocion 
+                      WHERE activa = 1 
+                      AND CURDATE() BETWEEN fechaInicio AND fechaFinalizacion
+                  ) AS p ON c.idCupon = p.idCupon
+                  WHERE c.activo = 1
+                  ORDER BY c.idCupon;";
         $sentencia = $this->pdo->prepare($query);
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $sentencia->execute();

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { CuponService } from 'src/app/services/cupon.service';
+import { Compra, CompraService } from 'src/app/services/compra.service';
+import { Cupon, CuponService } from 'src/app/services/cupon.service';
+import { DatosCupon, DatosCuponService } from 'src/app/services/datos-cupon.service';
 
 @Component({
   selector: 'app-compra',
@@ -14,7 +17,12 @@ export class CompraPage implements OnInit {
   fechaVencimiento: string = '';
   cvv: string = '';
 
-  constructor(private alertController: AlertController, private cuponService: CuponService) {}
+  constructor(
+    private alertController: AlertController
+    , private compraService: CompraService
+    , private datosCuponService: DatosCuponService
+    , private router: Router
+  ) {}
 
   ngOnInit() {
     ""
@@ -62,7 +70,7 @@ export class CompraPage implements OnInit {
     if (!/^[a-zA-Z\s]+$/.test(this.tarjetaHabiente)) {
       this.presentAlert('Error', 'El nombre del tarjetahabiente solo debe contener letras.');
       return;
-}
+    }
   
     // Valida que la fecha de vencimiento no esté vacía
     if (this.fechaVencimiento.trim() === '') {
@@ -83,9 +91,84 @@ export class CompraPage implements OnInit {
     }
   
     // Si todas las validaciones pasan, puedes proceder con la compra
-    console.log('Compra exitosa');
-    this.limpiarCampos();
-  }
+    
+    this.compraService.buscarIdDisponile().subscribe(responseIdDisponible => {
+      if (responseIdDisponible) {
+        console.log(responseIdDisponible);
+        const usuarioSesion = sessionStorage.getItem('usuarioSesion');
+        const carritoSesion = sessionStorage.getItem('carrito');
+
+        let carrito: any[] = [];
+        let usuario: any = null;
+
+        if (usuarioSesion && carritoSesion) {
+          usuario = JSON.parse(usuarioSesion);
+          carrito = JSON.parse(carritoSesion);
+        }
+
+        let precioTotal = 0;
+        let precioTotalConDescuento = 0;
+        let descuentoTotal = 0;
+
+        for (let index = 0; index < carrito.length; index++) {
+          precioTotal+=carrito[index].precio*carrito[index].cantidad;
+          precioTotalConDescuento+=((carrito[index].precio*carrito[index].cantidad)-((carrito[index].precio*carrito[index].cantidad)*(carrito[index].descuento/100)));
+        }
+
+        descuentoTotal = ((precioTotal-precioTotalConDescuento)/precioTotal)*100;
+
+        const compra: Compra = {
+          idCompra: responseIdDisponible,
+          cedula: usuario.cedula,
+          precioTotal: precioTotal,
+          descuentoFinal: descuentoTotal,
+          tarjeta: this.numeroTarjeta
+        };
+
+        this.compraService.insertarCompra(compra).subscribe(response => {
+          console.log(response);
+          const promesas = [];
+          for (let j = 0; j < carrito.length; j++) {
+            const datosCupon: DatosCupon = {
+              idCupon: carrito[j].idCupon,
+              idCompra: responseIdDisponible,
+              precio: carrito[j].precio,
+              descuento: carrito[j].descuento,
+              imagenRepresentativa: carrito[j].imagenRepresentativa,
+              ubicacion: carrito[j].ubicacion,
+              empresa: carrito[j].nombreEmpresa,
+              categoria: carrito[j].nombreCategoria,
+              cantidad: carrito[j].cantidad
+            };
+
+            promesas.push(new Promise<boolean>((resolve) => {
+              this.datosCuponService.insertarDatosCupon(datosCupon).subscribe(response => {
+                resolve(!!response);
+              });
+            }));
+          }// for
+
+          Promise.all(promesas).then(results => {
+            const funciono = results.some(result => result);
+            console.log(funciono ? 1 : 0);
+            if (funciono) {
+              sessionStorage.removeItem('carrito');
+              this.presentAlert('Registro', 'Reserva Exitosa!');
+              this.limpiarCampos();
+              this.router.navigate(['/home']);
+              // Se llama al enviar correo
+              //this.darFormatoYEnviarEmail(response, asientosArray, usuario);
+            }
+          }).catch(error => {
+            console.error('Error en una de las peticiones', error);
+            this.presentAlert('Error', 'Error en una de las peticiones');
+          });
+        });
+
+        
+      }// if
+    });
+  }// compra
 
   limpiarCampos() {
     this.tarjetaHabiente = '';
