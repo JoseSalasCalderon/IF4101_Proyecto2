@@ -23,14 +23,14 @@ namespace Proyecto2.BW.CU
             return await gestionarCompraDA.crearCompra(compra);
         }
 
-        public async Task<List<Compra>> ObtenerComprasPorUsuario(string cedula)
+        public async Task<List<Compra>> ObtenerComprasPorUsuario(string correo)
         {
-            return await gestionarCompraDA.ObtenerComprasPorUsuario(cedula);
+            return await gestionarCompraDA.ObtenerComprasPorUsuario(correo);
         }
 
-        public async Task<List<CompraDatosCupon>> ObtenerCompraConDatosCupon(string cedula)
+        public async Task<List<CompraDatosCupon>> ObtenerCompraConDatosCupon(string correo)
         {
-            return await gestionarCompraDA.ObtenerCompraConDatosCupon(cedula);
+            return await gestionarCompraDA.ObtenerCompraConDatosCupon(correo);
         }
 
         public async Task<int> buscarIdDisponible()

@@ -32,7 +32,7 @@ namespace Proyecto2.DA.Contexto
             modelBuilder.Entity<CompraDA>()
                 .HasOne(c => c.UsuarioAsociado)
                 .WithMany(u => u.CompraDA)
-                .HasForeignKey(c => c.cedula);
+                .HasForeignKey(c => c.correo);
 
             base.OnModelCreating(modelBuilder);
         }

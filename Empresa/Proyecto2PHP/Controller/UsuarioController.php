@@ -56,7 +56,6 @@ class UsuarioController {
             $resultado = $this->usuarioBusiness->crearUsuarioEmpresa($usuario);
             echo json_encode($resultado);
             http_response_code(200);
-            //header("HTTP/1.1 200 OK");
             exit();
         }
     }
@@ -96,6 +95,4 @@ class UsuarioController {
     }
 }
 
-// $controller = new UsuarioController();
-// $controller->handleRequest();
 ?>

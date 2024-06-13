@@ -15,7 +15,6 @@ namespace Proyecto2.DA.Entidades
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idUsuario { get; set; }
 
-        [Key]
         [Required]
         [MaxLength(12)]
         public string cedula { get; set; }
@@ -29,6 +28,7 @@ namespace Proyecto2.DA.Entidades
         [Required]
         public DateTime fechaNacimiento { get; set; }
 
+        [Key]
         [Required]
         public string correo { get; set; }
 

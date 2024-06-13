@@ -33,15 +33,15 @@ namespace Proyecto2Cliente.Controllers
         }
 
         [HttpGet]
-        [Route("ObtenerComprasPorUsuario/{cedula}")]
-        public async Task<IActionResult> ObtenerComprasPorUsuario(string cedula)
+        [Route("ObtenerComprasPorUsuario/{correo}")]
+        public async Task<IActionResult> ObtenerComprasPorUsuario(string correo)
         {
             try
             {
-                var compras = await gestionarCompraBW.ObtenerComprasPorUsuario(cedula);
+                var compras = await gestionarCompraBW.ObtenerComprasPorUsuario(correo);
                 if (compras == null || compras.Count == 0)
                 {
-                    return NotFound($"No se encontraron compras para el usuario con cédula: {cedula}");
+                    return NotFound($"No se encontraron compras para el usuario con cédula: {correo}");
                 }
 
                 return Ok(compras);
@@ -53,15 +53,15 @@ namespace Proyecto2Cliente.Controllers
         }
 
         [HttpGet]
-        [Route("ObtenerCompraConDatosCupon/{cedula}")]
-        public async Task<IActionResult> ObtenerCompraConDatosCupon(string cedula)
+        [Route("ObtenerCompraConDatosCupon/{correo}")]
+        public async Task<IActionResult> ObtenerCompraConDatosCupon(string correo)
         {
             try
             {
-                var result = await gestionarCompraBW.ObtenerCompraConDatosCupon(cedula);
+                var result = await gestionarCompraBW.ObtenerCompraConDatosCupon(correo);
                 if (result == null || result.Count == 0)
                 {
-                    return NotFound($"No se encontraron compras con cupones para el usuario con cédula: {cedula}");
+                    return NotFound($"No se encontraron compras con cupones para el usuario con cédula: {correo}");
                 }
 
                 return Ok(result);

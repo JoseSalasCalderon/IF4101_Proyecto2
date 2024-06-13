@@ -15,7 +15,7 @@
         <ion-row>
           <ion-col size="12" class="card-info">
             <h3>Información de Compra</h3>
-            <p><strong>Cédula:</strong> {{ compra.cedula }}</p>
+            <p><strong>Cédula:</strong> {{ compra.correo }}</p>
             <p><strong>Precio Total:</strong> ₡{{ compra.precioTotal }}</p>
             <p><strong>Precio Con Descuento:</strong> ₡{{ (compra.precioTotal-(compra.precioTotal*(compra.descuentoFinal/100))).toFixed(2) }}</p>
             <p><strong>Descuento Final:</strong> {{ compra.descuentoFinal }}%</p>

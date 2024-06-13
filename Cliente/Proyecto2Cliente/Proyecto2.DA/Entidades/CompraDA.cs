@@ -16,8 +16,8 @@ namespace Proyecto2.DA.Entidades
         public int idCompra { get; set; }
 
         [Required]
-        [MaxLength(9)]
-        public string cedula { get; set; } = null!; 
+        [MaxLength(30)]
+        public string correo { get; set; } = null!; 
 
         [Required]
         public decimal precioTotal { get; set; } 
@@ -28,7 +28,7 @@ namespace Proyecto2.DA.Entidades
         [Required]
         public string tarjeta { get; set; } = null!; 
 
-        [ForeignKey("cedula")]
+        [ForeignKey("correo")]
         public virtual UsuarioDA UsuarioAsociado { get; set; } = null!;
 
         public virtual ICollection<DatosCuponDA> DatosCupones { get; set; } = new List<DatosCuponDA>();

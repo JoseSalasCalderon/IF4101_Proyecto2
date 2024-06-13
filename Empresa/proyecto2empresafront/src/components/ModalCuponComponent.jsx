@@ -13,7 +13,7 @@ export const ModalCuponComponent = ({ isOpen, abrirCerrarModal, cupon, handleCha
             reader.readAsDataURL(file);
             reader.onload = () => {
                 handleChange({ target: { name: 'imagenRepresentativa', value: reader.result } });
-                setImagenCuponSeleccionada(file); // Guardar el archivo original para la subida
+                setImagenCuponSeleccionada(file);
             };
             reader.onerror = error => {
                 console.error('Error reading file:', error);

@@ -6,9 +6,9 @@ CREATE TABLE Usuario
 	idusuario INT IDENTITY
 	, nombre NVARCHAR(MAX) NOT NULL
 	, apellidos NVARCHAR(MAX) NOT NULL
-	, cedula NVARCHAR(12) PRIMARY KEY NOT NULL
+	, cedula NVARCHAR(12) NOT NULL
 	, fechaNacimiento DATE NOT NULL
-	, correo NVARCHAR(MAX) NOT NULL
+	, correo NVARCHAR(30) PRIMARY KEY NOT NULL
 	, contrasenna NVARCHAR(MAX) NOT NULL
 )
 
@@ -26,19 +26,19 @@ SELECT * FROM Usuario
 CREATE TABLE Compra
 (
     idCompra INT NOT NULL,
-    cedula NVARCHAR(12) NOT NULL,
+    correo NVARCHAR(30) NOT NULL,
     precioTotal DECIMAL(18, 2) NOT NULL,
     descuentoFinal DECIMAL(18, 2) NOT NULL,
     tarjeta NVARCHAR(MAX) NOT NULL,
     CONSTRAINT PK_Compra PRIMARY KEY (idCompra),
-    CONSTRAINT FK_Compra_Usuario FOREIGN KEY (cedula) REFERENCES Usuario(cedula)
+    CONSTRAINT FK_Compra_Usuario FOREIGN KEY (correo) REFERENCES Usuario(correo)
 );
 
-INSERT INTO Compra (idCompra, cedula, precioTotal, descuentoFinal, tarjeta)
-VALUES (1, '12345678', 100.00, 10.00, '1234-5678-9876-5432');
+INSERT INTO Compra (idCompra, correo, precioTotal, descuentoFinal, tarjeta)
+VALUES (1, 'juan.perez@example.com', 100.00, 10.00, '1234-5678-9876-5432');
 
 SELECT * FROM Compra
-
+SELECT * FROM DatosCupon
 
 CREATE TABLE DatosCupon
 (

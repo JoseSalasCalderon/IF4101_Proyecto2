@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-// import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import './App.css';
 import LoginService from './services/LoginService';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-// import { redirect } from 'react-router-dom';
 import { LoginComponent } from './components/LoginComponent';
 import { HomeAdminComponent } from './components/HomeAdminComponent';
 import { HomeUserComponent } from './components/HomeUserComponent';
@@ -126,23 +124,6 @@ function App() {
       {mostrarNavYFooter && <FooterComponent usuarioSesion={usuarioSesion} logoutApp={logout} />}
     </Router>
     
-    
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 

@@ -18,7 +18,6 @@ interface Usuario {
 export class UsuarioService {
 
   usuarioSesionSubject: Subject<boolean> = new Subject<boolean>();
-    // private usuarioSesion: Usuario | null = null;
     
   constructor(private http: HttpClient) { }
 
@@ -30,24 +29,16 @@ export class UsuarioService {
 
   hayUsuarioEnSesion(): boolean {
     const usuarioSesion = sessionStorage.getItem('usuarioSesion');
-    return usuarioSesion !== null; // Retorna true si hay un usuario en sesión, false si no
+    return usuarioSesion !== null; 
   }
 
   iniciarSesion() {
-    this.usuarioSesionSubject.next(true); // Emite un evento indicando que se ha iniciado sesión
+    this.usuarioSesionSubject.next(true); 
   }
 
   cerrarSesion() {
     sessionStorage.removeItem('usuarioSesion');
     sessionStorage.removeItem('carrito');
-    this.usuarioSesionSubject.next(false); // Emite un evento indicando que se ha cerrado sesión
+    this.usuarioSesionSubject.next(false); 
   }
-
-  // asignarUsuarioSesion(usuarioEncontrado: Usuario){
-  //   this.usuarioSesion = usuarioEncontrado;
-  // }
-
-  // retornarUsuarioSesion(){
-  //   return this.usuarioSesion;
-  // }
 }

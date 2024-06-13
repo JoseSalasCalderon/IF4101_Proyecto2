@@ -1,20 +1,20 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Espacio entre los elementos */
+  gap: 16px; 
 }
 
 .quantity-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px; /* Espacio entre los botones */
+  gap: 8px; 
 }
 
 .full-img {
   width: 100%;
   height: auto;
-  max-height: 150px; /* Ajusta la altura según sea necesario */
+  max-height: 150px; 
   object-fit: cover;
 }
 
