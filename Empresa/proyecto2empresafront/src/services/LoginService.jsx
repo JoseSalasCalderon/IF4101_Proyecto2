@@ -15,13 +15,13 @@ class LoginService {
       formData.append('contrasenna', contrasenna);
       formData.append('METHOD', 'POST');
       const responseAdmin = await axios.post(`${this.urlAdmin}`, formData);
-      // Guardamos variable nueva porquen es any
+      // Guardamos variable nueva porque es any
       if (responseAdmin.data) {
         responseAdmin.data.isAdmin = true;
         sessionStorage.setItem('usuarioSesion', JSON.stringify(responseAdmin.data));
         return responseAdmin.data;
       } else {
-        // De lo contrario, se verifica si es un usario de empresa
+        // De lo contrario, se verifica si es un usuario de empresa
         const responseUser = await axios.post(`${this.urlUser}`, formData);
         if (responseUser.data) {
           const user = {
@@ -35,7 +35,6 @@ class LoginService {
           return user;
         }
         
-        // Validar que no existe un usario registrado
         
         console.log("No se encontraron datos de usuario.");
       }

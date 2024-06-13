@@ -28,7 +28,6 @@ export class HomePage implements OnInit, DoCheck {
     this.filtrarCupones(); 
   });
 
-    // Cargar categorías
     this.categoriaService.obtenerCategorias().subscribe((categorias) => {
       this.categorias = categorias;
     });
@@ -47,12 +46,12 @@ export class HomePage implements OnInit, DoCheck {
   filtrarCupones(): void {
     let tempCupones = this.cupones;
 
-    // Filtro por categoría
+    // Filtramos por categoría
     if (this.filterBy !== 'none') {
       tempCupones = tempCupones.filter(categoria => categoria.nombreCategoria === this.filterBy);
     }
 
-    // Filtro por texto de búsqueda
+    // Se filtra por texto en el campo de búsqueda
     if (this.searchText.trim() !== '') {
       const searchTextLower = this.searchText.toLowerCase();
       tempCupones = tempCupones.filter(cupon => {

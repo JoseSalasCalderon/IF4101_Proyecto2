@@ -25,7 +25,7 @@ namespace Proyecto2.DA.Acciones
             CompraDA compraDA = new()
             {
                 idCompra = compra.idCompra,
-                cedula = compra.cedula,
+                correo = compra.correo,
                 precioTotal = compra.precioTotal,
                 descuentoFinal = compra.descuentoFinal,
                 tarjeta = compra.tarjeta
@@ -39,16 +39,16 @@ namespace Proyecto2.DA.Acciones
             return compra;
         }
 
-        public async Task<List<Compra>> ObtenerComprasPorUsuario(string cedula)
+        public async Task<List<Compra>> ObtenerComprasPorUsuario(string correo)
         {
             var compras = await proyecto2Context.CompraDA
-                                                .Where(c => c.cedula == cedula)
+                                                .Where(c => c.correo == correo)
                                                 .ToListAsync();
 
             var comprasConvertidas = compras.Select(c => new Compra
             {
                 idCompra = c.idCompra,
-                cedula = c.cedula,
+                correo = c.correo,
                 precioTotal = c.precioTotal,
                 descuentoFinal = c.descuentoFinal,
                 tarjeta = c.tarjeta
@@ -57,14 +57,14 @@ namespace Proyecto2.DA.Acciones
             return comprasConvertidas;
         }
 
-        public async Task<List<CompraDatosCupon>> ObtenerCompraConDatosCupon(string cedula)
+        public async Task<List<CompraDatosCupon>> ObtenerCompraConDatosCupon(string correo)
         {
             var result = await proyecto2Context.CompraDA
-                .Where(c => c.cedula == cedula)
+                .Where(c => c.correo == correo)
                 .Select(c => new CompraDatosCupon
                 {
                     idCompra = c.idCompra,
-                    cedula = c.cedula,
+                    correo = c.correo,
                     precioTotal = c.precioTotal,
                     descuentoFinal = c.descuentoFinal,
                     tarjeta = c.tarjeta,

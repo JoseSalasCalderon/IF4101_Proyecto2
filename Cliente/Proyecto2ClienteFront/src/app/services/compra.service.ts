@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface Compra {
   idCompra: number;
-  cedula: string;
+  correo: string;
   precioTotal: number;
   descuentoFinal: number;
   tarjeta: string;

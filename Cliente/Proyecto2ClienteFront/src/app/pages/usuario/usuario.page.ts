@@ -33,14 +33,6 @@ export class UsuarioPage {
     // Verificamos los datos del formulario
     if (email !== undefined && password !== undefined) {
       this.usuarioService.buscarUsuario(email, password).subscribe(async response => {
-        // console.log(response);
-        // this.usuarioService.asignarUsuarioSesion(response);
-        // console.log(JSON.stringify(this.usuarioService.retornarUsuarioSesion()));
-        // this.usuario = this.usuarioService.retornarUsuarioSesion();
-        // if (this.usuario!=null) {
-          
-        //   this.router.navigate(['/concierto'])
-        // }
         if (response != null) {
           // Obtenemos el usuario
           this.usuario = response;

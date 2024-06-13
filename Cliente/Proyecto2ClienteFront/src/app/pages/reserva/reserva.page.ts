@@ -18,8 +18,8 @@ export class ReservaPage implements OnInit {
     if (usuarioSesionString) {
       const usuarioSesion = JSON.parse(usuarioSesionString);
       
-      if (usuarioSesion && usuarioSesion.cedula) {
-        this.reservaService.obtenerCompraConDatosCupon(usuarioSesion.cedula)
+      if (usuarioSesion && usuarioSesion.correo) {
+        this.reservaService.obtenerCompraConDatosCupon(usuarioSesion.correo)
           .subscribe((compras) => {
             if (compras.length === 0) {
               this.mensajeNoReservas = 'No existen reservas asociadas a este usuario.';

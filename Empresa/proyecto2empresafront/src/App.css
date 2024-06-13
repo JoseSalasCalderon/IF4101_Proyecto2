@@ -1,5 +1,4 @@
 body {
-  /* Agregar un fondo */
   background-color: #001940;
 }
 
@@ -183,7 +182,6 @@ footer a:hover {
 }
 
 .navbar {
-  /*background-color: #2668d3;*/
   background-color: #0950a8;
   color: #FFF;
 }

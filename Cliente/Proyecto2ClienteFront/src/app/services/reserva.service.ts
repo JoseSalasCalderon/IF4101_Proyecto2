@@ -5,7 +5,7 @@ import { DatosCupon } from './datos-cupon.service';
 
 export interface CompraDatosCupon {
   idCompra: number;
-  cedula: string;
+  correo: string;
   precioTotal: number;
   descuentoFinal: number;
   tarjeta: string;

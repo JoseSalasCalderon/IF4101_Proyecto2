@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioEnSesion = this.usuarioService.hayUsuarioEnSesion();
-    // Suscripción al Subject para actualizar dinámicamente el estado del usuario en sesión
     this.usuarioService.usuarioSesionSubject.subscribe((sesionIniciada: boolean) => {
       this.usuarioEnSesion = sesionIniciada;
     });

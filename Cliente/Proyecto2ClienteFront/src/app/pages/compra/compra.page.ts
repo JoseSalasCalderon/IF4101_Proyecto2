@@ -72,31 +72,25 @@ export class CompraPage implements OnInit {
   }
 
   async comprar() {
-    // Valida que el nombre del tarjetahabiente solo contenga letras
     if (!/^[a-zA-Z\s]+$/.test(this.tarjetaHabiente)) {
       this.presentAlert('Error', 'El nombre del tarjetahabiente solo debe contener letras.');
       return;
     }
   
-    // Valida que la fecha de vencimiento no esté vacía
     if (this.fechaVencimiento.trim() === '') {
       this.presentAlert('Error', 'Debes ingresar la fecha de vencimiento.');
       return;
     }
   
-    // Valida el CVV
     if (!this.validarCVV(this.cvv)) {
       this.presentAlert('Error', 'El CVV debe tener exactamente 3 dígitos numéricos.');
       return;
     }
   
-    // Valida el número de tarjeta
     if (!this.validarNumeroTarjeta(this.numeroTarjeta)) {
       this.presentAlert('Error', 'El número de tarjeta no es válido.');
       return;
     }
-  
-    // Si todas las validaciones pasan, puedes proceder con la compra
     
     this.compraService.buscarIdDisponile().subscribe(responseIdDisponible => {
       if (responseIdDisponible) {
@@ -126,7 +120,7 @@ export class CompraPage implements OnInit {
 
         const compra: Compra = {
           idCompra: responseIdDisponible,
-          cedula: usuario.cedula,
+          correo: usuario.correo,
           precioTotal: precioTotal,
           descuentoFinal: descuentoTotal,
           tarjeta: tarjetaEnmascarada
