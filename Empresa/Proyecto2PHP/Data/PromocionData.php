@@ -53,11 +53,9 @@ class PromocionData {
     }
 
     public function actualizarPromocion($idPromocion, Promocion $promocion) {
-        // Iniciar una transacción
         $this->pdo->beginTransaction();
     
         try {
-            // Si la promoción debe ser activa, primero desactivar todas las promociones activas
             if ($promocion->activa) {
                 $queryDesactivar = "UPDATE promocion SET activa = 0 WHERE activa = 1 AND idCupon = :idCupon";
                 $sentenciaDesactivar = $this->pdo->prepare($queryDesactivar);
@@ -65,7 +63,6 @@ class PromocionData {
                 $sentenciaDesactivar->execute();
             }
     
-            // Actualizar la promoción específica
             $query = "UPDATE promocion 
                       SET idCupon = :idCupon,
                           descuento = :descuento,
@@ -83,13 +80,11 @@ class PromocionData {
             $sentencia->bindParam(':idPromocion', $idPromocion);
             $resultado = $sentencia->execute();
     
-            // Confirmar la transacción
             $this->pdo->commit();
     
             return $resultado;
     
         } catch (Exception $e) {
-            // En caso de error, revertir la transacción
             $this->pdo->rollBack();
             throw $e;
         }
