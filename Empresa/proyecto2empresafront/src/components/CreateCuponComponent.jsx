@@ -194,7 +194,7 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
                                 className="form-control"
                                 name="fechaInicio"
                                 value={cuponNuevo.fechaInicio}
-                                onChange={handleChange}
+                                onChange={handleChange}                           
                                 required
                             />
                         </div>
@@ -206,6 +206,7 @@ export const CreateCuponComponent = ({ usuarioSesion }) => {
                                 name="fechaFinalizacion"
                                 value={cuponNuevo.fechaFinalizacion}
                                 onChange={handleChange}
+                                min={cuponNuevo.fechaInicio}
                                 required
                             />
                         </div>

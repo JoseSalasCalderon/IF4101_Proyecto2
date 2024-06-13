@@ -112,6 +112,7 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
                                 name="nombreUsuario"
                                 value={usuarioActual.nombreUsuario}
                                 onChange={handleChange}
+                                placeholder='Nombre Usuario...'
                                 readOnly
                             />
                         </div>
@@ -123,6 +124,7 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
                                 name="contrasenna"
                                 value={usuarioActual.contrasenna}
                                 onChange={handleChange}
+                                placeholder='Example123!'
                             />
                         </div>
                         <div className="form-group">
@@ -133,6 +135,7 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
                                 name="nombreEmpresa"
                                 value={usuarioActual.nombreEmpresa}
                                 onChange={handleChange}
+                                placeholder='Nombre Empresa...'
                             />
                         </div>
                         <div className="form-group">
@@ -143,6 +146,7 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
                                 name="direccion"
                                 value={usuarioActual.direccion}
                                 onChange={handleChange}
+                                 placeholder='Dirección...'
                             />
                         </div>
                         <div className="form-group">
@@ -153,6 +157,7 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
                                 name="cedulaFisicaOJuridica"
                                 value={usuarioActual.cedulaFisicaOJuridica}
                                 onChange={handleChange}
+                                placeholder='00-0000-0000'
                             />
                         </div>
                         <div className="form-group">
@@ -173,6 +178,7 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
                                 name="correo"
                                 value={usuarioActual.correo}
                                 onChange={handleChange}
+                                placeholder='example@gmail.com'
                             />
                         </div>
                         <div className="form-group">
@@ -183,6 +189,7 @@ export const UpdateUserComponent = ({ usuarioSesion }) => {
                                 name="telefono"
                                 value={usuarioActual.telefono}
                                 onChange={handleChange}
+                                placeholder='0000-0000'
                             />
                         </div>
                         <button type="submit" className="btn btn-primary mb-3" onClick={actualizarUsuario}>Actualizar Mis Datos</button>

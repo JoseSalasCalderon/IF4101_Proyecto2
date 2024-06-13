@@ -129,6 +129,7 @@ export const CreateUserComponent = () => {
                                 name="nombreUsuario"
                                 value={usuarioNuevo.nombreUsuario}
                                 onChange={handleChange}
+                                placeholder='Nombre Usuario...'
                                 required
                             />
                         </div>
@@ -151,6 +152,7 @@ export const CreateUserComponent = () => {
                                 name="nombreEmpresa"
                                 value={usuarioNuevo.nombreEmpresa}
                                 onChange={handleChange}
+                                placeholder='Nombre Empresa...'
                             />
                         </div>
                         <div className="form-group">
@@ -161,6 +163,7 @@ export const CreateUserComponent = () => {
                                 name="direccion"
                                 value={usuarioNuevo.direccion}
                                 onChange={handleChange}
+                                placeholder='Dirección...'
                             />
                         </div>
                         <div className="form-group">
@@ -171,6 +174,7 @@ export const CreateUserComponent = () => {
                                 name="cedulaFisicaOJuridica"
                                 value={usuarioNuevo.cedulaFisicaOJuridica}
                                 onChange={handleChange}
+                                placeholder='00-0000-0000'
                             />
                         </div>
                         <div className="form-group">
@@ -181,6 +185,7 @@ export const CreateUserComponent = () => {
                                 name="fechaCreacion"
                                 value={usuarioNuevo.fechaCreacion}
                                 onChange={handleChange}
+                                required
                             />
                         </div>
                         <div className="form-group">
@@ -191,6 +196,7 @@ export const CreateUserComponent = () => {
                                 name="correo"
                                 value={usuarioNuevo.correo}
                                 onChange={handleChange}
+                                placeholder='example@gmail.com'
                             />
                         </div>
                         <div className="form-group">
@@ -201,6 +207,7 @@ export const CreateUserComponent = () => {
                                 name="telefono"
                                 value={usuarioNuevo.telefono}
                                 onChange={handleChange}
+                                placeholder='0000-0000'
                             />
                         </div>
                         <button type="submit" className="btn btn-primary mb-3">Crear Usuario</button>
