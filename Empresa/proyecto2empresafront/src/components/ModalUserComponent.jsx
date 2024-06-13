@@ -126,6 +126,7 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
                         name="nombreEmpresa"
                         value={usuarioEmpresa?.nombreEmpresa}
                         onChange={handleChange}
+                         placeholder='Nombre Empresa...'
                     />
                     <label>Dirección:</label>
                     <input
@@ -134,6 +135,7 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
                         name="direccion"
                         value={usuarioEmpresa?.direccion}
                         onChange={handleChange}
+                        placeholder='Dirección...'
                     />
                     <label>Cédula Física o Jurídica:</label>
                     <input
@@ -142,6 +144,7 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
                         name="cedulaFisicaOJuridica"
                         value={usuarioEmpresa?.cedulaFisicaOJuridica}
                         onChange={handleChange}
+                        placeholder='00-0000-0000'
                     />
                     <label>Fecha de Creación:</label>
                     <input
@@ -158,6 +161,7 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
                         name="correo"
                         value={usuarioEmpresa?.correo}
                         onChange={handleChange}
+                        placeholder='example@gmail.com'
                     />
                     <label>Teléfono:</label>
                     <input
@@ -166,6 +170,7 @@ export const ModalUserComponent = ({ isOpen, abrirCerrarModal, usuarioEmpresa, h
                         name="telefono"
                         value={usuarioEmpresa?.telefono}
                         onChange={handleChange}
+                         placeholder='0000-0000'
                     />
                     <label>Primera Vez:</label>
                     <select
